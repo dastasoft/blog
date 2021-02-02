@@ -1,13 +1,13 @@
 ---
-title: "Parcel React Boilerplate"
-excerpt: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Praesent elementum facilisis leo vel fringilla est ullamcorper eget. At imperdiet dui accumsan sit amet nulla facilities morbi tempus."
-coverImage: "/assets/blog/preview/cover.jpg"
-date: "2020-02-29T00:00:00.322Z"
+title: 'Simple React Boilerplate'
+excerpt: 'How to make a simple React boilerplate from scartch with Babel and Parcel.'
+coverImage: '/assets/posts/preview/simple-react-boilerplate.png'
+date: '2020-02-29T00:00:00.322Z'
 author:
   name: dastasoft
-  picture: "/assets/blog/authors/joe.jpeg"
+  picture: '/assets/authors/dastasoft.jpeg'
 ogImage:
-  url: "/assets/blog/preview/cover.jpg"
+  url: '/assets/posts/preview/simple-react-boilerplate.png'
 ---
 
 We will create a simple React boilerplate with [Parcel](https://parceljs.org/) bundler, linter, prettier and a few things more for create new React apps quick.
@@ -113,12 +113,12 @@ _Make sure to place this `div` before the `index.js` import. We want to load the
 For the `index.js` lets place some basic React code:
 
 ```javascript
-import React from "react";
-import { render } from "react-dom";
+import React from 'react'
+import { render } from 'react-dom'
 
-const App = () => <div>Hello Wolrd!</div>;
+const App = () => <div>Hello Wolrd!</div>
 
-render(<App />, document.getElementById("root"));
+render(<App />, document.getElementById('root'))
 ```
 
 ## Adding Extras

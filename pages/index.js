@@ -1,32 +1,38 @@
-import Link from "next/link";
+import styled from 'styled-components'
 
-import { getAllPosts } from "../lib/api";
+import { getAllPosts } from '@/lib/api'
+import Post from '@/components/Post'
 
-export default function Index({ allPosts }) {
+const Home = ({ allPosts }) => {
   return (
-    <div>
+    <GridLayout>
       {allPosts.map(post => (
-        <Link href="/posts/[slug]" as={`/posts/${post.slug}`}>
-          <a>
-            <div>{post.title}</div>
-          </a>
-        </Link>
+        <Post key={post.slug} {...post} />
       ))}
-    </div>
-  );
+    </GridLayout>
+  )
 }
+
+const GridLayout = styled.div`
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 1.8rem;
+  padding: 1rem;
+`
+
+export default Home
 
 export async function getStaticProps() {
   const allPosts = getAllPosts([
-    "title",
-    "date",
-    "slug",
-    "author",
-    "coverImage",
-    "excerpt"
-  ]);
+    'title',
+    'date',
+    'slug',
+    'author',
+    'coverImage',
+    'excerpt',
+  ])
 
   return {
-    props: { allPosts }
-  };
+    props: { allPosts },
+  }
 }
