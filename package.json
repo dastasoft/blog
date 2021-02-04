@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "date-fns": "^2.16.1",
+    "dayjs": "^1.10.4",
     "gray-matter": "^4.0.2",
     "markdown-to-jsx": "^7.1.1",
     "ms": "^2.1.3",

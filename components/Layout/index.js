@@ -2,10 +2,10 @@ import styled from 'styled-components'
 
 import Header from '@/components/Header'
 
-const Layout = ({ children, themeToggler }) => {
+const Layout = ({ children, theme, themeToggler }) => {
   return (
     <GridLayout>
-      <Header themeToggler={themeToggler} />
+      <Header theme={theme} themeToggler={themeToggler} />
       <main>{children}</main>
     </GridLayout>
   )

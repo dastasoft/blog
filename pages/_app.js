@@ -13,7 +13,7 @@ export default function App({ Component, pageProps }) {
     <>
       <ThemeProvider theme={themeMode}>
         <GlobalStyle />
-        <Layout themeToggler={themeToggler}>
+        <Layout theme={theme} themeToggler={themeToggler}>
           <Component {...pageProps} />
         </Layout>
       </ThemeProvider>

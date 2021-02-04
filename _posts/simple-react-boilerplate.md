@@ -2,7 +2,7 @@
 title: 'Simple React Boilerplate'
 excerpt: 'How to make a simple React boilerplate from scartch with Babel and Parcel.'
 coverImage: '/assets/posts/preview/simple-react-boilerplate.png'
-date: '2020-02-29T00:00:00.322Z'
+date: '2020-02-29T00:00:00.000Z'
 author:
   name: dastasoft
   picture: '/assets/authors/dastasoft.jpeg'

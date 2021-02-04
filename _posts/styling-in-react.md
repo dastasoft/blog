@@ -2,7 +2,7 @@
 title: 'Styling in React'
 excerpt: 'Check out the different options to style your React application. Decide which one fits best to your project.'
 coverImage: '/assets/posts/preview/styling-in-react.png'
-date: '2020-02-29T00:00:00.322Z'
+date: '2020-03-15T00:00:00.000Z'
 author:
   name: dastasoft
   picture: '/assets/authors/dastasoft.jpeg'
