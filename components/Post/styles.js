@@ -3,10 +3,10 @@ import styled from 'styled-components'
 export const Article = styled.article`
   background-color: ${({ theme }) => theme.background};
   border: 1px solid ${({ theme }) => theme.secondary};
+  border-radius: 5px;
   color: ${({ theme }) => theme.contentText};
   transition: all 0.5s linear;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  border-radius: 3px;
+  box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.25);
   padding: 1rem;
   display: flex;
   flex-direction: column;
