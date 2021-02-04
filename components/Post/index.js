@@ -15,7 +15,7 @@ const Post = ({ title, date, slug, coverImage, excerpt }) => {
             src={coverImage}
             alt={`${title} cover image`}
             width={400}
-            height={200}
+            height={160}
           />
           <p>{excerpt}</p>
         </Article>
