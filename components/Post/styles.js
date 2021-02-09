@@ -21,6 +21,7 @@ export const Article = styled.article`
     font-size: 18px;
     font-weight: 400;
     margin-top: 0.5rem;
+    line-height: 1.625;
   }
 
   > * {

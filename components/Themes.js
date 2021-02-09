@@ -8,6 +8,7 @@ export const lightTheme = {
   UIText: 'white',
   contentText: 'black',
   background: 'white',
+  code: 'black',
   ...theme,
 }
 export const darkTheme = {
@@ -15,5 +16,6 @@ export const darkTheme = {
   UIText: 'black',
   contentText: 'white',
   background: 'black',
+  code: 'white',
   ...theme,
 }
