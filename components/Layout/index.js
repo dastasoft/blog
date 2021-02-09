@@ -1,6 +1,5 @@
-import styled from 'styled-components'
-
 import Header from '@/components/Header'
+import { GridLayout } from './styles'
 
 const Layout = ({ children, theme, themeToggler }) => {
   return (
@@ -10,10 +9,5 @@ const Layout = ({ children, theme, themeToggler }) => {
     </GridLayout>
   )
 }
-
-const GridLayout = styled.div`
-  display: grid;
-  grid-template-rows: 5rem 1fr;
-`
 
 export default Layout

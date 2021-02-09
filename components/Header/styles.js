@@ -25,6 +25,7 @@ export const StyledHeader = styled.header`
     div > span::before {
       transition: all 0.5s linear;
       background-color: ${({ theme }) => theme.UIText};
+      z-index: 10;
     }
   }
 `
