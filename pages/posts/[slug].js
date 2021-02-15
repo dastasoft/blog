@@ -1,33 +1,25 @@
 import { useRouter } from 'next/router'
 import ErrorPage from 'next/error'
-import Image from 'next/image'
-import dayjs from 'dayjs'
 import styled from 'styled-components'
 
-import PostBody from '@/components/PostBody'
+import PostHeader from '@/components/Post/Header'
+import PostBody from '@/components/Post/Body'
 
 import { getPostBySlug, getAllPosts } from '../../lib/api'
 import markdownToHtml from '../../lib/markdownToHtml'
 
 export default function Post({ post }) {
-  const { title, date, coverImage, content } = post
+  console.log(post)
   const router = useRouter()
+
   if (!router.isFallback && !post?.slug) {
     return <ErrorPage statusCode={404} />
   }
+
   return (
     <Container>
-      <h1>{title}</h1>
-      <div>
-        <span>{dayjs(date).format('DD MMMM YYYY')}</span>
-      </div>
-      <Image
-        src={coverImage}
-        alt={`${title} cover image`}
-        width={400}
-        height={160}
-      />
-      <PostBody content={content} />
+      <PostHeader {...post} />
+      <PostBody {...post} />
     </Container>
   )
 }
@@ -54,6 +46,7 @@ export async function getStaticProps({ params }) {
     'content',
     'ogImage',
     'coverImage',
+    'tags',
   ])
   const content = await markdownToHtml(post.content || '')
 

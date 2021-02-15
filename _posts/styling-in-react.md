@@ -8,6 +8,7 @@ author:
   picture: '/assets/authors/dastasoft.jpeg'
 ogImage:
   url: '/assets/posts/preview/styling-in-react.png'
+tags: ['react', 'javascript']
 ---
 
 It's important that our components pass the tests, work well and don't re-render the screen too many times, but it's also important that they are visually attractive, right?

@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react'
 import styled from 'styled-components'
 
-import Post from '@/components/Post'
-import PostSearcher from '@/components/PostSearcher'
+import Post from '@/components/Post/Box'
+import PostSearcher from '@/components/InputSearch'
 import { getAllPosts } from '@/lib/api'
 
 const Home = ({ allPosts }) => {
