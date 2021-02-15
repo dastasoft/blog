@@ -1,6 +1,10 @@
 import styled from 'styled-components'
 
-export const Container = styled.div``
+export const Title = styled.h1`
+  font-size: 1.875rem;
+  line-height: 1.375;
+  margin-bottom: 0.8rem;
+`
 
 export const SubHeader = styled.div`
   display: flex;
@@ -24,4 +28,8 @@ export const TagContainer = styled.div`
   div:last-of-type {
     margin-right: 0;
   }
+`
+
+export const Date = styled.span`
+  font-size: 12px;
 `

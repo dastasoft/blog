@@ -29,12 +29,6 @@ const Container = styled.div`
   transition: all 0.5s linear;
   padding: 1rem;
   width: 100vw;
-
-  h1 {
-    font-size: 1.875rem;
-    line-height: 1.375;
-    margin-bottom: 1rem;
-  }
 `
 
 export async function getStaticProps({ params }) {

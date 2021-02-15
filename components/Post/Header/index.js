@@ -3,19 +3,19 @@ import dayjs from 'dayjs'
 
 import Tag from '@/components/Tag'
 
-import { Container, SubHeader, TagContainer } from './styles'
+import { Title, SubHeader, TagContainer, Date } from './styles'
 
 const PostBody = ({ title, date, coverImage, tags }) => {
   return (
-    <Container>
-      <h1>{title}</h1>
+    <>
+      <Title>{title}</Title>
       <SubHeader>
         <TagContainer>
           {tags.map(tag => (
             <Tag key={tag} text={tag} />
           ))}
         </TagContainer>
-        <span>{dayjs(date).format('DD MMMM YYYY')}</span>
+        <Date>{dayjs(date).format('DD MMMM YYYY')}</Date>
       </SubHeader>
       <Image
         src={coverImage}
@@ -23,7 +23,7 @@ const PostBody = ({ title, date, coverImage, tags }) => {
         width={400}
         height={160}
       />
-    </Container>
+    </>
   )
 }
 
