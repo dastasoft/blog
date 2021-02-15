@@ -4,12 +4,12 @@ import styled from 'styled-components'
 
 import PostHeader from '@/components/Post/Header'
 import PostBody from '@/components/Post/Body'
+import Share from '@/components/Post/Share'
 
 import { getPostBySlug, getAllPosts } from '../../lib/api'
 import markdownToHtml from '../../lib/markdownToHtml'
 
 export default function Post({ post }) {
-  console.log(post)
   const router = useRouter()
 
   if (!router.isFallback && !post?.slug) {
@@ -17,10 +17,13 @@ export default function Post({ post }) {
   }
 
   return (
-    <Container>
-      <PostHeader {...post} />
-      <PostBody {...post} />
-    </Container>
+    <>
+      <Container>
+        <PostHeader {...post} />
+        <PostBody {...post} />
+      </Container>
+      <Share title={post.title} summary={post.excerpt} />
+    </>
   )
 }
 
@@ -37,6 +40,7 @@ export async function getStaticProps({ params }) {
     'date',
     'slug',
     'author',
+    'excerpt',
     'content',
     'ogImage',
     'coverImage',

@@ -4,6 +4,7 @@ export const Markdown = styled.div`
   font-size: 1.125rem;
   line-height: 1.625;
   transition: all 0.5s linear;
+  overflow: auto;
 
   h2 {
     font-size: 1.875rem;
