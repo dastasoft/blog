@@ -20,17 +20,23 @@ const Menu = ({ isOpen }) => {
       </Link>
       <hr />
       <IconHolder>
-        <Image
-          src="/assets/github-brands.svg"
-          alt="Github logo"
-          {...ICON_SIZES}
-        />
-        <Image src="/assets/dev-brands.svg" alt="Dev logo" {...ICON_SIZES} />
-        <Image
-          src="/assets/linkedin-brands.svg"
-          alt="LinkedIn logo"
-          {...ICON_SIZES}
-        />
+        <a href={URLs.GITHUB} target="_blank" rel="noopener noreferrer">
+          <Image
+            src="/assets/github-brands.svg"
+            alt="Github logo"
+            {...ICON_SIZES}
+          />
+        </a>
+        <a href={URLs.DEV} target="_blank" rel="noopener noreferrer">
+          <Image src="/assets/dev-brands.svg" alt="Dev logo" {...ICON_SIZES} />
+        </a>
+        <a href={URLs.LINKEDIN} target="_blank" rel="noopener noreferrer">
+          <Image
+            src="/assets/linkedin-brands.svg"
+            alt="LinkedIn logo"
+            {...ICON_SIZES}
+          />
+        </a>
       </IconHolder>
     </Container>
   )

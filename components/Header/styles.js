@@ -17,6 +17,11 @@ export const StyledHeader = styled.header`
     justify-self: flex-start;
   }
 
+  a {
+    color: ${({ theme }) => theme.UIText};
+    transition: all 0.5s linear;
+  }
+
   button:last-child {
     justify-self: flex-end;
 

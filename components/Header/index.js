@@ -3,6 +3,7 @@ import Image from 'next/image'
 import { HamburgerSpin } from 'react-animated-burgers'
 
 import { AUTHOR } from '@/lib/constants'
+import Link from 'next/link'
 import ThemeToggler from '@/components/ThemeToggler'
 import Menu from '@/components/Menu'
 
@@ -21,7 +22,9 @@ const Header = ({ theme, themeToggler }) => {
           alt={AUTHOR}
           {...ICON_SIZES}
         />
-        <span>{AUTHOR}</span>
+        <Link href="/">
+          <a>{AUTHOR}</a>
+        </Link>
         <ThemeToggler theme={theme} onToggle={themeToggler} />
         <HamburgerSpin
           toggleButton={() => setMenuOpen(!menuOpen)}
