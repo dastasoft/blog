@@ -1,10 +1,11 @@
 import styled from 'styled-components'
 
-export const Markdown = styled.div`
+export const StyledContent = styled.div`
   font-size: 1.125rem;
   line-height: 1.625;
   transition: all 0.5s linear;
   overflow: auto;
+  margin-bottom: 10rem;
 
   h2 {
     font-size: 1.875rem;
