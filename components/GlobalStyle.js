@@ -33,4 +33,17 @@ const GlobalStyle = createGlobalStyle`
   }
 `
 
+export const colorBackgroundAndTransition = ({
+  background,
+  contentText,
+}) => `background-color: ${background};
+  color: ${contentText};
+  transition: all 0.5s linear;`
+
+export const imageDarkModeSupport = (color) => `
+img {
+  filter: ${color === 'white' ? 'invert()' : ''};
+}
+`
+
 export default GlobalStyle

@@ -2,11 +2,13 @@ import Image from 'next/image'
 
 import { ICON_SIZES, URLs } from '@/lib/constants'
 
+import { Container, Title, Text, SubTitle, IconHolder } from './About.styles'
+
 const About = () => {
   return (
-    <div>
-      <h1>About</h1>
-      <div>
+    <Container>
+      <Title>About</Title>
+      <Text>
         <p>
           Hi, I'm Daniel and I live in Sant Cugat del Vallès (Barcelona), I've
           been making websites, applications, games and learning the ins and
@@ -17,9 +19,32 @@ const About = () => {
         </p>
 
         <p>
-          Currently, both professionally and personally, I keep myself busy with
-          React.js, Node.js, React Native and cloud technology to offer high
-          performance, scalable and innovative solutions.
+          Currently, both professionally and personally, I keep myself busy with{' '}
+          <a
+            href="https://reactjs.org/"
+            target="blank"
+            rel="noopener noreferrer"
+          >
+            React.js
+          </a>
+          ,{' '}
+          <a
+            href="https://nodejs.org/"
+            target="blank"
+            rel="noopener noreferrer"
+          >
+            Node.js
+          </a>
+          ,{' '}
+          <a
+            href="http://reactnative.dev/"
+            target="blank"
+            rel="noopener noreferrer"
+          >
+            React Native
+          </a>{' '}
+          and cloud technology to offer high performance, scalable and
+          innovative solutions.
         </p>
 
         <p>
@@ -50,9 +75,9 @@ const About = () => {
           I am keen on creating high-quality user experience by working closely
           with project managers, designers and other engineers.
         </p>
-      </div>
-      <div>I love to talk about tech, contact me on</div>
-      <div>
+      </Text>
+      <SubTitle>I love to talk about tech, contact me on</SubTitle>
+      <IconHolder>
         <a
           href={`maitlo:${URLs.MAIL}`}
           target="_blank"
@@ -81,8 +106,8 @@ const About = () => {
             {...ICON_SIZES}
           />
         </a>
-      </div>
-    </div>
+      </IconHolder>
+    </Container>
   )
 }
 
