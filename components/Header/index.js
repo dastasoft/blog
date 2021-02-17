@@ -9,7 +9,7 @@ import Menu from '@/components/Menu'
 
 import { ICON_SIZES } from '@/lib/constants'
 
-import { StyledHeader } from './styles'
+import { StyledHeader } from './Header.styles'
 
 const Header = ({ theme, themeToggler }) => {
   const [menuOpen, setMenuOpen] = useState(false)
@@ -31,7 +31,7 @@ const Header = ({ theme, themeToggler }) => {
           isActive={menuOpen}
         />
       </StyledHeader>
-      <Menu isOpen={menuOpen} />
+      <Menu isOpen={menuOpen} close={() => setMenuOpen(false)} />
     </>
   )
 }

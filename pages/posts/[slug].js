@@ -7,7 +7,6 @@ import PostBody from '@/components/Post/Body'
 import Share from '@/components/Post/Share'
 
 import { getPostBySlug, getAllPosts } from '../../lib/api'
-import markdownToHtml from '../../lib/markdownToHtml'
 
 export default function Post({ post }) {
   const router = useRouter()
@@ -46,14 +45,10 @@ export async function getStaticProps({ params }) {
     'coverImage',
     'tags',
   ])
-  const content = await markdownToHtml(post.content || '')
 
   return {
     props: {
-      post: {
-        ...post,
-        content,
-      },
+      post,
     },
   }
 }

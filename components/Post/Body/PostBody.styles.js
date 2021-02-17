@@ -39,14 +39,9 @@ export const StyledContent = styled.div`
   }
 
   pre {
-    background-color: ${({ theme }) => theme.code};
-    color: ${({ theme }) => theme.UIText};
-    padding: 1rem;
     margin: 1rem 0;
     border-radius: 0.5rem;
     overflow-x: auto;
-    font-size: 0.875rem;
-    line-height: 1.25rem;
   }
 
   .table-wrapper-paragraph {
