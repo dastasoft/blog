@@ -5,6 +5,7 @@ const GlobalStyle = createGlobalStyle`
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    transition: all 0.5s linear;
   }
 
   *,
@@ -19,15 +20,36 @@ const GlobalStyle = createGlobalStyle`
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     transition: all 0.5s linear;
 
+    scrollbar-width: thin;
+    scrollbar-color: ${({ theme }) => `${theme.thumbBG} transparent`};
+
     h2 {
       font-weight: 500;
       font-size: 24px;
       line-height: 1.375;
     }
+  }
 
-    a {
-      text-decoration: none;
-    }
+  body::-webkit-scrollbar {
+    width: 0.75rem;
+  }
+
+  body::-webkit-scrollbar-track {
+    background: ${({ theme }) => theme.body};
+  }
+
+  body::-webkit-scrollbar-thumb {
+    background-color: ${({ theme }) => theme.thumbBG};
+    border-radius: 5px;
+    border: 3px solid ${({ theme }) => theme.body};
+  }
+
+  button, button:focus {
+    outline: none;
+  }
+
+  a {
+    text-decoration: none;
   }
 
   .mobile-locked {

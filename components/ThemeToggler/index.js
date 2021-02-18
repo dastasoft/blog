@@ -1,6 +1,6 @@
 import Image from 'next/image'
 
-import { Button } from './styles'
+import { Button } from './ThemeToggler.styles'
 
 const ThemeToggler = ({ theme, onToggle }) => {
   const isLight = theme === 'light'
