@@ -16,10 +16,8 @@ const GlobalStyle = createGlobalStyle`
   }
 
   body {
-    background: ${({ theme }) => theme.body};
-    color: ${({ theme }) => theme.text};
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    transition: all 0.50s linear;
+    transition: all 0.5s linear;
 
     h2 {
       font-weight: 500;
@@ -31,6 +29,12 @@ const GlobalStyle = createGlobalStyle`
       text-decoration: none;
     }
   }
+
+  .mobile-locked {
+    max-width: ${({ theme }) => theme.breakpoints.mobile};
+    margin: 0 auto;
+    overflow-y: auto;
+  }
 `
 
 export const colorBackgroundAndTransition = ({
@@ -40,7 +44,7 @@ export const colorBackgroundAndTransition = ({
   color: ${contentText};
   transition: all 0.5s linear;`
 
-export const imageDarkModeSupport = (color) => `
+export const imageDarkModeSupport = color => `
 img {
   filter: ${color === 'white' ? 'invert()' : ''};
 }

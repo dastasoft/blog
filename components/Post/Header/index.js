@@ -3,7 +3,7 @@ import dayjs from 'dayjs'
 
 import Tag from '@/components/Tag'
 
-import { Title, SubHeader, TagContainer, Date } from './styles'
+import { Title, SubHeader, TagContainer, Date } from './Header.styles'
 
 const PostBody = ({ title, date, coverImage, tags }) => {
   return (
@@ -20,6 +20,7 @@ const PostBody = ({ title, date, coverImage, tags }) => {
       <Image
         src={coverImage}
         alt={`${title} cover image`}
+        layout="responsive"
         width={400}
         height={160}
       />

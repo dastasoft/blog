@@ -5,6 +5,7 @@ export const Container = styled.div`
   background: #5e9073;
   bottom: 0;
   width: 100%;
+  max-width: inherit;
   padding: 0.5rem 1rem;
   color: ${({ theme }) => theme.UIText};
   transition: all 0.5s linear;

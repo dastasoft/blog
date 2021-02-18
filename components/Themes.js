@@ -1,6 +1,9 @@
 const theme = {
   primary: '#6da34dff',
   secondary: '#8fbc94ff',
+  breakpoints: {
+    mobile: '475px',
+  },
 }
 
 export const lightTheme = {

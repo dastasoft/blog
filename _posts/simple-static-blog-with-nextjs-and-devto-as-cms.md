@@ -409,7 +409,7 @@ Within the project in Vercel, we must go to `Settings` to the section referring 
 - Name: dev.to
 - Git Branch Name: master
 
-This will generate a URL of the type `https://api.vercel.com/v1/integrations/deploy/xxxxxxxxxxxxxxxxxxx`
+This will generate a URL of the type `https://api.vercel.com/v1/integrations/deploy/xxxx`
 
 ## Create webhooks on dev.to
 

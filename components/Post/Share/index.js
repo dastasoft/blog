@@ -3,7 +3,7 @@ import Image from 'next/image'
 
 import { HOMEPAGE, SHARE_SNS } from '@/lib/constants'
 
-import { Container, Text } from './styles'
+import { Container, Text } from './Share.styles'
 
 const Share = ({ title, summary }) => {
   const [socialNetworks, setSocialNetworks] = useState([])

@@ -7,7 +7,7 @@ import { Container, IconHolder } from './Menu.styles'
 
 const Menu = ({ isOpen, close }) => {
   return (
-    <Container isOpen={isOpen} onClick={close}>
+    <Container className="mobile-locked" isOpen={isOpen} onClick={close}>
       <Link href="/">
         <a>Blog</a>
       </Link>

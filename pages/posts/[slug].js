@@ -26,11 +26,14 @@ export default function Post({ post }) {
   )
 }
 
+const Test = styled.div`
+`
+
 const Container = styled.div`
   color: ${({ theme }) => theme.contentText};
   transition: all 0.5s linear;
   padding: 1rem;
-  width: 100vw;
+  max-width: 100vw;
 `
 
 export async function getStaticProps({ params }) {

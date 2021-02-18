@@ -1,12 +1,14 @@
 import Header from '@/components/Header'
-import { GridLayout } from './styles'
+import { Container, GridLayout } from './Layout.styles'
 
 const Layout = ({ children, theme, themeToggler }) => {
   return (
-    <GridLayout>
-      <Header theme={theme} themeToggler={themeToggler} />
-      <main>{children}</main>
-    </GridLayout>
+    <Container>
+      <GridLayout className="mobile-locked">
+        <Header theme={theme} themeToggler={themeToggler} />
+        <main className="mobile-locked">{children}</main>
+      </GridLayout>
+    </Container>
   )
 }
 

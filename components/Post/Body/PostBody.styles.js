@@ -38,10 +38,12 @@ export const StyledContent = styled.div`
     }
   }
 
-  pre {
+  pre,
+  code {
     margin: 1rem 0;
     border-radius: 0.5rem;
     overflow-x: auto;
+    word-wrap: break-word;
   }
 
   .table-wrapper-paragraph {
