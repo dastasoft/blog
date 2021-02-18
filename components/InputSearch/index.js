@@ -1,4 +1,4 @@
-import { Input } from './styles'
+import { Input } from './InputSearch.styles'
 
 const PostSearcher = ({ filter, setFilter }) => {
   const onFilterHandler = event => setFilter(event.target.value)

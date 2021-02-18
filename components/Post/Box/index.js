@@ -2,7 +2,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import dayjs from 'dayjs'
 
-import { Article } from './styles'
+import { Article } from './PostBox.styles'
 
 const Post = ({ title, date, slug, coverImage, excerpt }) => {
   return (
