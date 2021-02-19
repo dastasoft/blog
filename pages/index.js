@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import Head from 'next/head'
 import styled from 'styled-components'
 
 import Post from '@/components/Post/Box'
@@ -23,6 +24,16 @@ const Home = ({ allPosts }) => {
 
   return (
     <Container>
+      <Head>
+        <title>dastasoft's Blog</title>
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+        <script
+          async
+          defer
+          data-website-id="2cf50fa8-4a72-43c9-803e-714ef4029d88"
+          src="https://hal-umami-analytics.vercel.app/umami.js"
+        ></script>
+      </Head>
       <PostSearcher filter={filter} setFilter={setFilter} />
       <GridLayout>{posts}</GridLayout>
     </Container>

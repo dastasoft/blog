@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: /api
+Host: https://blog.dastasoft.vercel.app
+Sitemap: https://blog.dastasoft.vercel.app/sitemap.xml
