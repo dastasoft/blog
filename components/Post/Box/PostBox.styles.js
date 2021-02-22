@@ -10,6 +10,7 @@ export const Article = styled.article`
   padding: 1rem;
   display: flex;
   flex-direction: column;
+  cursor: pointer;
 
   span {
     font-weight: 300;
