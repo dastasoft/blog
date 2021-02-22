@@ -32,8 +32,9 @@ export const StyledContent = styled.div`
   a {
     color: ${({ theme }) => theme.primary};
     font-weight: 800;
-    text-decoration: underline;
+    font-size: 19px;
     cursor: pointer;
+
     img {
       margin: 0 auto;
     }
@@ -45,6 +46,62 @@ export const StyledContent = styled.div`
     border-radius: 0.5rem;
     overflow-x: auto;
     word-wrap: break-word;
+  }
+
+  pre {
+    display: block;
+    overflow-x: auto;
+    padding: 0.5em;
+    background: #eaeef3;
+    color: #00193a;
+    font-size: 20px;
+  }
+
+  .hljs-keyword,
+  .hljs-selector-tag,
+  .hljs-title,
+  .hljs-section,
+  .hljs-doctag,
+  .hljs-name,
+  .hljs-strong {
+    font-weight: bold;
+  }
+
+  .hljs-comment {
+    color: #738191;
+  }
+
+  .hljs-string,
+  .hljs-title,
+  .hljs-section,
+  .hljs-built_in,
+  .hljs-literal,
+  .hljs-type,
+  .hljs-addition,
+  .hljs-tag,
+  .hljs-quote,
+  .hljs-name,
+  .hljs-selector-id,
+  .hljs-selector-class {
+    color: #0048ab;
+  }
+
+  .hljs-meta,
+  .hljs-subst,
+  .hljs-symbol,
+  .hljs-regexp,
+  .hljs-attribute,
+  .hljs-deletion,
+  .hljs-variable,
+  .hljs-template-variable,
+  .hljs-link,
+  .hljs-bullet {
+    color: #4c81c9;
+    font-weight: bold;
+  }
+
+  .hljs-emphasis {
+    font-style: italic;
   }
 
   .table-wrapper-paragraph {

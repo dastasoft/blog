@@ -2,7 +2,6 @@ import { useEffect, useRef } from 'react'
 import Image from 'next/image'
 import ReactMarkdown from 'react-markdown'
 import hljs from 'highlight.js'
-import 'highlight.js/styles/atom-one-dark.css'
 
 import ImageWrapper from '@/components/ImageWrapper'
 

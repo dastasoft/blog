@@ -15,13 +15,13 @@ export const Container = styled.div`
   justify-content: space-between;
 
   img {
-    filter: ${({ theme }) => (theme.UIText === 'white' ? 'invert()' : '')};
+    filter: ${({ theme }) => (theme.UIText === 'white' ? 'invert()' : 'none')};
     transition: all 0.5s linear;
   }
 `
 
 export const Text = styled.span`
-  font-size: 14px;
-  font-weight: 700;
+  font-size: 20px;
+  font-weight: 800;
   display: inline-block;
 `

@@ -68,7 +68,7 @@ export const colorBackgroundAndTransition = ({
 
 export const imageDarkModeSupport = color => `
 img {
-  filter: ${color === 'white' ? 'invert()' : ''};
+  filter: ${color === 'white' ? 'invert()' : 'none'};
 }
 `
 

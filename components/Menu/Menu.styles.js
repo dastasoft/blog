@@ -51,6 +51,6 @@ export const IconHolder = styled.div`
   max-width: 400px;
 
   img {
-    filter: ${({ theme }) => (theme.UIText === 'white' ? 'invert()' : '')};
+    filter: ${({ theme }) => (theme.UIText === 'white' ? 'invert()' : 'none')};
   }
 `
