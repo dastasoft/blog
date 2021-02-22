@@ -4,19 +4,21 @@ import ReactMarkdown from 'react-markdown'
 import hljs from 'highlight.js'
 import 'highlight.js/styles/atom-one-dark.css'
 
-import { ICON_SIZES } from '@/lib/constants'
+import ImageWrapper from '@/components/ImageWrapper'
 
 import { StyledContent } from './PostBody.styles'
 
 const renderers = {
   image: image => {
     return (
-      <Image
-        src={image.src}
-        alt={image.alt}
-        layout="responsive"
-        {...ICON_SIZES}
-      />
+      <ImageWrapper>
+        <Image
+          src={image.src}
+          alt={image.alt}
+          layout="fill"
+          objectFit="contain"
+        />
+      </ImageWrapper>
     )
   },
 }

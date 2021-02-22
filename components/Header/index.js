@@ -21,6 +21,8 @@ const Header = ({ theme, themeToggler }) => {
           src="/assets/authors/dastasoft.jpeg"
           alt={AUTHOR}
           {...ICON_SIZES}
+          loading="eager"
+          priority
         />
         <Link href="/">
           <a>{AUTHOR}</a>

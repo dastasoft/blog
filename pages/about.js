@@ -15,7 +15,7 @@ const About = () => {
         title="dastasoft's about"
         description="Hi, I'm Daniel and I live in Sant Cugat del Vallès (Barcelona), I've
           been making websites, applications, games and learning the ins and
-          outs of technology since I can remember"
+          outs of technology since I can remember."
       />
       <Title>About</Title>
       <Text>

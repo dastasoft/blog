@@ -31,6 +31,7 @@ export const StyledContent = styled.div`
 
   a {
     color: ${({ theme }) => theme.primary};
+    font-weight: 800;
     text-decoration: underline;
     cursor: pointer;
     img {

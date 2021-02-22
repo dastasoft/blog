@@ -8,7 +8,7 @@ const PostSearcher = ({ filter, setFilter }) => {
       <Input
         type="text"
         placeholder="Search Posts"
-        aria-labelledBy="search-post"
+        aria-labelledby="search-post"
         value={filter}
         onChange={onFilterHandler}
       />

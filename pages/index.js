@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
-import Head from 'next/head'
 import styled from 'styled-components'
+import { NextSeo } from 'next-seo'
 
 import Post from '@/components/Post/Box'
 import PostSearcher from '@/components/InputSearch'
@@ -24,17 +24,12 @@ const Home = ({ allPosts }) => {
 
   return (
     <Container>
-      <Head>
-        <title>dastasoft's Blog</title>
-        <html lang="en" />
-        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-        <script
-          async
-          defer
-          data-website-id="2cf50fa8-4a72-43c9-803e-714ef4029d88"
-          src="https://hal-umami-analytics.vercel.app/umami.js"
-        ></script>
-      </Head>
+      <NextSeo
+        title="dastasoft's Blog"
+        description="Hi, I'm Daniel and I live in Sant Cugat del Vallès (Barcelona), I've
+          been making websites, applications, games and learning the ins and
+          outs of technology since I can remember."
+      />
       <PostSearcher filter={filter} setFilter={setFilter} />
       <GridLayout>{posts}</GridLayout>
     </Container>

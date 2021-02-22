@@ -38,7 +38,7 @@ The strategy we will follow in this tutorial will be:
 
 ### Creation of the project
 
-In my case I used my own NextJS boilerplate with TailwindCSS that you can download from [here](https://github.com/dastasoft/nextjs-boilerplate) or simply using one of the following commands:
+In my case I used my own NextJS boilerplate with TailwindCSS that you can download from [this repo](https://github.com/dastasoft/nextjs-boilerplate) or simply using one of the following commands:
 
 ```sh
 yarn create next-app my-app-name --example "https://github.com/dastasoft/nextjs-boilerplate"
