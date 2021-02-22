@@ -17,8 +17,6 @@ export default function Post({ post }) {
     return <ErrorPage statusCode={404} />
   }
 
-  console.log(`${HOMEPAGE}${post.slug}`)
-
   return (
     <>
       <Container>

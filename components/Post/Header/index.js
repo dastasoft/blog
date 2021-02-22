@@ -2,6 +2,7 @@ import Image from 'next/image'
 import dayjs from 'dayjs'
 
 import Tag from '@/components/Tag'
+import ImageWrapper from '@/components/ImageWrapper'
 
 import { Title, SubHeader, TagContainer, Date } from './Header.styles'
 
@@ -17,13 +18,14 @@ const PostBody = ({ title, date, coverImage, tags }) => {
         </TagContainer>
         <Date>{dayjs(date).format('DD MMMM YYYY')}</Date>
       </SubHeader>
-      <Image
-        src={coverImage}
-        alt={`${title} cover image`}
-        layout="responsive"
-        width={400}
-        height={160}
-      />
+      <ImageWrapper>
+        <Image
+          src={coverImage}
+          alt={`${title} cover image`}
+          layout="fill"
+          objectFit="contain"
+        />
+      </ImageWrapper>
     </>
   )
 }
