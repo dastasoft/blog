@@ -26,6 +26,7 @@ const Home = ({ allPosts }) => {
     <Container>
       <Head>
         <title>dastasoft's Blog</title>
+        <html lang="en" />
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
         <script
           async
