@@ -9,8 +9,8 @@ export const StyledHeader = styled.header`
   grid-template-columns: 3rem auto 3rem auto;
   grid-gap: 1rem;
   padding: 0 1rem;
-  font-size: 18px;
-  font-weight: 500;
+  font-size: 20px;
+  font-weight: 800;
 
   img {
     border-radius: 50%;
