@@ -10,7 +10,10 @@ export default {
     },
   ],
   openGraph: {
-    type: 'website',
+    profile: {
+      username: 'dastasoft',
+    },
+    type: 'blog',
     locale: 'en',
     url: 'https://blog.dastasoft.vercel.app',
     site_name: 'dastasoftBlog',

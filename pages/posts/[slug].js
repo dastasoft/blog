@@ -1,12 +1,14 @@
 import { useRouter } from 'next/router'
 import ErrorPage from 'next/error'
 import styled from 'styled-components'
+import { NextSeo } from 'next-seo'
 
 import PostHeader from '@/components/Post/Header'
 import PostBody from '@/components/Post/Body'
 import Share from '@/components/Post/Share'
 
-import { getPostBySlug, getAllPosts } from '../../lib/api'
+import { getPostBySlug, getAllPosts } from '@/lib/api'
+import { HOMEPAGE, URLs } from '@/lib/constants'
 
 export default function Post({ post }) {
   const router = useRouter()
@@ -15,9 +17,33 @@ export default function Post({ post }) {
     return <ErrorPage statusCode={404} />
   }
 
+  console.log(`${HOMEPAGE}${post.slug}`)
+
   return (
     <>
       <Container>
+        <NextSeo
+          title={post.title}
+          description={post.excerpt}
+          openGraph={{
+            article: {
+              publishedTime: post.date,
+              authors: [URLs.PORTFOLIO],
+              section: post.section,
+              tags: post.tags,
+            },
+            url: `${HOMEPAGE}${post.slug}`,
+            title: post.title,
+            description: post.excerpt,
+            images: [
+              {
+                url: post.ogImage,
+                alt: `${post.title} image cover`,
+              },
+            ],
+            site_name: post.title,
+          }}
+        />
         <PostHeader {...post} />
         <PostBody {...post} />
       </Container>
@@ -25,9 +51,6 @@ export default function Post({ post }) {
     </>
   )
 }
-
-const Test = styled.div`
-`
 
 const Container = styled.div`
   color: ${({ theme }) => theme.contentText};
@@ -47,6 +70,7 @@ export async function getStaticProps({ params }) {
     'ogImage',
     'coverImage',
     'tags',
+    'section',
   ])
 
   return {

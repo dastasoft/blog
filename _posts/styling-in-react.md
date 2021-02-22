@@ -9,6 +9,7 @@ author:
 ogImage:
   url: '/assets/posts/preview/styling-in-react.png'
 tags: ['beginners', 'react', 'javascript']
+section: 'frontend'
 ---
 
 It's important that our components pass the tests, work well and don't re-render the screen too many times, but it's also important that they are visually attractive, right?

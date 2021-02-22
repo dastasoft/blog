@@ -9,6 +9,7 @@ author:
 ogImage:
   url: '/assets/posts/preview/nextjs-blog.jpg'
 tags: ['nextjs', 'react', 'javascript']
+section: 'fullstack'
 ---
 
 We are going to set up a static blog using Next.js and dev.to as a headless CMS.

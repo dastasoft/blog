@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import styled from 'styled-components'
+import { NextSeo } from 'next-seo'
 
 import {
   colorBackgroundAndTransition,
@@ -10,6 +11,12 @@ import { ICON_SIZES, URLs } from '@/lib/constants'
 const About = () => {
   return (
     <Container>
+      <NextSeo
+        title="dastasoft's about"
+        description="Hi, I'm Daniel and I live in Sant Cugat del Vallès (Barcelona), I've
+          been making websites, applications, games and learning the ins and
+          outs of technology since I can remember"
+      />
       <Title>About</Title>
       <Text>
         <p>

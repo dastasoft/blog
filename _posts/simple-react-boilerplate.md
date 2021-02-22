@@ -9,6 +9,7 @@ author:
 ogImage:
   url: '/assets/posts/preview/simple-react-boilerplate.png'
 tags: ['beginners', 'react', 'javascript']
+section: 'frontend'
 ---
 
 We will create a simple React boilerplate with [Parcel](https://parceljs.org/) bundler, linter, prettier and a few things more for create new React apps quick.

@@ -9,6 +9,7 @@ author:
 ogImage:
   url: '/assets/posts/preview/animated-circlebar.jpg'
 tags: ['beginners', 'react', 'javascript']
+section: 'frontend'
 ---
 
 Let's make an easy and simple **circle progress bar** from an **animated SVG** in a **React component**. We only need a SVG, some hooks and a bunch of props to make it customizable.
