@@ -1,9 +1,11 @@
 import styled from 'styled-components'
 
+import { getGlobalTransition } from '@/components/GlobalStyle'
+
 export const StyledHeader = styled.header`
   background-color: ${({ theme }) => theme.primary};
   color: ${({ theme }) => theme.UIText};
-  transition: all 0.5s linear;
+  ${getGlobalTransition()}
   display: grid;
   align-items: center;
   grid-template-columns: 3rem auto 3rem auto;
@@ -19,7 +21,7 @@ export const StyledHeader = styled.header`
 
   a {
     color: ${({ theme }) => theme.UIText};
-    transition: all 0.5s linear;
+    ${getGlobalTransition()}
   }
 
   button:last-child {
@@ -28,7 +30,7 @@ export const StyledHeader = styled.header`
     div > span,
     div > span::after,
     div > span::before {
-      transition: all 0.5s linear;
+      ${getGlobalTransition()}
       background-color: ${({ theme }) => theme.UIText};
       z-index: 10;
     }

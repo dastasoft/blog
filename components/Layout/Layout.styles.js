@@ -1,12 +1,14 @@
 import styled from 'styled-components'
 
+import { getGlobalTransition } from '@/components/GlobalStyle'
+
 export const Container = styled.div`
   background: ${({ theme }) => theme.body};
   background-image: ${({ theme }) =>
     `radial-gradient(${theme.contentText} 1px, transparent 0)`};
   background-size: 40px 40px;
   background-position: -19px -19px;
-  transition: all 0.5s linear;
+  ${getGlobalTransition()}
 `
 
 export const GridLayout = styled.div`
@@ -15,5 +17,5 @@ export const GridLayout = styled.div`
   border: 1px solid ${({ theme }) => theme.primary};
   background: ${({ theme }) => theme.body};
   color: ${({ theme }) => theme.contentText};
-  transition: all 0.5s linear;
+  ${getGlobalTransition()}
 `

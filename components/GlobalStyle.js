@@ -1,11 +1,26 @@
 import { createGlobalStyle } from 'styled-components'
 
+export const colorBackgroundAndTransition = ({
+  background,
+  contentText,
+}) => `background-color: ${background};
+  color: ${contentText};
+  ${getGlobalTransition()}`
+
+export const imageDarkModeSupport = color => `
+img {
+  filter: ${color === 'white' ? 'invert()' : 'none'};
+}
+`
+
+export const getGlobalTransition = () => 'transition: all 0.5s linear;'
+
 const GlobalStyle = createGlobalStyle`
   html {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    transition: all 0.5s linear;
+    ${getGlobalTransition()}
   }
 
   *,
@@ -18,7 +33,7 @@ const GlobalStyle = createGlobalStyle`
 
   body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    transition: all 0.5s linear;
+    ${getGlobalTransition()}
 
     scrollbar-width: thin;
     scrollbar-color: ${({ theme }) => `${theme.thumbBG} transparent`};
@@ -57,19 +72,6 @@ const GlobalStyle = createGlobalStyle`
     margin: 0 auto;
     overflow-y: auto;
   }
-`
-
-export const colorBackgroundAndTransition = ({
-  background,
-  contentText,
-}) => `background-color: ${background};
-  color: ${contentText};
-  transition: all 0.5s linear;`
-
-export const imageDarkModeSupport = color => `
-img {
-  filter: ${color === 'white' ? 'invert()' : 'none'};
-}
 `
 
 export default GlobalStyle

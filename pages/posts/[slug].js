@@ -6,6 +6,7 @@ import { NextSeo } from 'next-seo'
 import PostHeader from '@/components/Post/Header'
 import PostBody from '@/components/Post/Body'
 import Share from '@/components/Post/Share'
+import { getGlobalTransition } from '@/components/GlobalStyle'
 
 import { getPostBySlug, getAllPosts } from '@/lib/api'
 import { HOMEPAGE, URLs } from '@/lib/constants'
@@ -52,7 +53,7 @@ export default function Post({ post }) {
 
 const Container = styled.div`
   color: ${({ theme }) => theme.contentText};
-  transition: all 0.5s linear;
+  ${getGlobalTransition()}
   padding: 1rem;
   max-width: 100vw;
 `

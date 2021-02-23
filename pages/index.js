@@ -19,7 +19,11 @@ const Home = ({ allPosts }) => {
       )
     }
 
-    setPosts(displayPosts.map(post => <Post key={post.slug} {...post} />))
+    setPosts(
+      displayPosts.map((post, index) => (
+        <Post key={post.slug} {...post} isFirst={index === 0} />
+      ))
+    )
   }, [filter])
 
   return (

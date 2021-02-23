@@ -1,16 +1,24 @@
 import styled from 'styled-components'
 
+import { getGlobalTransition } from '@/components/GlobalStyle'
+
 export const Article = styled.article`
   background-color: ${({ theme }) => theme.background};
   border: 1px solid ${({ theme }) => theme.secondary};
   border-radius: 5px;
-  color: ${({ theme }) => theme.contentText};
-  transition: all 0.5s linear;
+  ${getGlobalTransition()}
   box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.25);
   padding: 1rem;
   display: flex;
   flex-direction: column;
   cursor: pointer;
+
+  a,
+  span,
+  p {
+    color: ${({ theme }) => theme.contentText};
+    ${getGlobalTransition()}
+  }
 
   span {
     font-weight: 300;
@@ -26,6 +34,6 @@ export const Article = styled.article`
   }
 
   > * {
-    padding: 0.2rem 0;
+    padding: 0.1rem 0;
   }
 `

@@ -1,9 +1,11 @@
 import styled from 'styled-components'
 
+import { getGlobalTransition } from '@/components/GlobalStyle'
+
 export const StyledContent = styled.div`
   font-size: 1.125rem;
   line-height: 1.625;
-  transition: all 0.5s linear;
+  ${getGlobalTransition()}
   overflow: auto;
   margin-bottom: 10rem;
 
@@ -49,6 +51,90 @@ export const StyledContent = styled.div`
   }
 
   pre {
+    display: block;
+    overflow-x: auto;
+    padding: 0.5em;
+    background: ${({ theme }) => theme.code.background};
+    color: ${({ theme }) => theme.code.color};
+    font-size: 20px;
+    ${getGlobalTransition()}
+  }
+
+  .hljs-comment,
+  .hljs-quote {
+    color: ${({ theme }) => theme.code.comment};
+    font-style: italic;
+  }
+
+  .hljs-doctag,
+  .hljs-keyword,
+  .hljs-formula {
+    color: ${({ theme }) => theme.code.keyword};
+  }
+
+  .hljs-section,
+  .hljs-name,
+  .hljs-selector-tag,
+  .hljs-deletion,
+  .hljs-subst {
+    color: ${({ theme }) => theme.code.name};
+    font-weight: bold;
+  }
+
+  .hljs-literal {
+    color: ${({ theme }) => theme.code.literal};
+    font-weight: bold;
+  }
+
+  .hljs-string,
+  .hljs-regexp,
+  .hljs-addition,
+  .hljs-attribute,
+  .hljs-meta-string {
+    color: ${({ theme }) => theme.code.regexp};
+    font-weight: bold;
+  }
+
+  .hljs-built_in,
+  .hljs-class .hljs-title {
+    color: ${({ theme }) => theme.code.class};
+    font-weight: bold;
+  }
+
+  .hljs-attr,
+  .hljs-variable,
+  .hljs-template-variable,
+  .hljs-type,
+  .hljs-selector-class,
+  .hljs-selector-attr,
+  .hljs-selector-pseudo,
+  .hljs-number {
+    color: ${({ theme }) => theme.code.variable};
+  }
+
+  .hljs-symbol,
+  .hljs-bullet,
+  .hljs-link,
+  .hljs-meta,
+  .hljs-selector-id,
+  .hljs-title {
+    color: ${({ theme }) => theme.code.link};
+    font-weight: bold;
+  }
+
+  .hljs-emphasis {
+    font-style: italic;
+  }
+
+  .hljs-strong {
+    font-weight: bold;
+  }
+
+  .hljs-link {
+    text-decoration: underline;
+  }
+
+  /* pre {
     display: block;
     overflow-x: auto;
     padding: 0.5em;
@@ -102,7 +188,7 @@ export const StyledContent = styled.div`
 
   .hljs-emphasis {
     font-style: italic;
-  }
+  } */
 
   .table-wrapper-paragraph {
     width: 100%;

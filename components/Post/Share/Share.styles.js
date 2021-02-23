@@ -1,5 +1,7 @@
 import styled from 'styled-components'
 
+import { getGlobalTransition } from '@/components/GlobalStyle'
+
 export const Container = styled.div`
   position: fixed;
   background: #5e9073;
@@ -8,7 +10,7 @@ export const Container = styled.div`
   max-width: inherit;
   padding: 0.5rem 1rem;
   color: ${({ theme }) => theme.UIText};
-  transition: all 0.5s linear;
+  ${getGlobalTransition()}
 
   display: flex;
   align-items: center;
@@ -16,7 +18,7 @@ export const Container = styled.div`
 
   img {
     filter: ${({ theme }) => (theme.UIText === 'white' ? 'invert()' : 'none')};
-    transition: all 0.5s linear;
+    ${getGlobalTransition()}
   }
 `
 

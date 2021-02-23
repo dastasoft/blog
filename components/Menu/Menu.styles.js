@@ -1,5 +1,7 @@
 import styled from 'styled-components'
 
+import { getGlobalTransition } from '@/components/GlobalStyle'
+
 export const Container = styled.div`
   position: absolute;
   width: 100%;
@@ -14,7 +16,7 @@ export const Container = styled.div`
 
   opacity: ${({ isOpen }) => (isOpen ? 1 : 0)};
   color: ${({ theme }) => theme.UIText};
-  transition: all 0.5s linear;
+  ${getGlobalTransition()}
 
   display: flex;
   flex-direction: column;

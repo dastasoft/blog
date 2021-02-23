@@ -12,7 +12,18 @@ export const lightTheme = {
   UIText: 'white',
   contentText: 'black',
   background: 'white',
-  code: 'black',
+  code: {
+    color: '#383a42',
+    background: '#fafafa',
+    comments: '#a0a1a7',
+    keyword: '#a626a4',
+    name: '#e45649',
+    literal: '#0184bb',
+    regexp: '#50a14f',
+    class: '#c18401',
+    variable: '#986801',
+    link: '#4078f2',
+  },
   ...theme,
 }
 export const darkTheme = {
@@ -20,6 +31,17 @@ export const darkTheme = {
   UIText: 'black',
   contentText: 'white',
   background: 'black',
-  code: 'white',
+  code: {
+    color: '#abb2bf',
+    background: '#282c34',
+    comments: '#5c6370',
+    keyword: '#c678dd',
+    name: '#e06c75',
+    literal: '#56b6c2',
+    regexp: '#98c379',
+    class: '#e6c07b',
+    variable: '#d19a66',
+    link: '#61aeee',
+  },
   ...theme,
 }

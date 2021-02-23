@@ -1,5 +1,7 @@
 import styled from 'styled-components'
 
+import { getGlobalTransition } from '@/components/GlobalStyle'
+
 export const Button = styled.button`
   background: ${({ theme }) => theme.primary};
   border: 1px solid ${({ theme }) => theme.UIText};
@@ -9,10 +11,10 @@ export const Button = styled.button`
   justify-content: space-between;
   overflow: hidden;
   padding: 0.2rem;
-  transition: all 0.5s linear;
+  ${getGlobalTransition()}
 
   img {
-    transition: all 0.5s linear;
+    ${getGlobalTransition()}
   }
 
   img[alt='light-theme'] {
