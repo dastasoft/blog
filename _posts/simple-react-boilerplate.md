@@ -18,7 +18,7 @@ You always can use [Create React App](https://github.com/facebook/create-react-a
 
 I recommend this approach specially for ppl who start with React because CRA does a lot of [magic](https://www.reactiongifs.com/magic-3/) for us and I think it's important know which problems CRA "solves" before use it as an overkill.
 
-If you want to skip the guide and check/fork the final result, you can do it [here](https://github.com/dastasoft/parcel-react-boilerplate)
+If you want to skip the guide and check/fork the final result, you can do it [checking out the full repo](https://github.com/dastasoft/parcel-react-boilerplate)
 
 ## Why Parcel
 
@@ -188,7 +188,7 @@ Create the files `.prettierrc` and `.prettierignore` files on the root folder of
 }
 ```
 
-_You can find more config options [here](https://prettier.io/docs/en/options.html)_
+_You can find more config options [in this repo](https://prettier.io/docs/en/options.html)_
 
 - **semi** Add a semicolon at the end of every statement.
 - **singleQuote** Use single quotes insted of doubles _JSX ignore this option_.
@@ -237,7 +237,7 @@ In the project root folder create the files `.eslinitrc` and `.eslintignore`:
 }
 ```
 
-_You can add more rules from [here](https://github.com/yannickcr/eslint-plugin-react/tree/master/docs/rules) and set as warning or error depending your criteria._
+_You can add more rules from [this repo](https://github.com/yannickcr/eslint-plugin-react/tree/master/docs/rules) and set as warning or error depending your criteria._
 
 I usually use import alphabetical order and prop types alphabetical order but I don't include in this guide because is a very personal preference.
 

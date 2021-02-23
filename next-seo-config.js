@@ -1,12 +1,14 @@
+import { HOMEPAGE } from '@/lib/constants'
+
 export default {
   title: "dastasoft's Blog",
   description:
     "Hi I'm dastasoft, I love talking, learning and teaching about technology so, I write tutorials and guides about programming like JavaScript, React, Next.js, Node.js and many more.",
-  canonical: 'https://blog.dastasoft.vercel.app',
+  canonical: HOMEPAGE,
   languageAlternates: [
     {
       hrefLang: 'en',
-      href: 'https://blog.dastasoft.vercel.app',
+      href: HOMEPAGE,
     },
   ],
   openGraph: {
@@ -15,7 +17,7 @@ export default {
     },
     type: 'blog',
     locale: 'en',
-    url: 'https://blog.dastasoft.vercel.app',
+    url: HOMEPAGE,
     site_name: 'dastasoftBlog',
     images: [
       {

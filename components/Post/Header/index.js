@@ -24,6 +24,8 @@ const PostBody = ({ title, date, coverImage, tags }) => {
           alt={`${title} cover image`}
           layout="fill"
           objectFit="contain"
+          loading="eager"
+          priority
         />
       </ImageWrapper>
     </>

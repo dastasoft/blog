@@ -16,7 +16,7 @@ Let's make an easy and simple **circle progress bar** from an **animated SVG** i
 
 The scope of this guide is to make a simple but customizable circle progress bar for starting at a very basic level of SVG animations.
 
-If you want to skip the guide and check/fork the final result you can do it [here](https://github.com/dastasoft/react-ui-components/tree/master/src/components/CircleProgressBar) and in this [playground](https://bit.dev/dastag/ui-components/circle-progress-bar).
+If you want to skip the guide and check/fork the final result you can do it [checking here the full repo](https://github.com/dastasoft/react-ui-components/tree/master/src/components/CircleProgressBar) and in this [playground](https://bit.dev/dastag/ui-components/circle-progress-bar).
 
 ![circle-progress-bar](/assets/posts/content/circle-full.gif)
 

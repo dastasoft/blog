@@ -56,7 +56,6 @@ export const StyledContent = styled.div`
     padding: 0.5em;
     background: ${({ theme }) => theme.code.background};
     color: ${({ theme }) => theme.code.color};
-    font-size: 20px;
     ${getGlobalTransition()}
   }
 
@@ -133,62 +132,6 @@ export const StyledContent = styled.div`
   .hljs-link {
     text-decoration: underline;
   }
-
-  /* pre {
-    display: block;
-    overflow-x: auto;
-    padding: 0.5em;
-    background: #eaeef3;
-    color: #00193a;
-    font-size: 20px;
-  }
-
-  .hljs-keyword,
-  .hljs-selector-tag,
-  .hljs-title,
-  .hljs-section,
-  .hljs-doctag,
-  .hljs-name,
-  .hljs-strong {
-    font-weight: bold;
-  }
-
-  .hljs-comment {
-    color: #738191;
-  }
-
-  .hljs-string,
-  .hljs-title,
-  .hljs-section,
-  .hljs-built_in,
-  .hljs-literal,
-  .hljs-type,
-  .hljs-addition,
-  .hljs-tag,
-  .hljs-quote,
-  .hljs-name,
-  .hljs-selector-id,
-  .hljs-selector-class {
-    color: #0048ab;
-  }
-
-  .hljs-meta,
-  .hljs-subst,
-  .hljs-symbol,
-  .hljs-regexp,
-  .hljs-attribute,
-  .hljs-deletion,
-  .hljs-variable,
-  .hljs-template-variable,
-  .hljs-link,
-  .hljs-bullet {
-    color: #4c81c9;
-    font-weight: bold;
-  }
-
-  .hljs-emphasis {
-    font-style: italic;
-  } */
 
   .table-wrapper-paragraph {
     width: 100%;

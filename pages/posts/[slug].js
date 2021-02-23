@@ -24,6 +24,7 @@ export default function Post({ post }) {
         <NextSeo
           title={post.title}
           description={post.excerpt}
+          canonical={`${HOMEPAGE}${post.slug}`}
           openGraph={{
             article: {
               publishedTime: post.date,
