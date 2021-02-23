@@ -2,7 +2,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import dayjs from 'dayjs'
 
-import ImageWrapper from '@/components/ImageWrapper'
+import { DEFAULT_IMAGE_SIZES } from '@/lib/constants'
 
 import { Article } from './PostBox.styles'
 
@@ -15,8 +15,8 @@ const Post = ({ title, date, slug, coverImage, excerpt, isFirst }) => {
   let imageProperties = {
     src: coverImage,
     alt: `${title} cover image`,
-    layout: 'fill',
-    objectFit: 'contain',
+    layout: 'responsive',
+    ...DEFAULT_IMAGE_SIZES,
   }
 
   if (isFirst) {
@@ -33,9 +33,7 @@ const Post = ({ title, date, slug, coverImage, excerpt, isFirst }) => {
           <h2>{title}</h2>
         </a>
         <span>{dayjs(date).format('DD MMMM YYYY')}</span>
-        <ImageWrapper>
-          <Image {...imageProperties} />
-        </ImageWrapper>
+        <Image {...imageProperties} />
         <p>{excerpt}</p>
       </Article>
     </Link>

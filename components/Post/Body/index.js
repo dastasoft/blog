@@ -3,21 +3,19 @@ import Image from 'next/image'
 import ReactMarkdown from 'react-markdown'
 import hljs from 'highlight.js'
 
-import ImageWrapper from '@/components/ImageWrapper'
+import { DEFAULT_IMAGE_SIZES } from '@/lib/constants'
 
 import { StyledContent } from './PostBody.styles'
 
 const renderers = {
   image: image => {
     return (
-      <ImageWrapper>
-        <Image
-          src={image.src}
-          alt={image.alt}
-          layout="fill"
-          objectFit="contain"
-        />
-      </ImageWrapper>
+      <Image
+        src={image.src}
+        alt={image.alt}
+        layout="responsive"
+        {...DEFAULT_IMAGE_SIZES}
+      />
     )
   },
 }
