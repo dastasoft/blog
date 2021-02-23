@@ -17,13 +17,17 @@ const Header = ({ theme, themeToggler }) => {
   return (
     <>
       <StyledHeader>
-        <Image
-          src="/assets/authors/dastasoft.jpeg"
-          alt={AUTHOR}
-          {...ICON_SIZES}
-          loading="eager"
-          priority
-        />
+        <Link href="/">
+          <a>
+            <Image
+              src="/assets/authors/dastasoft.jpeg"
+              alt={AUTHOR}
+              {...ICON_SIZES}
+              loading="eager"
+              priority
+            />
+          </a>
+        </Link>
         <Link href="/">
           <a>{AUTHOR}</a>
         </Link>

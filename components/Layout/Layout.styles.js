@@ -12,10 +12,15 @@ export const Container = styled.div`
 `
 
 export const GridLayout = styled.div`
+  min-height: 100vh;
   display: grid;
   grid-template-rows: 5rem 1fr;
   border: 1px solid ${({ theme }) => theme.primary};
   background: ${({ theme }) => theme.body};
   color: ${({ theme }) => theme.contentText};
   ${getGlobalTransition()}
+
+  main {
+    width: 100%;
+  }
 `
