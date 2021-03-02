@@ -68,7 +68,7 @@ const GlobalStyle = createGlobalStyle`
   }
 
   .mobile-locked {
-    max-width: ${({ theme }) => theme.breakpoints.mobile};
+    /* max-width: ${({ theme }) => theme.breakpoints.mobile}; */
     margin: 0 auto;
     overflow-y: auto;
   }

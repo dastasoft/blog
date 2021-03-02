@@ -28,14 +28,6 @@ export const Container = styled.div`
     width: inherit;
   }
 
-  a {
-    text-decoration: none;
-    text-align: center;
-    font-weight: 500;
-    font-size: 36px;
-    color: inherit;
-  }
-
   hr {
     border: 1px solid ${({ theme }) => theme.UIText};
     height: 0px;
@@ -43,16 +35,5 @@ export const Container = styled.div`
     max-width: 400px;
     padding: 0;
     margin: 1rem 0 0.5rem 0;
-  }
-`
-
-export const IconHolder = styled.div`
-  display: flex;
-  justify-content: space-around;
-  align-content: center;
-  max-width: 400px;
-
-  img {
-    filter: ${({ theme }) => (theme.UIText === 'white' ? 'invert()' : 'none')};
   }
 `
