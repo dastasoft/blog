@@ -12,7 +12,7 @@ export const Container = styled.div`
     font-weight: 500;
     font-size: 36px;
     color: inherit;
-    padding: 1rem 0;
+    padding: 1rem;
   }
 
   .active {

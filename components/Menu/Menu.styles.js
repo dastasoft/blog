@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import { getGlobalTransition } from '@/components/GlobalStyle'
 
 export const Container = styled.div`
-  position: absolute;
+  position: fixed;
   width: 100%;
   height: 100%;
   z-index: ${({ isOpen }) => (isOpen ? 9 : -1)};
