@@ -1,5 +1,5 @@
 ---
-title: 'Simple Static Blog with Next.js and dev.to as CMS'
+title: 'Blog with Next.js and dev.to'
 excerpt: 'We are going to set up a static blog using Next.js and dev.to as a headless CMS.'
 coverImage: '/assets/posts/preview/nextjs-blog.jpg'
 date: '2020-11-03T00:00:00.000Z'

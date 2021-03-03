@@ -42,13 +42,31 @@ const Container = styled.div`
   padding: 1rem;
   display: flex;
   flex-direction: column;
+  align-items: center;
+  margin: 0 auto;
 `
 
 const GridLayout = styled.div`
   display: grid;
   grid-template-columns: 1fr;
   grid-gap: 1.8rem;
-  margin: 1rem 0;
+  margin: 1rem auto;
+  max-width: ${({ theme }) => theme.breakpoints.sm};
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.lg}) {
+    grid-template-columns: repeat(2, 1fr);
+    max-width: ${({ theme }) => theme.breakpoints.lg};
+  }
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.xl}) {
+    grid-template-columns: repeat(3, 1fr);
+    max-width: ${({ theme }) => theme.breakpoints.xl};
+  }
+
+  @media (min-width: ${({ theme }) => theme.breakpoints['2xl']}) {
+    grid-template-columns: repeat(4, 1fr);
+    max-width: ${({ theme }) => theme.breakpoints['2xl']};
+  }
 `
 
 export default Home

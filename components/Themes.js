@@ -3,6 +3,7 @@ const theme = {
   secondary: '#8fbc94ff',
   thumbBG: '#6da34dff',
   activeLink: '#28401a',
+  maxWidth: '475px',
   breakpoints: {
     mobile: '475px',
     sm: '640px',

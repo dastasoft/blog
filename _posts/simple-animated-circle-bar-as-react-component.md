@@ -1,6 +1,6 @@
 ---
-title: 'Simple Animated Circle Bar as React Component '
-excerpt: "Let's make an easy and simple circle progress bar from an animated SVG in a React component. We only need a SVG, some hooks and a bunch of props to make it customizable."
+title: 'Simple Animated Circle Bar'
+excerpt: "Let's make an easy and simple circle progress bar from an animated SVG in a React component."
 coverImage: '/assets/posts/preview/animated-circlebar.jpg'
 date: '2020-03-05T00:00:00.000Z'
 author:

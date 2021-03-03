@@ -1,6 +1,6 @@
 ---
 title: 'Simple React Boilerplate'
-excerpt: 'How to make a simple React boilerplate from scartch with Babel and Parcel.'
+excerpt: 'How to make a simple React boilerplate from scartch with Babel, Parcel and ESlint checks.'
 coverImage: '/assets/posts/preview/simple-react-boilerplate.png'
 date: '2020-02-29T00:00:00.000Z'
 author:
