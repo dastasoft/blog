@@ -2,6 +2,7 @@ const theme = {
   primary: '#6da34dff',
   secondary: '#8fbc94ff',
   thumbBG: '#6da34dff',
+  activeLink: '#28401a',
   breakpoints: {
     mobile: '475px',
     sm: '640px',

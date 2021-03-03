@@ -15,11 +15,16 @@ export const Container = styled.div`
     padding: 1rem 0;
   }
 
+  .active {
+    background-color: ${({ theme }) => theme.activeLink};
+    border-radius: 1rem;
+  }
+
   @media (min-width: ${({ theme }) => theme.breakpoints.lg}) {
     flex-direction: row;
 
     a {
-      padding: 0 1rem;
+      padding: 0.5rem 1rem;
       font-size: 24px;
     }
   }

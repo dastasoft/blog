@@ -1,22 +1,21 @@
-import Link from 'next/link'
-
 import { URLs } from '@/lib/constants'
+import ELink from '@/components/EnhancedLink'
 
 import { Container } from './Items.styles'
 
 const MenuItems = () => {
   return (
     <Container>
-      <Link href="/">
+      <ELink href="/" activeClassName="active">
         <a>Blog</a>
-      </Link>
+      </ELink>
       <a href={URLs.PORTFOLIO} target="_blank" rel="noopener noreferrer">
         Portfolio
       </a>
       <a href={`mailto:${URLs.MAIL}`}>Contact</a>
-      <Link href="/about">
+      <ELink href="/about" activeClassName="active">
         <a>About</a>
-      </Link>
+      </ELink>
     </Container>
   )
 }
