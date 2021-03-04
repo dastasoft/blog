@@ -123,6 +123,11 @@ export const Container = styled.div`
   padding: 1rem;
   font-size: 18px;
   ${({ theme }) => colorBackgroundAndTransition(theme)}
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.lg}) {
+    max-width: ${({ theme }) => theme.breakpoints.xl};
+    margin: 0 auto;
+  }
 `
 
 export const Title = styled.h1`
@@ -130,12 +135,16 @@ export const Title = styled.h1`
   font-size: 24px;
   font-weight: 500;
   margin-bottom: 1rem;
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.lg}) {
+    display: none;
+  }
 `
 
 export const Text = styled.div`
   p {
     margin: 1rem 0 2rem 0;
-    font-size: 14px;
+    font-size: calc(0.7rem + 1vmin);
     font-weight: 400;
     line-height: 24px;
   }
@@ -153,6 +162,14 @@ export const IconHolder = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.lg}) {
+    justify-content: center;
+
+    a {
+      margin-right: 1rem;
+    }
+  }
 `
 
 export default About

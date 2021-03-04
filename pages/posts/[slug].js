@@ -55,8 +55,13 @@ export default function Post({ post }) {
 const Container = styled.div`
   color: ${({ theme }) => theme.contentText};
   ${getGlobalTransition()}
-  padding: 1rem;
+  padding: 2rem 1rem;
   max-width: 100vw;
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.lg}) {
+    max-width: ${({ theme }) => theme.breakpoints.md};
+    margin: 0 auto;
+  }
 `
 
 export async function getStaticProps({ params }) {
