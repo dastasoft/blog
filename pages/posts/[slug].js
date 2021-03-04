@@ -37,8 +37,12 @@ export default function Post({ post }) {
             description: post.excerpt,
             images: [
               {
-                url: post.ogImage,
+                url: `${HOMEPAGE}_next/image?url=${encodeURIComponent(
+                  post.ogImage.url
+                )}&w=1920&q=75`,
                 alt: `${post.title} image cover`,
+                width: 200,
+                height: 200,
               },
             ],
             site_name: post.title,
