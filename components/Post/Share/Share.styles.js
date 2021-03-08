@@ -20,10 +20,25 @@ export const Container = styled.div`
     filter: ${({ theme }) => (theme.UIText === 'white' ? 'invert()' : 'none')};
     ${getGlobalTransition()}
   }
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.lg}) {
+    left: 0;
+    bottom: calc(100vh / 3);
+    width: 4rem;
+    flex-direction: column;
+
+    a {
+      margin: 1rem 0;
+    }
+  }
 `
 
 export const Text = styled.span`
   font-size: 20px;
-  font-weight: 800;
+  font-weight: 900;
   display: inline-block;
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.lg}) {
+    display: none;
+  }
 `

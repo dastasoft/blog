@@ -121,29 +121,44 @@ const About = () => {
 
 export const Container = styled.div`
   padding: 1rem;
-  font-size: 18px;
+  font-size: 1.25rem;
+  line-height: 1.55;
   ${({ theme }) => colorBackgroundAndTransition(theme)}
+  margin: 0 auto;
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.md}) {
+    max-width: ${({ theme }) => theme.breakpoints.sm};
+  }
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.lg}) {
+    max-width: ${({ theme }) => theme.breakpoints.md};
+  }
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.xl}) {
+    max-width: ${({ theme }) => theme.breakpoints.rg};
+  }
 `
 
 export const Title = styled.h1`
   text-align: center;
   font-size: 24px;
-  font-weight: 500;
+  font-weight: 700;
   margin-bottom: 1rem;
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.lg}) {
+    display: none;
+  }
 `
 
 export const Text = styled.div`
   p {
-    margin: 1rem 0 2rem 0;
-    font-size: 14px;
-    font-weight: 400;
-    line-height: 24px;
+    margin: 1rem 0 1.55rem 0;
   }
 `
 
 export const SubTitle = styled.div`
   text-align: center;
-  font-weight: 500;
+  font-weight: 700;
   margin-bottom: 1rem;
 `
 
@@ -153,6 +168,14 @@ export const IconHolder = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.lg}) {
+    justify-content: center;
+
+    a {
+      margin-right: 1rem;
+    }
+  }
 `
 
 export default About

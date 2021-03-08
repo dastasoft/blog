@@ -37,8 +37,12 @@ export default function Post({ post }) {
             description: post.excerpt,
             images: [
               {
-                url: post.ogImage,
+                url: `${HOMEPAGE}_next/image?url=${encodeURIComponent(
+                  post.ogImage.url
+                )}&w=1920&q=75`,
                 alt: `${post.title} image cover`,
+                width: 200,
+                height: 200,
               },
             ],
             site_name: post.title,
@@ -55,8 +59,21 @@ export default function Post({ post }) {
 const Container = styled.div`
   color: ${({ theme }) => theme.contentText};
   ${getGlobalTransition()}
-  padding: 1rem;
+  padding: 2rem 1rem;
   max-width: 100vw;
+  margin: 0 auto;
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.md}) {
+    max-width: ${({ theme }) => theme.breakpoints.sm};
+  }
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.lg}) {
+    max-width: ${({ theme }) => theme.breakpoints.md};
+  }
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.xl}) {
+    max-width: ${({ theme }) => theme.breakpoints.rg};
+  }
 `
 
 export async function getStaticProps({ params }) {

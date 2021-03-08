@@ -23,4 +23,8 @@ export const GridLayout = styled.div`
   main {
     width: 100%;
   }
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.lg}) {
+    border: none;
+  }
 `

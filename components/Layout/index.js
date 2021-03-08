@@ -4,9 +4,9 @@ import { Container, GridLayout } from './Layout.styles'
 const Layout = ({ children, theme, themeToggler }) => {
   return (
     <Container>
-      <GridLayout className="mobile-locked">
+      <GridLayout>
         <Header theme={theme} themeToggler={themeToggler} />
-        <main className="mobile-locked">{children}</main>
+        <main>{children}</main>
       </GridLayout>
     </Container>
   )

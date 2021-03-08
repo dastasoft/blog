@@ -20,6 +20,7 @@ const GlobalStyle = createGlobalStyle`
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    text-rendering: optimizelegibility;
     ${getGlobalTransition()}
   }
 
@@ -32,14 +33,14 @@ const GlobalStyle = createGlobalStyle`
   }
 
   body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-family: 'Lato', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     ${getGlobalTransition()}
 
     scrollbar-width: thin;
     scrollbar-color: ${({ theme }) => `${theme.thumbBG} transparent`};
 
     h2 {
-      font-weight: 500;
+      font-weight: 700;
       font-size: 24px;
       line-height: 1.375;
     }
@@ -68,7 +69,7 @@ const GlobalStyle = createGlobalStyle`
   }
 
   .mobile-locked {
-    max-width: ${({ theme }) => theme.breakpoints.mobile};
+    /* max-width: ${({ theme }) => theme.breakpoints.mobile}; */
     margin: 0 auto;
     overflow-y: auto;
   }
