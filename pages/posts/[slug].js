@@ -61,10 +61,18 @@ const Container = styled.div`
   ${getGlobalTransition()}
   padding: 2rem 1rem;
   max-width: 100vw;
+  margin: 0 auto;
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.md}) {
+    max-width: ${({ theme }) => theme.breakpoints.sm};
+  }
 
   @media (min-width: ${({ theme }) => theme.breakpoints.lg}) {
     max-width: ${({ theme }) => theme.breakpoints.md};
-    margin: 0 auto;
+  }
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.xl}) {
+    max-width: ${({ theme }) => theme.breakpoints.rg};
   }
 `
 

@@ -12,7 +12,7 @@ export const StyledHeader = styled.header`
   grid-gap: 1rem;
   padding: 0 1rem;
   font-size: 20px;
-  font-weight: 800;
+  font-weight: 900;
 
   a {
     text-decoration: none;

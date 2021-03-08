@@ -3,20 +3,11 @@ import Image from 'next/image'
 import ReactMarkdown from 'react-markdown'
 import hljs from 'highlight.js'
 
-import { DEFAULT_IMAGE_SIZES } from '@/lib/constants'
-
 import { StyledContent } from './PostBody.styles'
 
 const renderers = {
   image: image => {
-    return (
-      <Image
-        src={image.src}
-        alt={image.alt}
-        layout="responsive"
-        {...DEFAULT_IMAGE_SIZES}
-      />
-    )
+    return <Image src={image.src} alt={image.alt} width={1024} height={968} />
   },
 }
 

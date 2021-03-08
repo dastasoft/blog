@@ -9,7 +9,7 @@ export const Container = styled.div`
   a {
     text-decoration: none;
     text-align: center;
-    font-weight: 500;
+    font-weight: 700;
     font-size: 36px;
     color: inherit;
     padding: 1rem;

@@ -3,8 +3,8 @@ import styled from 'styled-components'
 import { getGlobalTransition } from '@/components/GlobalStyle'
 
 export const StyledContent = styled.div`
-  font-size: 1.125rem;
-  line-height: 1.625;
+  font-size: 1.25rem;
+  line-height: 1.7;
   ${getGlobalTransition()}
   overflow: auto;
   margin-bottom: 10rem;
@@ -33,13 +33,17 @@ export const StyledContent = styled.div`
 
   a {
     color: ${({ theme }) => theme.primary};
-    font-weight: 800;
+    font-weight: 900;
     font-size: 19px;
     cursor: pointer;
 
     img {
       margin: 0 auto;
     }
+  }
+
+  p {
+    margin: 1rem 0 1.55rem 0;
   }
 
   pre,
@@ -77,12 +81,12 @@ export const StyledContent = styled.div`
   .hljs-deletion,
   .hljs-subst {
     color: ${({ theme }) => theme.code.name};
-    font-weight: bold;
+    font-weight: 900;
   }
 
   .hljs-literal {
     color: ${({ theme }) => theme.code.literal};
-    font-weight: bold;
+    font-weight: 900;
   }
 
   .hljs-string,
@@ -91,13 +95,13 @@ export const StyledContent = styled.div`
   .hljs-attribute,
   .hljs-meta-string {
     color: ${({ theme }) => theme.code.regexp};
-    font-weight: bold;
+    font-weight: 900;
   }
 
   .hljs-built_in,
   .hljs-class .hljs-title {
     color: ${({ theme }) => theme.code.class};
-    font-weight: bold;
+    font-weight: 900;
   }
 
   .hljs-attr,
@@ -118,7 +122,7 @@ export const StyledContent = styled.div`
   .hljs-selector-id,
   .hljs-title {
     color: ${({ theme }) => theme.code.link};
-    font-weight: bold;
+    font-weight: 900;
   }
 
   .hljs-emphasis {
@@ -126,7 +130,7 @@ export const StyledContent = styled.div`
   }
 
   .hljs-strong {
-    font-weight: bold;
+    font-weight: 900;
   }
 
   .hljs-link {

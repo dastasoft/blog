@@ -35,7 +35,7 @@ export const Container = styled.div`
 
 export const Text = styled.span`
   font-size: 20px;
-  font-weight: 800;
+  font-weight: 900;
   display: inline-block;
 
   @media (min-width: ${({ theme }) => theme.breakpoints.lg}) {
