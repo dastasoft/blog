@@ -3,7 +3,7 @@ import { Container, GridLayout } from './Layout.styles'
 
 const Layout = ({ children, theme, themeToggler }) => {
   return (
-    <Container>
+    <Container id="top">
       <GridLayout>
         <Header theme={theme} themeToggler={themeToggler} />
         <main>{children}</main>
