@@ -68,10 +68,11 @@ const GlobalStyle = createGlobalStyle`
     text-decoration: none;
   }
 
-  .mobile-locked {
-    /* max-width: ${({ theme }) => theme.breakpoints.mobile}; */
-    margin: 0 auto;
-    overflow-y: auto;
+/* Smooth scrolling IF user doesn't have a preference due to motion sensitivities */
+  @media screen and (prefers-reduced-motion: no-preference) {
+    html {
+      scroll-behavior: smooth;
+    }
   }
 `
 

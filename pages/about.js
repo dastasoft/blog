@@ -12,13 +12,13 @@ const About = () => {
   return (
     <Container>
       <NextSeo
-        title="dastasoft's about"
+        title="About | dastasoft"
         description="Hi, I'm a Full Stack Developer and I love learning, teaching, Japanese culture, rhythm games and talking about tech."
       />
       <Title>About</Title>
       <Text>
         <p>
-          Hi, I'm Daniel and I live in Sant Cugat del Vallès (Barcelona), I've
+          Hi, I'm Daniel and I live in Barcelona, I've
           been making websites, applications, games and learning the ins and
           outs of technology since I can remember. I love learning, teaching
           what I have learned and approaching projects from an agile vision and

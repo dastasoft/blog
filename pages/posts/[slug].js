@@ -7,6 +7,7 @@ import PostHeader from '@/components/Post/Header'
 import PostBody from '@/components/Post/Body'
 import Share from '@/components/Post/Share'
 import { getGlobalTransition } from '@/components/GlobalStyle'
+import ScrollToTop from '@/components/ScrollToTop'
 
 import { getPostBySlug, getAllPosts } from '@/lib/api'
 import { HOMEPAGE, URLs } from '@/lib/constants'
@@ -19,7 +20,7 @@ export default function Post({ post }) {
   }
 
   return (
-    <>
+    <Wrapper>
       <Container>
         <NextSeo
           title={post.title}
@@ -51,10 +52,15 @@ export default function Post({ post }) {
         <PostHeader {...post} />
         <PostBody {...post} />
       </Container>
+      <ScrollToTop />
       <Share title={post.title} summary={post.excerpt} />
-    </>
+    </Wrapper>
   )
 }
+
+const Wrapper = styled.div`
+  position: relative;
+`
 
 const Container = styled.div`
   color: ${({ theme }) => theme.contentText};
