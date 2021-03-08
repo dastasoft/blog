@@ -1,7 +1,7 @@
 import { HOMEPAGE } from '@/lib/constants'
 
 export default {
-  title: "dastasoft's Blog",
+  title: "Blog | dastasoft",
   description:
     "Hi I'm dastasoft, I love talking, learning and teaching about technology so, I write tutorials and guides about programming like JavaScript, React, Next.js, Node.js and many more.",
   canonical: HOMEPAGE,

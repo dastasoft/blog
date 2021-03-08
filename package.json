@@ -1,6 +1,7 @@
 {
-  "name": "blog",
-  "version": "0.1.0",
+  "author": "dastasoft <dastasoft@protonmail.com> (https://dastasoft.com)",
+  "name": "dastasoft-blog",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
     "dev": "next dev",

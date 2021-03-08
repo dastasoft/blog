@@ -29,7 +29,7 @@ const Home = ({ allPosts }) => {
   return (
     <Container>
       <NextSeo
-        title="dastasoft's Blog"
+        title="Blog | dastasoft"
         description="Hi, I'm a Full Stack Developer and I love learning, teaching, Japanese culture, rhythm games and talking about tech."
       />
       <PostSearcher filter={filter} setFilter={setFilter} />
