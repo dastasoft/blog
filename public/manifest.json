@@ -12,7 +12,7 @@
   "short_name": "Blog | dastasoft",
   "start_url": "/",
   "theme_color": "#ffffff",
-  "categories": null,
+  "categories": ["business", "education", "productivity", "utilities"],
   "screenshots": [
     {
       "src": "screenshots/blog1.png",
@@ -70,6 +70,21 @@
       "purpose": "any maskable"
     }
   ],
-  "shortcuts": null,
+  "shortcuts": [
+    {
+      "name": "Blog",
+      "short_name": "Blog",
+      "description": "View the list of blog",
+      "url": "/",
+      "icons": [{ "src": "/icons/maskable_icon_x192.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "About",
+      "short_name": "About",
+      "description": "View data about the author",
+      "url": "/about",
+      "icons": [{ "src": "/icons/maskable_icon_x192.png", "sizes": "192x192" }]
+    }
+  ],
   "url": "https://blog.dastasoft.com"
 }
