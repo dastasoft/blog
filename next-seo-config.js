@@ -1,9 +1,8 @@
-import { HOMEPAGE } from '@/lib/constants'
+import { HOMEPAGE, AUTHOR, TITLE, DESCRIPTION } from '@/lib/constants'
 
 export default {
-  title: "Blog | dastasoft",
-  description:
-    "Hi I'm dastasoft, I love talking, learning and teaching about technology so, I write tutorials and guides about programming like JavaScript, React, Next.js, Node.js and many more.",
+  title: TITLE,
+  description: DESCRIPTION,
   canonical: HOMEPAGE,
   languageAlternates: [
     {
@@ -13,7 +12,7 @@ export default {
   ],
   openGraph: {
     profile: {
-      username: 'dastasoft',
+      username: AUTHOR,
     },
     type: 'blog',
     locale: 'en',
@@ -28,10 +27,5 @@ export default {
         alt: "dastasoft's Blog",
       },
     ],
-  },
-  twitter: {
-    handle: '@handle',
-    site: '@site',
-    cardType: 'summary_large_image',
   },
 }
