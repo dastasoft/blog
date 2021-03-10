@@ -1,12 +1,31 @@
 {
-  "name": "Blog | dastasoft",
-  "short_name": "Blog | dastasoft",
-  "theme_color": "#ffffff",
   "background_color": "#6da34d",
+  "description": "Hi I'm dastasoft, I love talking, learning and teaching about technology so, I write tutorials and guides about programming like JavaScript, React, Next.js, Node.js and many more.",
+  "dir": null,
   "display": "fullscreen",
-  "orientation": "portrait",
+  "lang": "English",
+  "name": "Blog | dastasoft",
+  "orientation": "portrait-primary",
+  "prefer_related_applications": null,
+  "related_applications": null,
   "scope": "/",
+  "short_name": "Blog | dastasoft",
   "start_url": "/",
+  "theme_color": "#ffffff",
+  "categories": null,
+  "screenshots": [
+    {
+      "src": "screenshots/blog1.png",
+      "sizes": "1280x800",
+      "type": "image/png"
+    },
+    {
+      "src": "screenshots/blog2.png",
+      "sizes": "750x1334",
+      "type": "image/png"
+    }
+  ],
+  "iarc_rating_id": null,
   "icons": [
     {
       "src": "icons/maskable_icon_x48.png",
@@ -51,5 +70,6 @@
       "purpose": "any maskable"
     }
   ],
-  "splash_pages": null
+  "shortcuts": null,
+  "url": "https://blog.dastasoft.com"
 }
