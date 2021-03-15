@@ -1,5 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:mobile="http://www.google.com/schemas/sitemap-mobile/1.0" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
-<url><loc>https://blog.dastasoft.com/</loc><changefreq>weekly</changefreq><priority>1</priority><lastmod>2021-02-25T17:05:38+01:00Z</lastmod></url>
-<url><loc>https://blog.dastasoft.com/about</loc><changefreq>monthly</changefreq><priority>0.4</priority><lastmod>2021-02-25T17:05:38+01:00Z</lastmod></url>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://blog.dastasoft.com/about</loc>
+  </url>
+
+  <url>
+    <loc>https://blog.dastasoft.com</loc>
+  </url>
+
+  <url>
+    <loc
+      >https://blog.dastasoft.com/posts/simple-animated-circle-bar-as-react-component</loc
+    >
+  </url>
+
+  <url>
+    <loc>https://blog.dastasoft.com/posts/simple-react-boilerplate</loc>
+  </url>
+
+  <url>
+    <loc
+      >https://blog.dastasoft.com/posts/simple-static-blog-with-nextjs-and-devto-as-cms</loc
+    >
+  </url>
+
+  <url>
+    <loc>https://blog.dastasoft.com/posts/styling-in-react</loc>
+  </url>
 </urlset>
