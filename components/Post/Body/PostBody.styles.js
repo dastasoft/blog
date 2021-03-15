@@ -7,7 +7,7 @@ export const StyledContent = styled.div`
   line-height: 1.7;
   ${getGlobalTransition()}
   overflow: auto;
-  margin-bottom: 10rem;
+  margin-bottom: 1rem;
 
   h2 {
     font-size: 1.875rem;

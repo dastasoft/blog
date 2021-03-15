@@ -5,6 +5,7 @@ import { NextSeo } from 'next-seo'
 
 import PostHeader from '@/components/Post/Header'
 import PostBody from '@/components/Post/Body'
+import PostFooter from '@/components/Post/Footer'
 import Share from '@/components/Post/Share'
 import { getGlobalTransition } from '@/components/GlobalStyle'
 import ScrollToTop from '@/components/ScrollToTop'
@@ -51,6 +52,7 @@ export default function Post({ post }) {
         />
         <PostHeader {...post} />
         <PostBody {...post} />
+        <PostFooter slug={post.slug} />
       </Container>
       <ScrollToTop />
       <Share title={post.title} summary={post.excerpt} />
