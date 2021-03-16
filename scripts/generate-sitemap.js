@@ -11,6 +11,7 @@ const prettier = require('prettier')
     '!pages/_*.js',
     '!pages/api',
     '!pages/**/[slug].js',
+    '!pages/.well-known',
   ])
   const sitemap = `
         <?xml version="1.0" encoding="UTF-8"?>
