@@ -41,6 +41,12 @@ export default class MyDocument extends Document {
             href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap"
             rel="stylesheet"
           />
+          <script
+            async
+            defer
+            data-website-id="2cf50fa8-4a72-43c9-803e-714ef4029d88"
+            src="https://hal-umami-analytics.vercel.app/umami.js"
+          ></script>
         </Head>
         <body>
           <Main />
