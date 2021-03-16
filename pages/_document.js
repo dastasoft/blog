@@ -31,12 +31,6 @@ export default class MyDocument extends Document {
     return (
       <Html lang="en">
         <Head>
-          <script
-            async
-            defer
-            data-website-id="2cf50fa8-4a72-43c9-803e-714ef4029d88"
-            src="https://hal-umami-analytics.vercel.app/umami.js"
-          ></script>
           <meta charSet="utf-8" />
           <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
           <link rel="manifest" href="/manifest.json" />
