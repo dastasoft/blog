@@ -1,6 +1,7 @@
 const theme = {
   primary: '#6da34dff',
   secondary: '#8fbc94ff',
+  contrast: '#512bd4',
   thumbBG: '#6da34dff',
   activeLink: '#28401a',
   maxWidth: '475px',

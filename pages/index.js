@@ -5,6 +5,7 @@ import { NextSeo } from 'next-seo'
 import Post from '@/components/Post/Box'
 import PostSearcher from '@/components/InputSearch'
 import { getAllPosts } from '@/lib/api'
+import Subscribe from '@/components/Subscribe'
 
 const Home = ({ allPosts }) => {
   const [filter, setFilter] = useState('')
@@ -34,6 +35,7 @@ const Home = ({ allPosts }) => {
       />
       <PostSearcher filter={filter} setFilter={setFilter} />
       <GridLayout>{posts}</GridLayout>
+      <Subscribe />
     </Container>
   )
 }
@@ -44,6 +46,10 @@ const Container = styled.div`
   flex-direction: column;
   align-items: center;
   margin: 0 auto;
+
+  form {
+    margin: 4rem 0 2rem 0;
+  }
 `
 
 const GridLayout = styled.div`

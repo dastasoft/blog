@@ -1,4 +1,4 @@
-import { createGlobalStyle } from 'styled-components'
+import styled, { createGlobalStyle } from 'styled-components'
 
 export const colorBackgroundAndTransition = ({
   background,
@@ -14,6 +14,39 @@ img {
 `
 
 export const getGlobalTransition = () => 'transition: all 0.5s linear;'
+
+export const Input = styled.input`
+  ${getGlobalTransition()}
+  background-color: ${({ theme }) => theme.background};
+  border-radius: 5px;
+  border: 1px solid ${({ theme }) => theme.secondary};
+  color: ${({ theme }) => theme.contentText};
+  font-size: 18px;
+  max-width: ${({ theme }) => theme.maxWidth};
+  outline: none;
+  padding: 0.5rem;
+  width: inherit;
+
+  :focus {
+    outline: none;
+  }
+`
+
+export const Button = styled.button`
+  ${getGlobalTransition()}
+  border: 0;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  color: ${({ theme }) => theme.UIText};
+  cursor: pointer;
+  background-color: ${({ theme }) => theme.contrast};
+  font-size: 1rem;
+  font-weight: bold;
+
+  :hover {
+    background-color: ${({ theme }) => theme.primary};
+  }
+`
 
 const GlobalStyle = createGlobalStyle`
   html {
