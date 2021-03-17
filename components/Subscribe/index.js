@@ -1,15 +1,17 @@
 import { useRef, useState } from 'react'
 
-import { Input } from '@/components/GlobalStyle'
+import { Input, Spinner } from '@/components/GlobalStyle'
 
 import { Container, Title, Label, Message, Button } from './Subscribe.styles'
 
 export default function Subscribe() {
   const inputEmail = useRef(null)
   const [message, setMessage] = useState('')
+  const [loading, setLoading] = useState(false)
 
   const subscribe = async e => {
     e.preventDefault()
+    setLoading(true)
 
     const res = await fetch('/api/subscribe', {
       body: JSON.stringify({
@@ -22,6 +24,8 @@ export default function Subscribe() {
     })
 
     const { error } = await res.json()
+
+    setLoading(false)
 
     if (error) {
       setMessage(error)
@@ -49,7 +53,9 @@ export default function Subscribe() {
           ? message
           : `I'll only send emails when new content is posted. No spam.`}
       </Message>
-      <Button type="submit">Subscribe</Button>
+      <Button type="submit" disabled={loading}>
+        <Spinner loading={loading} /> Subscribe
+      </Button>
     </Container>
   )
 }

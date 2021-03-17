@@ -35,7 +35,6 @@ const Home = ({ allPosts }) => {
       />
       <PostSearcher filter={filter} setFilter={setFilter} />
       <GridLayout>{posts}</GridLayout>
-      <Subscribe />
     </Container>
   )
 }

@@ -42,9 +42,42 @@ export const Button = styled.button`
   background-color: ${({ theme }) => theme.contrast};
   font-size: 1rem;
   font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
   :hover {
     background-color: ${({ theme }) => theme.primary};
+  }
+
+  :disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+`
+
+export const Spinner = styled.span`
+  display: ${({ loading }) => (loading ? 'inline-block' : 'none')};
+
+  :after {
+    content: ' ';
+    display: block;
+    width: 1rem;
+    height: 1rem;
+    border-radius: 50%;
+    margin-right: 0.5rem;
+    border: 2px solid ${({ theme }) => theme.UIText};
+    border-color: ${({ theme }) => theme.UIText} transparent
+      ${({ theme }) => theme.UIText} transparent;
+    animation: lds-dual-ring 1.2s linear infinite;
+  }
+  @keyframes lds-dual-ring {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
   }
 `
 

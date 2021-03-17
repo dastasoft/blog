@@ -7,6 +7,8 @@ import {
 } from '@/components/GlobalStyle'
 
 export const Container = styled.form`
+  justify-self: center;
+  margin: 1rem 0 4rem 0;
   padding: 2rem;
   display: flex;
   flex-direction: column;
