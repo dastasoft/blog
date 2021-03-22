@@ -9,6 +9,7 @@
     "start": "next start"
   },
   "dependencies": {
+    "@mailchimp/mailchimp_marketing": "^3.0.34",
     "date-fns": "^2.16.1",
     "dayjs": "^1.10.4",
     "gray-matter": "^4.0.2",
