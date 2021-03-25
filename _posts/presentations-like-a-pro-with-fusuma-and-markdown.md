@@ -2,7 +2,7 @@
 title: 'Present like a pro with Fusuma and MD'
 excerpt: 'Create slides quickly and easily with this amazing tool, make presentations like a pro.'
 coverImage: '/assets/posts/preview/fusuma.webp'
-date: '2021-03-22T00:00:00.000Z'
+date: '2021-03-25T00:00:00.000Z'
 author:
   name: dastasoft
   picture: '/assets/authors/dastasoft.jpeg'
@@ -14,7 +14,7 @@ section: 'frontend'
 
 There is a lot of software out there to deal with presentations creating slides, I recently found [Fusuma](https://github.com/hiroppy/fusuma) and I find the results very impressive compared to the time I had to invest in it.
 
-You can follow the tutorial directly in the slides generated with Fusuma on [this direction]() and check the [source code]().
+You can follow the tutorial directly in the slides generated with Fusuma on [this direction](https://fusuma-101-slides.netlify.app/) and check the [source code](https://github.com/dastasoft/fusuma-101-slides).
 
 The main benefits of using Fusuma are:
 
