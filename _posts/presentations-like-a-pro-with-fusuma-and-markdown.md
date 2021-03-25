@@ -22,7 +22,7 @@ The main benefits of using Fusuma are:
 - Responsive design.
 - Automatically generate the content section.
 - You don't need to configure it, but it has settings to suit your needs.
-- Markdown and MDX are support.
+- Markdown and MDX are supported.
 - Several themes included.
 - Code syntax highlighting for your code blocks, diagrams and flowcharts.
 - Presentation mode, you will have the slides on one screen and the presentation control panel in the other.
