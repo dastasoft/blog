@@ -5,7 +5,7 @@
 ## Features
 
 - [x] **PWA** Progressive Web Application compliant, can be installed directly from the browser.
-- [x] **Google Play App** Converted the PWA into a [Android App](https://play.google.com/store/apps/details?id=com.dastasoft.blog.twa).
+- [x] **Google Play App** Converted the PWA into an [Android App](https://play.google.com/store/apps/details?id=com.dastasoft.blog.twa).
 - [x] **Dark Mode** All the blog and code fragments are available in light and dark theme.
 - [x] **Built in SSG** The blog is rebuilt when I push to GitHub, in that process the posts are converted into pages.
 - [x] **Mobile and Desktop design** Supports both mobile and larger desktop screens.

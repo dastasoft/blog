@@ -7,7 +7,15 @@ import { StyledContent } from './PostBody.styles'
 
 const renderers = {
   image: image => {
-    return <Image src={image.src} alt={image.alt} width={1024} height={968} />
+    return (
+      <Image
+        src={image.src}
+        alt={image.alt}
+        width={1024}
+        height="auto"
+        objectFit="contain"
+      />
+    )
   },
 }
 
