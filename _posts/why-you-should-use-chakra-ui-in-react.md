@@ -36,6 +36,8 @@ So what are the main benefits of using this component library.
 - You will do more with less in less time, which in fact is the goal of most libraries and frameworks.
 - The community is quite small yet (which can be a good thing, you can join from the begining), but it's very active.
 
+After test other libraries I would describe Chakra UI as if you have a clean default design like in Material UI with the simplicity of colors and responsive design provided by TailwindCSS plus the atomic design of the components of Antd and a convenient layer of accessebility all in one package.
+
 ## Resources
 
 You can go directly to the [sample project](https://github.com/dastasoft/handy-tools) which uses almost everything I will tell in this article or try [the final PWA version](https://handy-tools.dastasoft.com/).
@@ -131,7 +133,83 @@ You will find components for the layout of your webpage, for every component in 
 
 The first contact with Chakra UI for me was quite similar of working with pre build components in React Native.
 
+### Simple Grid
+
+### Drawer
+
+### Skeleton
+
 ## Theming
+
+One of the core values of Chakra UI is the theming, and it's so easy to adapt to your preferences.
+
+Inside styles folder I create a `theme.js` file which has:
+
+```js
+import { extendTheme } from '@chakra-ui/react'
+
+const theme = extendTheme({
+  fonts: {
+    heading: 'Lato',
+    body: 'Roboto',
+  },
+})
+
+export default theme
+```
+
+In this file you can define all the general theme for your application such as font sizes, breakpoints, line heights and so on.
+
+For the colors Chakra UI has a default theme inspired by Tailwind CSS of colors going from a range of intensity of 50 to 900.
+
+### Extending even more the theme
+
+One of the things that can be a barrier when you use a component library is that maybe your style or the style that the designer provides to you will be different from the base design. 
+
+That could become a pain in the neck, make all those changes can end on thinking that you need more work adapting the library than doing from scrach.
+
+Let's check this example that is not from Handy Tools, I extracted from the official documentation:
+
+```js
+// theme.js
+import { extendTheme } from "@chakra-ui/react"
+
+const theme = extendTheme({
+  components: {
+    Button: {
+      // 1. We can update the base styles
+      baseStyle: {
+        fontWeight: "bold", // Normally, it is "semibold"
+      },
+      // 2. We can add a new button size or extend existing
+      sizes: {
+        xl: {
+          h: "56px",
+          fontSize: "lg",
+          px: "32px",
+        },
+      },
+      // 3. We can add a new visual variant
+      variants: {
+        "with-shadow": {
+          bg: "red.400",
+          boxShadow: "0 0 2px 2px #efdfde",
+        },
+        // 4. We can override existing variants
+        solid: (props) => ({
+          bg: props.colorMode === "dark" ? "red.300" : "red.500",
+        }),
+      },
+    },
+  },
+})
+
+export default theme
+```
+
+I think it's clear how much effort Chakra UI's team has put to make the library easly adaptable to your needs. This is only a small example I think if I want to cover all the possibilities of customizing this librarie that will get an entire article, be sure to check [the official documentation about theming](https://chakra-ui.com/docs/theming/advanced).
+
+Maybe this file can be very big if you need a lot of changes, but the base theme with all the accessebility and consistency still will be available for you.
 
 ## Hooks
 
