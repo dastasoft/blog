@@ -33,4 +33,10 @@
   <url>
     <loc>https://blog.dastasoft.com/posts/styling-in-react</loc>
   </url>
+
+  <url>
+    <loc
+      >https://blog.dastasoft.com/posts/why-you-should-use-chakra-ui-in-react</loc
+    >
+  </url>
 </urlset>
