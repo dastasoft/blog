@@ -65,7 +65,7 @@ yarn add @chakra-ui/react @emotion/react@^11 @emotion/styled@^11 framer-motion@^
 Once you have installed the packages, you need to set up a provider.
 
 ```js
-// _app.js
+// pages/_app.js
 import { ChakraProvider } from '@chakra-ui/react'
 
 import Layout from '@/components/Layout'
@@ -103,7 +103,7 @@ One of the things I love the most from Chakra UI is how the components are desig
 For example, let's take a look of the composition of the Layout component in Handy Tools:
 
 ```js
-// Layout.js
+// components/Layout.js
 import { Box, Flex } from '@chakra-ui/react'
 
 import Header from '@/components/Header'
@@ -171,7 +171,7 @@ That could become a pain in the neck, make all those changes can end on thinking
 Let's check this example that is not from Handy Tools, I extracted from the official documentation:
 
 ```js
-// theme.js
+// styles/theme.js
 import { extendTheme } from "@chakra-ui/react"
 
 const theme = extendTheme({
@@ -215,11 +215,108 @@ Maybe this file can be very big if you need a lot of changes, but the base theme
 
 ## Comparison with other libraries
 
+There are other well know libraries like [Material UI]() and [Antd]() or [React Bootstrap]().
+
+### Material UI
+
+My biggest concern about Material UI it's the API, you must learn a lot to use the library and you will get a very nice and clean design but on the other side it's a design hard to customize to the point that seems yours.
+
+The beauty of Chakra UI it's you can leave the library as is or change a few colors (like I did in Handy Tools) or customize to the point to see as your own library and all of that without pages and pages of API.
+
+### Antd
+
+I use Antd before Chakra UI and the atomic components was a blast too, very easy to use and easy documentation to follow but for the customization I find harder than Chakra UI. 
+
+In Antd they done the customization using Less.
+
+### React Bootstrap
+
+
+
 ## Separation of Concerns
+
+Maybe one of the things that yoy might not like from Chakra UI it's the fact they're mixing props related to the css with the logic of the application, which in fact is not a problem of Chakra UI rather than the design of any CSS-in-JS solution.
+
+In the Handy Tools project, the last utilitie I added follows the same idea than styles in React Native:
+
+```js
+// pages/px-converter.js
+export default function PxConverter() {
+  return (
+    <Box>
+      <Heading {...styles.heading}>Px Converter</Heading>
+      <Select
+        onChange={onOptionChange}
+        defaultValue="pxToREM"
+        {...styles.select}
+      />
+    </Box>
+  )
+}
+
+const styles = {
+  heading: {
+    marginBottom: '0.5em',
+  },
+  flex: {
+    alignItems: 'center',
+    marginLeft: '0.2em',
+  },
+  flexCenter: {
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  input: {
+    bg: 'white',
+    marginRight: '0.5em',
+  },
+  select: {
+    bg: 'white',
+    maxWidth: '400px',
+    margin: '0 auto',
+  },
+  grid: {
+    maxWidth: '600px',
+    margin: '1.5em auto',
+  },
+  gridItem: {
+    display: 'flex',
+    alignItems: 'center',
+    marginX: '1em',
+  },
+  buttonGroup: {
+    justifyContent: 'center',
+    size: 'sm',
+    marginX: '0.5em',
+  },
+}
+```
+
+I didn't see this format in any Chakra UI document but I copy the idea from React Native's createStylesheet pattern, with this you can easly divide the CSS part from the props that are related to the logic.
+
+But yes, at the end of the day the concern about having separate standard CSS files can be a downside, check the next section to find if Chakra UI suits your needs or not.
 
 ## Chakra UI might be for you if...
 
+- You work on a small / medium project.*
+- You do not want / can invest the effort on creating a component library.
+- Accessibility it's important for you and do not want / can invest the effort.
+- You or your team are more skilled with JS than CSS.**
+- You are trying to establish a common architecture in your team.***
+- You need your own component library but starting with a solid base.
+- You are using another component library which you find that does not speed up your developing time.
+
+*I talk about size of the project because CSS-in-JS have one problem in common, they are JS at the end of the day, for the browser it's easy to process CSS files rather than executing JS especially if your app is changing data very often. Common web applications will suit with Chakra UI perfectly.
+
+**Don't think you can avoid learning CSS because of Chakra UI or any other CSS-in-JS solution, the syntax is pretty similar and knowing propper CSS will help a lot.
+
+**I found that the weakest point of many front end developers is maintaining a good architecture in the CSS, having a solution like Chakra UI which blends prefectly with the props they already know from React components helps keeping the project clean and mantainable.
+
 ## Chakra UI might not be for you if...
+
+- You are working on a big project and/or changes a lot of data.
+- You or your team are more skilled with CSS than JS.
+- You need to share your style files across multiple projects which don't have Chakra UI.
 
 ## On top of Chakra UI
 
