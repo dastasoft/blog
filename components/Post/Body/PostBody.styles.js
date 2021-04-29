@@ -184,3 +184,10 @@ export const StyledContent = styled.div`
     }
   }
 `
+
+export const Figure = styled.figure`
+  figcaption {
+    font-size: 16px;
+    text-align: center;
+  }
+`
