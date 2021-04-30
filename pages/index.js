@@ -5,7 +5,6 @@ import { NextSeo } from 'next-seo'
 import Post from '@/components/Post/Box'
 import PostSearcher from '@/components/InputSearch'
 import { getAllPosts } from '@/lib/api'
-import Subscribe from '@/components/Subscribe'
 
 const Home = ({ allPosts }) => {
   const [filter, setFilter] = useState('')

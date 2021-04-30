@@ -3,18 +3,22 @@ import Image from 'next/image'
 import ReactMarkdown from 'react-markdown'
 import hljs from 'highlight.js'
 
-import { StyledContent } from './PostBody.styles'
+import { StyledContent, Figure } from './PostBody.styles'
 
-const renderers = {
-  image: image => {
+const components = {
+  img: image => {
+    console.log(image)
     return (
-      <Image
-        src={image.src}
-        alt={image.alt}
-        width={1024}
-        height="auto"
-        objectFit="contain"
-      />
+      <Figure>
+        <Image
+          src={image.src}
+          alt={image.alt}
+          width={1920}
+          height={1080}
+          objectFit="contain"
+        />
+        {image.title && <figcaption>{image.title}</figcaption>}
+      </Figure>
     )
   },
 }
@@ -30,7 +34,7 @@ const PostBody = ({ content }) => {
 
   return (
     <StyledContent ref={rootRef}>
-      <ReactMarkdown children={content} renderers={renderers} />
+      <ReactMarkdown children={content} components={components} />
     </StyledContent>
   )
 }
