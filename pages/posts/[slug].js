@@ -49,6 +49,11 @@ export default function Post({ post }) {
             ],
             site_name: post.title,
           }}
+          twitter={{
+            handle: '@handle',
+            site: '@site',
+            cardType: 'summary_large_image',
+          }}
         />
         <PostHeader {...post} />
         <PostBody {...post} />
