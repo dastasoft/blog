@@ -27,13 +27,11 @@ I'm not going to lie, Chakra UI popped up on my radar because I'm a Naruto fan a
 So what are the main benefits of using this component library.
 
 - All components provided by Chakra UI are accessible following WAI-ARIA standards which I think is a pending subject for most of us. If you don't know why this is so important, please check out [this article](https://dev.to/mokkapps/why-a-good-frontend-developer-should-care-about-web-accessibility-545m).
-- Components are easy to theme.
+- Components are easy to theme, expand and fully customize.
 - Combine components, components are small and are easy to combine to form bigger structures.
-- Different colour modes, switching between the typical light and dark colours or even any other colour will be a piece of cake.
+- Different colour modes, switching between the typical light and dark colours or even any other set of colours will be a piece of cake.
 - You will do more with less in less time, which is in fact the goal of most libraries and frameworks.
 - The community is still quite small (which can be a good thing, you can join from the beginning), but it is very active.
-
-After testing other libraries I would describe Chakra UI as having a clean default design like in Material UI with the simplicity of colours and responsive design provided by TailwindCSS plus the atomic design of Antd components and a convenient accessibility layer all in one package.
 
 ## Resources
 
@@ -204,9 +202,174 @@ Maybe this file can be very large if you need a lot of changes, but the base the
 
 ### Responsive
 
-In the next section you will find how to set up the Dark Mode with the usage of the hooks provided by the library.
+Working with responsive styles is very easy, forget about media-queries and rewriting css classes (you can use it if you need to of course).
+
+Chakra UI works with default breakpoints but you can create your own:
+
+```js
+import { createBreakpoints } from "@chakra-ui/theme-tools"
+
+const breakpoints = createBreakpoints({
+  sm: "30em",
+  md: "48em",
+  lg: "62em",
+  xl: "80em",
+  "2xl": "96em",
+})
+```
+
+Let's say you have a div and you want to resize it according to different breakpoints:
+
+```js
+<Box width={[300, 400, 500]}>
+  I am a div
+</Box>
+```
+
+The array will be matched internally so:
+
+- 300 will be applied from 30em
+- 400 will be applied from 48em
+- 500 will be applied from 62em
+
+Another syntax for responsive values can be:
+
+```js
+<Box width={{ sm: '300px', md: '400px', xl: '500px' }}>
+  I am a div
+</Box>
+```
+
+In the example above we are doing the same thing but we are targeting a specific breakpoint. To get the same result in the array example we need to pass a null to skip the `lg` breakpoint: `[300, 400, null, 500]`.
+
+With this syntax you don't need any media queries (Chakra UI will do it under the bonnet), but if you need to use media queries check out the next section on Hooks.
+
+### Dark Mode
+
+The components provided by Chakra UI support dark mode. The only configuration you need to provide is a `ColorModeScript`:
+
+#### NextJS
+
+```js
+// pages/_document.js
+import { ColorModeScript } from '@chakra-ui/react'
+import NextDocument, { Html, Head, Main, NextScript } from 'next/document'
+
+import theme from '@/styles/theme'
+
+export default class Document extends NextDocument {
+  render() {
+    return (
+      <Html lang="en">
+        <Head />
+        <body>
+          <ColorModeScript initialColorMode={theme.config.initialColorMode} />
+          <Main />
+          <NextScript />
+        </body>
+      </Html>
+    )
+  }
+}
+```
+
+#### CRA
+
+```js
+// index.js
+import ReactDOM from "react-dom"
+
+import App from "./App"
+import theme from "./theme"
+
+ReactDOM.render(
+  <>
+    <ColorModeScript initialColorMode={theme.config.initialColorMode} />
+    <App />
+  </>,
+  document.getElementById("root"),
+)
+```
+
+Let's check in the next section which hooks you need to use to switch between topics.
 
 ## Hooks
+
+Chakra UI also provides a collection of handy hooks to work faster.
+
+### useColorMode
+
+In the previous section we were configuring our application with dark mode, let's see how to build a button to switch between light and dark mode.
+
+```js
+// components/ColorChanger.js
+import { IconButton, useColorMode, useColorModeValue } from '@chakra-ui/react'
+import { SunIcon, MoonIcon } from '@chakra-ui/icons'
+
+export default function ColorChanger() {
+  const { toggleColorMode } = useColorMode()
+  const text = useColorModeValue('dark', 'light')
+  const SwitchIcon = useColorModeValue(MoonIcon, SunIcon)
+
+  return (
+    <IconButton
+      size="md"
+      fontSize="lg"
+      aria-label={`Switch to ${text} mode`}
+      variant="ghost"
+      color="current"
+      onClick={toggleColorMode}
+      icon={<SwitchIcon />}
+    />
+  )
+}
+```
+
+`useColorMode` provides the `toggleColorMode` function and that's all we need to switch between the two themes, try this hook and see how all the components included in the library switch automatically without any configuration.
+
+#### useColorModeValue
+
+In the example above you can see `useColorModeValue` this hook is very useful to assign different colours depending on the theme we are in. For example:
+
+```js
+// components/WordCounters.js
+import { Flex, Text, useColorModeValue } from '@chakra-ui/react'
+
+export default function WordCounters({ value, caption }) {
+  const bg = useColorModeValue('whiteAlpha.900', 'gray.800')
+
+  return (
+    <Flex flexDirection="column" alignItems="center" padding="1rem" bg={bg}>
+      <Text fontSize="3xl" fontWeight="bold">
+        {value}
+      </Text>
+      <Text>{caption}</Text>
+    </Flex>
+  )
+}
+```
+
+In this example we are changing the background of this component from `whiteAlpha.900` in the light theme to `gray.800` when we switch to the dark theme.
+
+### useMediaQuery
+
+As I said before, if we need to use media-query we can use this hook:
+
+```js
+import { useMediaQuery } from "@chakra-ui/react"
+
+function Example() {
+  const [isLargerThan1280] = useMediaQuery("(min-width: 1280px)")
+
+  return (
+    <Text>
+      {isLargerThan1280 ? "larger than 1280px" : "smaller than 1280px"}
+    </Text>
+  )
+}
+```
+
+With the help of this hook you can execute code when the media query is triggered.
 
 ## Comparison with other libraries
 
@@ -214,21 +377,21 @@ There are other well know libraries like [Material UI](https://material-ui.com/)
 
 ### Material UI
 
-My biggest concern about Material UI it's the API, you must learn a lot to use the library and you will get a very nice and clean design but on the other side it's a design hard to customize to the point that seems yours.
+My biggest concern about Material UI is the API, you have to learn a lot to use the library and you will get a very nice and clean design but on the other hand it is a difficult design to customize to the point that it looks like your own.
 
-The beauty of Chakra UI it's you can leave the library as is or change a few colors (like I did in Handy Tools) or customize to the point to see as your own library and all of that without pages and pages of API.
+The beauty of Chakra UI is that you can leave the library as it is or change some colours (like I did in Handy Tools) or customise it to the point where it looks like your own library and all that without pages and pages of API.
 
 ### Antd
 
-I use Antd before Chakra UI and the atomic components was a blast too, very easy to use and easy documentation to follow but for the customization I find harder than Chakra UI.
+I use Antd before Chakra UI and the atomic components were awesome too, very easy to use and easy to follow documentation but for customisation I find it more difficult than Chakra UI.
 
-In Antd they done the customization using Less.
+In Antd they did the customisation using Less.
 
 ### Tailwind CSS
 
-I love working on projects with Tailwind CSS, it definitely speeds up the development process and I find it very useful when it comes to getting things done. The performance is better and if you or your team has experience with bootstrap you will get the knowledge in no time.
+I love working on projects with Tailwind CSS, it definitely speeds up the development process and I find it very useful when it comes to getting things done. The performance is better and if you or your team have experience with bootstrap, you will get the knowledge in no time.
 
-The problem I see with Tailwind CSS is keeping the code clean and especially in projects with more members having a good architecture for that part is not easy. Things like accessibility or keyboard navigation have to be handled manually.
+The problem I see with Tailwind CSS is keeping the code clean and especially in projects with more members, having a good architecture for that part is not easy. Things like accessibility or keyboard navigation have to be handled manually.
 
 With Chakra UI in the end it's all props like in any other React component, so I find it easier to use it for teamwork.
 
@@ -305,7 +468,7 @@ But yes, in the end the concern about having separate standard CSS files can be 
 - You need your own component library but from a solid base.
 - You are using another component library that you find doesn't speed up your development time.
 
-*I'm talking about the size of the project because CSS-in-JS have a common problem, they are JS after all, it's easier for the browser to process CSS files instead of running JS, especially if your application is changing data very often. Common web applications are perfectly suited to Chakra UI's performance.
+*I'm talking about the size of the project because CSS-in-JS have a common problem, they are JS after all, it's easier for the browser to process CSS files instead of running JS, especially if your application is changing data very often but common web applications are perfectly suited to Chakra UI's performance.
 
 **Don't think you can avoid learning CSS because of Chakra UI or any other CSS-in-JS solution, the syntax is quite similar and knowing proper CSS will help a lot.
 
@@ -323,3 +486,7 @@ But yes, in the end the concern about having separate standard CSS files can be 
 - [Choc UI](https://choc-ui.tech/) Another collection of big components for developing common webpages blazing fast. They have a nice roadmap of future components so be sure to check out.
 
 ## Conclusion
+
+If you need a good quality of components ready to start your next project and/or want to customize the components having a good starting point I think Chakra UI has a perfect balance of effort/results.
+
+For me doing Handy Tools, besides being a very small example project for this article, was a good experience, I would describe Chakra UI as having a clean default design like in Material UI with the simplicity of colours and responsive design provided by TailwindCSS plus the atomic design of the Antd components and a convenient accessibility layer all in one package.
