@@ -7,7 +7,6 @@ import { StyledContent, Figure } from './PostBody.styles'
 
 const components = {
   img: image => {
-    console.log(image)
     return (
       <Figure>
         <Image
