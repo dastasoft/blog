@@ -15,6 +15,7 @@ import { HOMEPAGE, URLs } from '@/lib/constants'
 
 export default function Post({ post }) {
   const router = useRouter()
+  const url = `${HOMEPAGE}posts/${post.slug}`
 
   if (!router.isFallback && !post?.slug) {
     return <ErrorPage statusCode={404} />
@@ -26,7 +27,7 @@ export default function Post({ post }) {
         <NextSeo
           title={post.title}
           description={post.excerpt}
-          canonical={`${HOMEPAGE}posts/${post.slug}`}
+          canonical={url}
           openGraph={{
             article: {
               publishedTime: post.date,
@@ -34,7 +35,7 @@ export default function Post({ post }) {
               section: post.section,
               tags: post.tags,
             },
-            url: `${HOMEPAGE}${post.slug}`,
+            url,
             title: post.title,
             description: post.excerpt,
             images: [
