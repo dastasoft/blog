@@ -39,7 +39,7 @@ So what are the main benefits of using this component library.
 
 You can go directly to the [sample project](https://github.com/dastasoft/handy-tools) that uses almost everything I'm going to talk in this article or try [the final PWA version](https://handy-tools.dastasoft.com/).
 
-Additional sample project, [Apartmentify](https://apartmentfy.dastasoft.com/)
+Additional sample project, [Apartmentfy](https://apartmentfy.dastasoft.com/)
 
 And be sure to check the [official Chakra UI webpage](https://chakra-ui.com/).
 
