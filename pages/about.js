@@ -1,12 +1,13 @@
-import Image from 'next/image'
 import styled from 'styled-components'
 import { NextSeo } from 'next-seo'
+import { FaGithub, FaLinkedin, FaDev, FaTwitter } from 'react-icons/fa'
+import { MdEmail } from 'react-icons/md'
 
 import {
   colorBackgroundAndTransition,
   imageDarkModeSupport,
 } from '@/components/GlobalStyle'
-import { ICON_SIZES, URLs } from '@/lib/constants'
+import { URLs } from '@/lib/constants'
 
 const About = () => {
   return (
@@ -18,12 +19,11 @@ const About = () => {
       <Title>About</Title>
       <Text>
         <p>
-          Hi, I'm Daniel and I live in Barcelona, I've
-          been making websites, applications, games and learning the ins and
-          outs of technology since I can remember. I love learning, teaching
-          what I have learned and approaching projects from an agile vision and
-          from the user's point of view maintaining the quality of the code
-          following the best practices.
+          Hi, I'm Daniel and I live in Barcelona, I've been making websites,
+          applications, games and learning the ins and outs of technology since
+          I can remember. I love learning, teaching what I have learned and
+          approaching projects from an agile vision and from the user's point of
+          view maintaining the quality of the code following the best practices.
         </p>
 
         <p>
@@ -91,28 +91,19 @@ const About = () => {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <Image
-            src="/assets/envelope-solid.svg"
-            alt="Mail logo"
-            {...ICON_SIZES}
-          />
+          <MdEmail fontSize="40px" />
         </a>
         <a href={URLs.GITHUB} target="_blank" rel="noopener noreferrer">
-          <Image
-            src="/assets/github-brands.svg"
-            alt="Github logo"
-            {...ICON_SIZES}
-          />
+          <FaGithub fontSize="40px" />
         </a>
         <a href={URLs.DEV} target="_blank" rel="noopener noreferrer">
-          <Image src="/assets/dev-brands.svg" alt="Dev logo" {...ICON_SIZES} />
+          <FaDev fontSize="40px" />
         </a>
         <a href={URLs.LINKEDIN} target="_blank" rel="noopener noreferrer">
-          <Image
-            src="/assets/linkedin-brands.svg"
-            alt="LinkedIn logo"
-            {...ICON_SIZES}
-          />
+          <FaLinkedin fontSize="40px" />
+        </a>
+        <a href={URLs.TWITTER} target="_blank" rel="noopener noreferrer">
+          <FaTwitter fontSize="40px" />
         </a>
       </IconHolder>
     </Container>
@@ -174,6 +165,7 @@ export const IconHolder = styled.div`
 
     a {
       margin-right: 1rem;
+      ${({ theme }) => colorBackgroundAndTransition(theme)}
     }
   }
 `
