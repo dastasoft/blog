@@ -8,16 +8,16 @@ const SocialNetworks = () => {
   return (
     <IconHolder>
       <a href={URLs.GITHUB} target="_blank" rel="noopener noreferrer">
-        <FaGithub />
+        <FaGithub fontSize="32px" />
       </a>
       <a href={URLs.DEV} target="_blank" rel="noopener noreferrer">
-        <FaDev />
+        <FaDev fontSize="32" />
       </a>
       <a href={URLs.LINKEDIN} target="_blank" rel="noopener noreferrer">
-        <FaLinkedin />
+        <FaLinkedin fontSize="32" />
       </a>
       <a href={URLs.TWITTER} target="_blank" rel="noopener noreferrer">
-        <FaTwitter />
+        <FaTwitter fontSize="32px" />
       </a>
     </IconHolder>
   )
