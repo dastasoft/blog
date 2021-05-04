@@ -12,6 +12,8 @@ tags: ['beginners', 'react', 'style', 'nextjs']
 section: 'frontend'
 ---
 
+EDIT: An additional project has been added as an example: [Apartmentfy](https://apartmentfy.dastasoft.com/)
+
 If you want to build an application or a website you need to take care of many things and in that sea of options which component library, css or ui framework will take a big role in the final version of your product.
 
 I have tried some component libraries like Material UI, Antd, React Boostrap and other CSS frameworks like styled-components, TailwindCSS and so on, I even tried to make some mini set of components for myself with [React and Bit](https://github.com/dastasoft/react-ui-components).
@@ -36,6 +38,8 @@ So what are the main benefits of using this component library.
 ## Resources
 
 You can go directly to the [sample project](https://github.com/dastasoft/handy-tools) that uses almost everything I'm going to talk in this article or try [the final PWA version](https://handy-tools.dastasoft.com/).
+
+Additional sample project, [Apartmentify](https://apartmentfy.dastasoft.com/)
 
 And be sure to check the [official Chakra UI webpage](https://chakra-ui.com/).
 
