@@ -28,6 +28,10 @@ export const Container = styled.div`
     width: inherit;
   }
 
+  a {
+    color: ${({ theme }) => theme.UIText};
+  }
+
   hr {
     border: 1px solid ${({ theme }) => theme.UIText};
     height: 0px;

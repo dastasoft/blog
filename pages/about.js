@@ -160,12 +160,15 @@ export const IconHolder = styled.div`
   justify-content: space-between;
   align-items: center;
 
+  a {
+    ${({ theme }) => colorBackgroundAndTransition(theme)}
+  }
+
   @media (min-width: ${({ theme }) => theme.breakpoints.lg}) {
     justify-content: center;
 
     a {
       margin-right: 1rem;
-      ${({ theme }) => colorBackgroundAndTransition(theme)}
     }
   }
 `

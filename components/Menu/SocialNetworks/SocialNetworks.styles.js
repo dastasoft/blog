@@ -6,10 +6,6 @@ export const IconHolder = styled.div`
   align-content: center;
   max-width: 400px;
 
-  img {
-    filter: ${({ theme }) => (theme.UIText === 'white' ? 'invert()' : 'none')};
-  }
-
   @media (min-width: ${({ theme }) => theme.breakpoints.lg}) {
     margin-left: 1rem;
 
