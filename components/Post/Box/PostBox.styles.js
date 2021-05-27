@@ -36,4 +36,22 @@ export const Article = styled.article`
   > * {
     padding: 0.1rem 0;
   }
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.lg}) {
+    h2 {
+      min-height: 4rem;
+    }
+  }
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.xl}) {
+    h2 {
+      min-height: 6rem;
+    }
+  }
+
+  @media (min-width: ${({ theme }) => theme.breakpoints['2xl']}) {
+    h2 {
+      min-height: 6.1rem;
+    }
+  }
 `

@@ -12,22 +12,24 @@ export const StyledContent = styled.div`
   h2 {
     font-size: 1.875rem;
     line-height: 1.375;
-    margin-top: 3rem;
-    margin-bottom: 1rem;
+    margin-top: 1.5em;
+    margin-bottom: 0.5em;
   }
 
   h3 {
     font-size: 1.5rem;
     line-height: 1.375;
-    margin-top: 2rem;
-    margin-bottom: 1rem;
+    margin-top: 1.5em;
+    margin-bottom: 0.5em;
   }
 
   ul {
     list-style: disc;
     margin-left: 2rem;
+    margin-bottom: 1.5em;
+
     li {
-      padding: 0.3rem 0;
+      padding: 0.5em 0;
     }
   }
 
@@ -43,7 +45,7 @@ export const StyledContent = styled.div`
   }
 
   p {
-    margin: 1rem 0 1.55rem 0;
+    margin-bottom: 1.5em;
   }
 
   pre,
@@ -54,7 +56,14 @@ export const StyledContent = styled.div`
     word-wrap: break-word;
   }
 
-  pre {
+  code {
+    color: #6da34dff;
+    background-color: #282c34;
+    padding: 0.2em 0.5em;
+    font-size: 1rem;
+  }
+
+  pre > code {
     display: block;
     overflow-x: auto;
     padding: 0.5em;
