@@ -2,7 +2,7 @@
 title: 'Here is what every React Developer needs to know about TypeScript - Part 1'
 excerpt: 'Is it worth using TypeScript with React in 2021? Find out why through examples, you do not need to have any previous TypeScript knowledge.'
 coverImage: '/assets/posts/preview/typescript-react.webp'
-date: '2021-05-28T00:00:00.000Z'
+date: '2021-05-27T00:00:00.000Z'
 author:
   name: dastasoft
   picture: '/assets/authors/dastasoft.jpeg'
