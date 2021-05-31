@@ -266,7 +266,7 @@ Now you need to include the ts file in the HTML but, browsers don't understand T
     <title>Document</title>
   </head>
   <body></body>
-  <script src="./index.js"><script/>
+  <script src="./index.js"></script>
 </html>
 ```
 
