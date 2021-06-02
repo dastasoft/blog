@@ -205,11 +205,11 @@ yarn add -D typescript @types/node @types/react @types/react-dom @types/jest
 - You can use the ready-to-use boilerplate provided in the resources section.
 
 ```bash
-npm install --save typescript @types/node @types/react @types/react-dom @types/jest
+npm install --save-dev typescript @types/node @types/react @types/react-dom @types/jest
 
 # or
 
-yarn add typescript @types/node @types/react @types/react-dom @types/jest
+yarn add -D typescript @types/node @types/react @types/react-dom @types/jest
 ```
 
 ### Global Installation
