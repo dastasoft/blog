@@ -191,11 +191,11 @@ In this article we will use the Global Installation, because I think it is bette
 If it is an existing project, you can use the following command, and convert your js files to ts/tsx files.
 
 ```bash
-npm install --save typescript @types/node @types/react @types/react-dom @types/jest
+npm install --save-dev typescript @types/node @types/react @types/react-dom @types/jest
 
 # or
 
-yarn add typescript @types/node @types/react @types/react-dom @types/jest
+yarn add -D typescript @types/node @types/react @types/react-dom @types/jest
 ```
 
 ### Installation with Nextjs
