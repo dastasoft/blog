@@ -45,7 +45,7 @@ export default class MyDocument extends Document {
             <script
               async
               defer
-              data-website-id="2cf50fa8-4a72-43c9-803e-714ef4029d88"
+              data-website-id="bd5a32c1-787f-4461-828b-7144a85be6bf"
               src="https://hal-umami-analytics.vercel.app/umami.js"
             ></script>
           )}
