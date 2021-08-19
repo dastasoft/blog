@@ -16,7 +16,7 @@ I'm sure you've heard of Node.js but maybe you haven't delved into it or you onl
 
 Through this guide we will see what `Node` and `Express` is and how it works, build a REST API to store and retrieve data, test endpoints and upload our application.
 
-By the end of this series you will have a complete overview of the MERN stack (MongoDB, Express, React and Node).
+By the end of this series you will have a complete overview of the MERN stack (MongoDB, Express, React and Node) and testing skills.
 
 ## Roadmap
 
@@ -26,7 +26,7 @@ In this series we will also create a React application that will use this back-e
 
 ## TypeScript
 
-Throughout this guide I will be using TypeScript instead of plain JavaScript, you can follow it without worries because the syntax is quite similar but if you wonder why you should bother dealing with TS instead of JS I recommend you read [my last post](https://blog.dastasoft.com/posts/heres-what-every-react-developer-needs-to-know-about-typescript).
+In the sample project I will be using TypeScript instead of plain JavaScript, you can follow it without worries because the syntax is quite similar but if you wonder why you should bother dealing with TS instead of JS I recommend you read [my last post](https://blog.dastasoft.com/posts/heres-what-every-react-developer-needs-to-know-about-typescript).
 
 My last post was for TypeScript on the front-end but everything explained there is applicable here. If in the front-end TS is useful in the back-end it is even more useful because back-end development usually has more logic and let's say more critical than front-end development, but take this statement with a grain of salt.
 
@@ -45,13 +45,13 @@ In this guide we are going to work on a simple REST API that stores and retrieve
 
 As you know, we are divided into front-end and back-end, until Node.js was released, if we think of JavaScript it was directly targeted at front-end development.
 
-With Node.js, we can run JavaScript on the server side or even directly on a computer. Well, technically a server is a computer, but you get the point. But JavaScript only runs inside the browser, so how can it now run directly on a computer? Node.js is mainly built in C++ which inside has Google's V8 engine, this engine converts the JavaScript directly into native machine code.
+With Node.js, we can run JavaScript on the server side or even directly on a computer. Well, technically a server is a computer, but you get the point. But JavaScript only runs inside the browser, so how can it now run directly on a computer? Node.js is mainly built in C++, Node inside has Google's V8 engine, this engine converts the JavaScript directly into native machine code.
 
 So basically you write your normal JavaScript, which Node passes to V8 which generates machine code and the computer is able to read that code.
 
 ![node diagram](/assets/posts/content/node-express/node.png)
 
-But Node is much more than a bridge between your JS and V8, through different modules Node allows us, to give some examples, to communicate with the computer's file system or the topic we will see in this guide, to set up a server that reacts to requests and serves content from/to a database.
+But Node is much more than a bridge between your JS and V8, through different modules Node allows us, to give some examples, to communicate with the computer's file system or to set up a server that reacts to requests and serves content from/to a database.
 
 That's great but, I'm a web developer who doesn't intend to write applications for Windows or any other OS, how do you put Node.js on the server and replace my fancy Java Spring Boot + Hibernate dynamised with Lombok annotations?
 
@@ -63,7 +63,7 @@ It can also communicate with a database, retrieve some data, do some calculation
 
 ## Why to use Node.js?
 
-- It's all JavaScript → Even if you look at this from the perspective of your own or the point of view of a company it is still true, just one language and you can make a complete application, both sides. For you it's interesting, reusing your current domain with a language in another field, but for companies this is a good point too, they can reuse the current expertise of their workers.
+- It's all JavaScript → Even if you look at this from the perspective of your own or the point of view of a company it is still true, just one language and you can make a complete application, both sides. For you it's interesting, reusing your current skills with a language in another field, but for companies this is a good point too, they can reuse the current expertise of their workers.
 - It's all JavaScript x2 → Because both sides are JavaScript, it's very possible to reuse code between both sides, do you already have a function that validates ID cards? Use exactly the same on the front-end and back-end.
 - Community → There are a lot of utilities, packages and even frameworks built on top of Node.js, you will get a lot of support and there are tons of ready to use tools available.
 - It's highly used → Take a look at this screenshot from [State of JS 2020](https://2020.stateofjs.com/), Express which is built on top of Node.js is in terrible shape. But yes, the "everyone uses it" argument should be taken very carefully.
@@ -74,7 +74,7 @@ It can also communicate with a database, retrieve some data, do some calculation
 
 The easiest way to install Node.js on your system is to go to the official website, especially [https://nodejs.org/en/download/current/](https://nodejs.org/en/download/current/) where all the platforms and options are listed. You can choose between the Long Term Support or the latest version, choose what you want, for the case of this guide both options are good, personally I am using the current version which is 16.5.0.
 
-For Windows and Mac there is no mystery with the installation so if you are Linux users like me, you will find this resource [https://github.com/nodesource/distributions/blob/master/README.md](https://github.com/nodesource/distributions/blob/master/README.md) more useful.
+For Windows and Mac there is no mystery with the installation so if you are Linux user like me, you will find [this resource](https://github.com/nodesource/distributions/blob/master/README.md) more useful.
 
 For example for Ubuntu users:
 
@@ -94,7 +94,7 @@ npm --version
 
 If you type `node` in your terminal, you will be able to execute JavaScript code in the same way as you do in a Developer Tools inside the browser. If you want to exit, type `.exit` or use `Ctrl+C`.
 
-Open your favourite IDE and create a `server.js` file (the name is totally up to you), in this JS file you can write your normal JavaScript and run it by `node server`.
+Open your favourite IDE and create a `server.js` file (the name is totally up to you), in this JS file you can write your normal JavaScript and run it by typing `node server` on your terminal.
 
 Congratulations, you are now running JavaScript code outside the browser!
 
@@ -219,7 +219,7 @@ The filesystem module is one of Node's game changers, you can access the filesys
 
 Let's create a `filesystem.js` to do some testing with the filesystem module:
 
-```jsx
+```js
 // filesystem.js
 const fs = require("fs");
 
@@ -233,20 +233,27 @@ If you do `node filesystem` you will get the following error message `Error: ENO
 
 Create a folder called `assets` and a `test.txt` file with some content in it, try again.
 
-If we place the following code following the example above:
+Let's add a `writeFile` function:
 
-```jsx
+```js
 // filesystem.js
+const fs = require("fs");
+
+fs.readFile("./assets/test.txt", (error, data) => {
+  if (error) console.log(error);
+  else console.log(data.toString());
+});
+
 fs.writeFile("./assets/test.txt", "I'm soooo fast", () => {
   console.log("Done sir");
 });
 ```
 
-As you can see, before you can read the file it is already written with the new text and when `readFile` does its job it prints the new content. This happens because these two methods are asynchronous and do not block the execution of the code, the code continues to execute line by line and `writeFile` terminates first.
+If you try this code, you will see that before you can read the file it is already written with the new text and when `readFile` does its job it prints the new content. This happens because these two methods are asynchronous and do not block the execution of the code, the code continues to execute line by line and `writeFile` terminates first.
 
-Try this code again:
+Try this code instead:
 
-```jsx
+```js
 console.log(fs.readFileSync("./assets/test.txt").toString()); // I'm soooo fast
 
 fs.writeFileSync("./assets/test.txt", "I'm actually faster");
@@ -260,7 +267,7 @@ FS allows a lot more actions but you have the basic idea, with this module we ca
 
 With these modules we can configure our Node as a HTTP/HTTPS server, this will be the module we will use to create the REST API.
 
-```jsx
+```js
 // server.js
 const http = require("http");
 
@@ -289,7 +296,7 @@ As you can see, the `console.log` is not printed to the browser console it is on
 
 ## Creating a Server
 
-```jsx
+```js
 // server.js
 const http = require("http");
 
@@ -383,12 +390,6 @@ One tip, when using an external package, even if you have seen it in a tutorial,
 
 ## Express
 
-As we saw in the last section we will use Express in our project but I think the most important thing when you add a new package to your project is know why and what problem actually solves.
-
-Let's build a simple (and incomplete) REST API as an example. You can achieve this behavior without installing Express and only using Node.
-
-First of all let's create a folder `database` and a `todos.json` inside of it, this file will act as a simple database.
-
 As we saw in the last section we will use Express in our project but I think the most important thing when you add a new package to your project is to know why and what problem it actually solves.
 
 We are going to build a simple REST API as an example. You can achieve this behavior without installing Express and just using Node.
@@ -417,7 +418,7 @@ First let's create a `database` folder and a `companies.json` inside it, this fi
 ]
 ```
 
-```jsx
+```js
 // server.js
 const fs = require("fs");
 const http = require("http");
@@ -440,7 +441,7 @@ const getCompanies = res => {
   });
 };
 
-const deteleCompany = (res, id) => {
+const deleteCompany = (res, id) => {
   fs.readFile(DB_PATH, (error, data) => {
     if (error) {
       console.error(error);
@@ -470,7 +471,7 @@ const server = http.createServer((req, res) => {
   if (url.pathname === "/companies" && req.method === "GET") {
     getCompanies(res);
   } else if (url.pathname === "/companies" && req.method === "DELETE") {
-    deteleCompany(res, url.searchParams.get("id"));
+    deleteCompany(res, url.searchParams.get("id"));
   } else {
     res.statusCode = 404;
     res.end();
@@ -488,11 +489,11 @@ Within the two different methods we read the JSON file and return the content, i
 
 If you want to try the previous example, I recommend you to use [Postman](https://www.postman.com/), an application that we will see in detail later, with which you can execute different requests to a specific endpoint using different methods.
 
-As you can see, the REST API above is incomplete, we only have the `get`, `delete`and not found endpoints, but it's enough to see some advantages of using Express, so let's compare it with an Express version of the same application.
+As you can see, the REST API above is incomplete, we only have the `get`, `delete` and `not found` endpoints, but it's enough to see some advantages of using Express, so let's compare it with an Express version of the same application.
 
 Create a new file `app.js`:
 
-```jsx
+```js
 // app.js
 const express = require("express");
 const fs = require("fs");
@@ -513,7 +514,7 @@ const getCompanies = (req, res) => {
   });
 };
 
-const deteleCompany = (req, res) => {
+const deleteCompany = (req, res) => {
   const { id } = req.params;
 
   fs.readFile(DB_PATH, (error, data) => {
@@ -536,7 +537,7 @@ const deteleCompany = (req, res) => {
 
 app.get("/companies", getCompanies);
 
-app.delete("/companies/:id", deteleCompany);
+app.delete("/companies/:id", deleteCompany);
 
 app.use((req, res) => {
   res.status(404).send("Not found");
@@ -555,7 +556,7 @@ The server does not need to specify the default value of `localhost`.
 
 You can also use an extended version:
 
-```jsx
+```js
 app.listen(PORT, HOSTNAME, () => {
   console.log("Server running");
 });
@@ -567,7 +568,7 @@ As you can see the routes section is simplified, cleaner and more readable. Each
 
 All routes accept a function that receives the request and response objects:
 
-```jsx
+```js
 app.get("/companies", (req, res) => {
   // Do something
 });
@@ -575,7 +576,7 @@ app.get("/companies", (req, res) => {
 
 With this in mind we can isolate that logic within a function and pass the function directly:
 
-```jsx
+```js
 // app.get("/companies", (req, res) => getCompanies(req, res));
 app.get("/companies", getCompanies);
 ```
@@ -588,7 +589,7 @@ Finally, in case someone tries to access a route we don't have defined, we defin
 
 In the Node version we send back and end the communication with `end` method which still it's available but Express allows us to do in a simpler way:
 
-```jsx
+```js
 res.send(data);
 ```
 
@@ -606,6 +607,22 @@ res.status(200).send(data);
 
 Remember the `app.use` we saved for later? Now is the time. Try pasting the `app.use` lines at the beginning of the file, put them before the other routes and see what happens when you make a request.
 
+```js
+// app.js
+
+app.use((req, res) => {
+  res.status(404).send("Not found");
+});
+
+app.get("/companies", getCompanies);
+
+app.delete("/companies/:id", deleteCompany);
+
+app.listen(PORT, HOSTNAME, () => {
+  console.log("Server running");
+});
+```
+
 As you can see, now every request is responding with `Not found` because `use` is catching all requests and doing an action. Now remove that and try these statements at the top of the file:
 
 ```jsx
@@ -614,6 +631,18 @@ As you can see, now every request is responding with `Not found` because `use` i
 app.use((req, res, next) => {
   console.log("I'm watching you");
   next();
+});
+
+app.get("/companies", getCompanies);
+
+app.delete("/companies/:id", deleteCompany);
+
+app.use((req, res) => {
+  res.status(404).send("Not found");
+});
+
+app.listen(PORT, HOSTNAME, () => {
+  console.log("Server running");
 });
 ```
 
@@ -634,7 +663,6 @@ In the diagram above you can see the following:
 - The first `app.use` is executed and performs `next`.
 - The second `app.use` is executed and performs `next`.
 - The request was a get method that asked for the path /, so the `app.get` executes and sends a response.
-- 
 
 Sending a response is what breaks the middleware chain so it is important to note the order.
 
@@ -642,7 +670,7 @@ Sending a response is what breaks the middleware chain so it is important to not
 
 It is likely that if you are building a front-end that submits data to a REST API, to submit a form for example, you will need to read those values. In the past, to do this we used an external middleware called `body.parser` to read these values from the `req.body`. Nowadays this is already integrated in Express and is one of the built-in middlewares.
 
-```jsx
+```js
 app.use(express.urlencoded({ extended: true }));
 ```
 
@@ -650,7 +678,7 @@ app.use(express.urlencoded({ extended: true }));
 
 There are lots of external packages for Express, but earlier I mentioned `morgan`, this package is just an external middleware that if I show you now how to use it you will understand the idea perfectly:
 
-```jsx
+```js
 import morgan from "morgan";
 
 app.use(morgan("dev"));
@@ -662,9 +690,200 @@ Extending the capabilities of Express with external middleware as you can see is
 
 ### MVC
 
+MVC stands for Model-View-Controller and is a well-established software design pattern in different backend systems that can be useful here as well. A graphical summary of what MVC is:
+
+[mvc-diagram](/assets/posts/content/node-express/mvc-diagram.png)
+
+At this stage of the tutorial we will only use the `Controller`, the `Model` we will add later when we define a model for the database and the `View` in this case is not applicable because we are not serving HTML from the server, the view will be our React application in any case.
+
+Even the lack of certain parts, splitting our code following the MVC pattern is useful for readability and maintainability purposes, so let's isolate all the different functions for manipulating data that we have seen before in the controller.
+
+Under the `controller` folder, we'll place the `company.js` and `joboffer.js` files, with code similar to the following: (check out the example project for the full code)
+
+```js
+// controller/company.js
+import path from "path";
+import fs from "fs";
+
+const DB_PATH = path.resolve("database/companies.json");
+
+const list = (req, res) => {
+  fs.readFile(DB_PATH, (error, data) => {
+    if (error) {
+      console.error(error);
+      res.status(500).end();
+    } else {
+      res.status(200).send(JSON.parse(data));
+    }
+  });
+};
+
+const delete = (req, res) => {
+  const { id } = req.params;
+
+  fs.readFile(DB_PATH, (error, data) => {
+    if (error) {
+      console.error(error);
+      res.status(500).end();
+    } else {
+      const companies = JSON.parse(data);
+      const filteredData = JSON.stringify(
+        companies.filter(company => company.id !== id),
+        null,
+        2
+      );
+
+      fs.writeFileSync(DB_PATH, filteredData);
+      res.status(200).send(JSON.parse(filteredData));
+    }
+  });
+};
+
+export { list, delete }
+```
+
+*The other methods can be found in the example project.
+
+By doing so, we have isolated the code relating to working with the data in a single file, which we can then reuse as needed, as in the next section.
+
 ### Routes using router
 
-### TypeScript for type checking the model
+There is a better way to organise the routes, especially now that we want to add another context, so far we only talked about routes about `company` but now we want to add routes for `job offer`. Let's use the `router` to organise the routes in a better way.
+
+Inside the `routes` folder, we'll place two files `company.js` and `joboffer.js`, which will contain something similar to this code: (check the example project for the full code)
+
+```js
+// routes/company.js
+import express from "express";
+
+import { list, create, details, update, remove } from "../controller/company";
+
+const router = express.Router();
+
+router.get("/", list);
+router.post("/", create);
+router.get("/find/:id", details);
+router.put("/:id", update);
+router.delete("/:id", remove);
+
+export default router;
+```
+
+Let's check what happens there:
+- We use the `Router` function of Express.
+- With the router, we can add routes in the same way as we did with `app`.
+- Finally we export the router.
+
+Later, we can use this router to define all routes:
+
+```js
+import express from "express";
+
+import { companyRoutes, jobOfferRoutes } from "../routes";
+
+const app = express();
+
+// routes
+app.use("/company", companyRoutes);
+app.use("/job-offer", jobOfferRoutes);
+```
+
+With `app.use` we define a context for that path (this is entirely optional) and add the paths we defined earlier. The advantage of using the context is that the routes in the example above are simpler and easier to move between contexts.
+
+So instead of declaring all your routes in your `app.js` or whatever main file you have, isolate them in their own files, it will be easier and less error prone for other developers to modify in the future.
+
+
+### TypeScript
+
+As I said at the beginning of this guide, TS can be useful in this project, and if you check the example project is entery in TS, in later stages of the guide it will be even more useful because of the type checking of the model, but for now here are some benefits:
+
+#### Clear data structure
+
+```ts
+// types.ts
+
+type Company = {
+  id: string;
+  about: string;
+  industries: string[];
+  name: string;
+  numberEmployees: string;
+  yearFounded: number;
+};
+
+type JobOffer = {
+  id: string;
+  availablePositions?: number;
+  companyId: string;
+  description: string;
+  function: string;
+  industry: string;
+  location: string;
+  numberApplicants?: number;
+  postDate: Date;
+  published: boolean;
+  requirements: string[];
+  salary?: number;
+  workType: string;
+};
+
+export { Company, JobOffer };
+
+```
+
+Declaring the types of our objects gives us, and other developers, a snapshot of what we are talking about. Looking at a single file, you now have a clear picture of the form of the data, which parameters are mandatory and which are optional.
+
+This will be even more useful later, but for now we can use these types in the controller to implement less error-prone functions, use `IntelliSense` efficiently and include these types in our tests.
+
+#### Readable code
+
+Let's check for an updated version of the `remove` function in the company's controller:
+
+```ts
+// controller/company.ts
+import { Request, Response } from "express";
+import path from "path";
+import fs from "fs";
+
+import { Company } from "../types";
+
+const DB_PATH = path.resolve("database/companies.json");
+
+const remove = (req: Request, res: Response) => {
+  const { id } = req.params;
+
+  const companies: Company[] = JSON.parse(fs.readFileSync(DB_PATH).toString());
+  const company: Company | undefined = companies.find(company => company.id === id);
+  const newCompanies: Company[] = companies.filter(company => company.id !== id);
+
+  if (company) {
+    fs.writeFile(DB_PATH, JSON.stringify(newCompanies, null, 2), error => {
+      if (error) {
+        console.error(error);
+        res.status(500).end();
+      } else {
+        res.status(200).send({ message: `Company with id ${id} removed.` });
+      }
+    });
+  } else {
+    res.status(404).send({ message: `Company with id ${id} not found.` });
+  }
+};
+```
+
+Most of the types are inferred and it is not necessary to write it explicitly, but I added it here so that it is better understood that we now know at each step what type of data we are handling and more importantly, the IDE is checking that it follows that form.
+
+#### Better understand of external tools
+
+Do you see this in the previous example?
+
+```ts
+import { Request, Response } from "express";
+
+const remove = (req: Request, res: Response) => {}
+```
+
+Good luck finding out what is inside the `req` and `res` params, you will need to check the documentation or debug, with TS you will automatically have access to the object form and documentation, directly from the IDE, this is one of the main reasons why I am currently using TS in my projects.
 
 ### Postman
 
