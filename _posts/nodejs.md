@@ -889,7 +889,68 @@ Good luck finding out what is inside the `req` and `res` params, you will need t
 
 ## Publish
 
-- Local
-- Heroku
-- AWS
+Let's review what the different options are for publishing our backend so that it is accessible to others, due to the current size of the guide, I will keep this section as a summary but will consider making a more focused guide on this point if I feel it is necessary.
+
+### Local
+
+### AWS
+
+You can use Amazon Web Services to host your Node.js application, I will list the steps but I won't go into the details because using AWS requires some prior knowledge about AWS and is beyond the scope of this guide.
+
+- Request an Elastic Cloud Computer (EC2) instance with Ubuntu for example.
+- Upgrade the system.
+- Install Node.js on the system as we did in the the Setup section for Ubuntu.
+- Clone your back-end project or the example project from git.
+- Perform `npm install && npm start` which will make the Node.js server available.
+
+*This is a simple step-by-step for this guide, there are actually better ways to deal with disconnects, restarts, and so on, check out [pm2](https://pm2.keymetrics.io/) if you are more interested in this part.*
+
+Be careful with this option because AWS has a free tier but may have additional charges for usage.
+
+### Heroku
+
+One of the easiest options and the one I will cover here in more detail is to use [Heroku](https://id.heroku.com). Heroku is a Platform as a Service (PaaS) that will simplify the process of having to configure your system to be visible from the outside and act as a server or the AWS option which as I said before requires some knowledge.
+
+One of the cool things about Heroku is that we can do this kind of testing without any kind of credit card or fee, so it's perfect for a guide like this and your first tests developing backends with Node.js.
+
+*With the example project, I needed to add a `postinstall` script for TypeScript so that Heroku compiles down to JS code before starting the server.*
+
+There are two ways to upload a back-end project like the example project in this guide:
+
+#### Heroku CLI
+
+Heroku provides a command line interface that we can use to deploy the project in a few steps. First install the cli directly from npm:
+
+```sh
+npm install -g heroku
+```
+
+Once installed, we need to log in:
+
+```sh
+heroku login -i
+```
+
+If you want to verify that everything works before uploading to Heroku, you can check it with:
+
+```sh
+heroku local web
+```
+
+`web` will check your `package.json` and look for the `start` script.
+
+Once everything is verified, let's create the project in Heroku and push it:
+
+```sh
+heroku create
+git push heroku main
+```
+
+After `create` you will get the URL where it is stored and you are ready to go, if you are using the example project, you can try with your new url + `/company` for example. In my case [https://mars-pot-backend.herokuapp.com/company](https://mars-pot-backend.herokuapp.com/company).
+
+
+#### Directly on the web.
+
+
+
 - Railway
