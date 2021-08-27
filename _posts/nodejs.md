@@ -887,11 +887,23 @@ Good luck finding out what is inside the `req` and `res` params, you will need t
 
 ### Postman
 
+#### Testing endpoints
+
+#### Creating examples
+
+#### Environment variables
+
+#### Exporting the collection
+
 ## Publish
 
 Let's review what the different options are for publishing our backend so that it is accessible to others, due to the current size of the guide, I will keep this section as a summary but will consider making a more focused guide on this point if I feel it is necessary.
 
 ### Local
+
+On a basic scale you already have a local environment for your node server but it is not available outside your current local network, with this you may be able to test the server as we saw in the Postman section.
+
+Nowadays it is less common to want to use your local machine as a server, and if you prefer not to do that check the next sections, but if you want to expose your local node server to the world you can use [ngrock](https://ngrok.com/), the introduction video on the landing page is self explanatory to be honest :)
 
 ### AWS
 
@@ -951,6 +963,14 @@ After `create` you will get the URL where it is stored and you are ready to go, 
 
 #### Directly on the web.
 
+- Once logged into Heroku, in your [dashboard](https://dashboard.heroku.com/apps) select `New` and `Create new app`, you can choose a name and a region. 
+- Then you can select your project from github and deploy a specific branch.
+- Once deployed, in `Settings` you can check the `Domains` section to see the url of your project, if you are using the example project, you can try your new url + `/company` for example. In my case [https://mars-pot-backend.herokuapp.com/company](https://mars-pot-backend.herokuapp.com/company).
 
+For a successful deployment you must have a `start` script in your `package.json` in this case it will be the script to start the node server.
 
-- Railway
+### Railway
+
+I found [Railway](https://railway.app/) during the process of this guide and I'm quite surprised, I try uploading the example project here and within seconds I have an instance ready to go, even with a provisioned MongoDB available but that's for the next iteration of this guide.
+
+I haven't tested this option in depth but I will try it with future iterations of this series because it seems convenient.
