@@ -2,7 +2,7 @@
 title: 'Node'
 excerpt: 'Node'
 coverImage: '/assets/posts/preview/node-express.webp'
-date: '2021-07-23T00:00:00.000Z'
+date: '2021-09-01T00:00:00.000Z'
 author:
   name: dastasoft
   picture: '/assets/authors/dastasoft.jpeg'
@@ -885,16 +885,6 @@ const remove = (req: Request, res: Response) => {}
 
 Good luck finding out what is inside the `req` and `res` params, you will need to check the documentation or debug, with TS you will automatically have access to the object form and documentation, directly from the IDE, this is one of the main reasons why I am currently using TS in my projects.
 
-### Postman
-
-#### Testing endpoints
-
-#### Creating examples
-
-#### Environment variables
-
-#### Exporting the collection
-
 ## Publish
 
 Let's review what the different options are for publishing our backend so that it is accessible to others, due to the current size of the guide, I will keep this section as a summary but will consider making a more focused guide on this point if I feel it is necessary.
@@ -909,8 +899,8 @@ Nowadays it is less common to want to use your local machine as a server, and if
 
 You can use Amazon Web Services to host your Node.js application, I will list the steps but I won't go into the details because using AWS requires some prior knowledge about AWS and is beyond the scope of this guide.
 
-- Request an Elastic Cloud Computer (EC2) instance with Ubuntu for example.
-- Upgrade the system.
+- Request an Elastic Compute Cloud (EC2) instance with Ubuntu for example.
+- Update the system.
 - Install Node.js on the system as we did in the the Setup section for Ubuntu.
 - Clone your back-end project or the example project from git.
 - Perform `npm install && npm start` which will make the Node.js server available.
@@ -974,3 +964,46 @@ For a successful deployment you must have a `start` script in your `package.json
 I found [Railway](https://railway.app/) during the process of this guide and I'm quite surprised, I try uploading the example project here and within seconds I have an instance ready to go, even with a provisioned MongoDB available but that's for the next iteration of this guide.
 
 I haven't tested this option in depth but I will try it with future iterations of this series because it seems convenient.
+
+## BONUS
+
+### Postman
+
+Throughout this guide you can test the different api rest endpoints directly in the browser or using `curl` but one tool that will make life easier for you and your co-workers is [Postman](https://www.postman.com/).
+
+One of the main benefits of using Postman with your co-workers or even on side projects for yourself is to easily define how to interact with your API, provide examples, and collaborate in the same workspace to maintain that collection.
+
+There are also plenty of APIs available so you can test how things work and plan how to code anything before you start writing, for example the [Twitter API workspace](https://www.postman.com/twitter/workspace/twitter-s-public-workspace/overview).
+
+
+#### Testing endpoints
+
+With the example project I also provide a [Postman collection](), you can use it as an example for your collection or to test the example project.
+
+If you want to create a bunch of endpoints and test your own application, it's as easy as selecting the request method and url.
+
+[postman endpoints](/assets/posts/content/node-express/postman-endpoints.jpg)
+
+For endpoints that have to carry data to the server, they can be sent via params or the `Body`.
+
+[postman endpoints 2](/assets/posts/content/node-express/postman-endpoints2.png)
+
+Postman provides a lot of information about the request and the response, so you won't miss anything from the Developer Tools Network tab:
+
+[postman endpoints 3](/assets/posts/content/node-express/postman-endpoints3.png)
+
+#### Creating examples
+
+Providing examples in the Postman collection is a fantastic way to ensure that your colleagues or collaborators can see the shape of the data without actually running anything, in a regular scenario this may not be necessary but when a service is behind a proxy, authentications or even the service is not yet avialable, it can be a good resource for developers to start coding their part.
+
+To create a new example, click on the three dots at the endpoint you want to add an example and select `Add example`.
+
+[postman examples](/assets/posts/content/node-express/postman-examples.png)
+
+#### Environment variables
+
+As in programming, you can isolate your constants in environment variables to share different configurations and make it easier to modify the collection or test endpoints with different environments. 
+
+[postman environment variables](/assets/posts/content/node-express/postman-environment-variables.jpg)
+
+In the sample project collection you can find variables to run the endpoints on your local or directly to the published version on Heroku. To use the environemnt provided to the Postman collection you must import the two jsons provided in the same folder which are `*environment.json`.
