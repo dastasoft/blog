@@ -3,14 +3,14 @@ import styled from 'styled-components'
 export const Title = styled.h1`
   font-size: 1.875rem;
   line-height: 1.375;
-  margin-bottom: 0.8rem;
+  margin: 0.8rem 0 1rem 0;
 `
 
 export const SubHeader = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 1rem;
+  margin: 1rem 0;
 `
 
 export const TagContainer = styled.div`

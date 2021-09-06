@@ -1,5 +1,5 @@
 ---
-title: 'Node'
+title: 'How Every Web Developer Can Become FullStack With Node.js'
 excerpt: 'Expand your tool belt with backend knowledge using your existing JavaScript skills. In this article we will check what Node is and build a REST API.'
 coverImage: '/assets/posts/preview/node-express.webp'
 date: '2021-09-09T00:00:00.000Z'
@@ -8,7 +8,7 @@ author:
   picture: '/assets/authors/dastasoft.jpeg'
 ogImage:
   url: '/assets/posts/preview/node-express.webp'
-tags: ['beginners', 'node', 'express']
+tags: ['beginners', 'node', 'express', 'javascript']
 section: 'backend'
 ---
 
