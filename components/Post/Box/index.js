@@ -29,11 +29,11 @@ const Post = ({ title, date, slug, coverImage, excerpt, isFirst }) => {
   return (
     <Link href="/posts/[slug]" as={`/posts/${slug}`}>
       <Article>
+        <span>{dayjs(date).format('DD MMMM YYYY')}</span>
+        <Image {...imageProperties} />
         <a href={`/posts/${slug}`}>
           <h2>{title}</h2>
         </a>
-        <span>{dayjs(date).format('DD MMMM YYYY')}</span>
-        <Image {...imageProperties} />
         <p>{excerpt}</p>
       </Article>
     </Link>

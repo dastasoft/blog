@@ -34,8 +34,7 @@ My last post was for TypeScript on the front-end but everything explained there 
 
 - [Node.js](https://nodejs.org/)
 - [Express](https://expressjs.com/)
-- [Postman](https://www.postman.com/)
-- [Project Sample](https://github.com/dastasoft/mars-pot-backend)
+- [Project Sample](https://github.com/dastasoft/mars-pot-backend/tree/develop)
 
 ## Project Sample
 
@@ -66,7 +65,7 @@ It can also communicate with a database, retrieve some data, do some calculation
 - It's all JavaScript → Even if you look at this from the perspective of your own or the point of view of a company it is still true, just one language and you can make a complete application, both sides. For you it's interesting, reusing your current skills with a language in another field, but for companies this is a good point too, they can reuse the current expertise of their workers.
 - It's all JavaScript x2 → Because both sides are JavaScript, it's very possible to reuse code between both sides, do you already have a function that validates ID cards? Use exactly the same on the front-end and back-end.
 - Community → There are a lot of utilities, packages and even frameworks built on top of Node.js, you will get a lot of support and there are tons of ready to use tools available.
-- It's highly used → Take a look at this screenshot from [State of JS 2020](https://2020.stateofjs.com/), Express which is built on top of Node.js is in terrible shape. But yes, the "everyone uses it" argument should be taken very carefully.
+- It's highly used → Take a look at this screenshot from [State of JS 2020](https://2020.stateofjs.com/), Express which is built on top of Node.js is in a terrible shape. But yes, the "everyone uses it" argument should be taken very carefully.
 
 ![state of js 2020](/assets/posts/content/node-express/state-of-js.png)
 
@@ -83,7 +82,7 @@ curl -fsSL https://deb.nodesource.com/setup_16.x | sudo -E bash -
 sudo apt-get install -y nodejs
 ```
 
-Installing Node.js also installs npm which stands for Node Package Manager, if you come from web development with React or any other library you are more than used to using it.
+Installing Node.js also installs npm which stands for Node Package Manager, if you come from web development you are more than used to using it.
 
 To check that everything is OK, run the following commands in your terminal
 
@@ -250,6 +249,9 @@ fs.writeFile("./assets/test.txt", "I'm soooo fast", () => {
 ```
 
 If you try this code, you will see that before you can read the file it is already written with the new text and when `readFile` does its job it prints the new content. This happens because these two methods are asynchronous and do not block the execution of the code, the code continues to execute line by line and `writeFile` terminates first.
+
+This is one of the key points of Node.js and the reason why many large companies are looking for Node, its asynchronous nature and non-blocking I/O. With this your server can receive a lot of requests without blocking the application. Node has a library called `libuv` which is multithreaded, it will handle all the asynchronous processes that Node's single thread cannot and return the response.
+
 
 Try this code instead:
 
@@ -646,7 +648,7 @@ app.listen(PORT, HOSTNAME, () => {
 });
 ```
 
-Now every request prints this console log first but executes correctly. To understand why this happens you first have to learn about middlewares.
+Now every request prints `I'm watching you` first but executes correctly. To understand why this happens you first have to learn about middlewares.
 
 Middleware functions have access to the request and response object and are executed on every execution between a request and a response. If you think about the definition you come to the conclusion that the whole Express is made up of middleware functions, not just `app.use`.
 
@@ -690,9 +692,9 @@ Extending the capabilities of Express with external middleware as you can see is
 
 ### MVC
 
-MVC stands for Model-View-Controller and is a well-established software design pattern in different backend systems that can be useful here as well. A graphical summary of what MVC is:
+MVC stands for Model-View-Controller and is a well-established software design pattern in different systems that can be useful here as well. A graphical summary of what MVC is:
 
-[mvc-diagram](/assets/posts/content/node-express/mvc-diagram.png)
+![mvc-diagram](/assets/posts/content/node-express/mvc-diagram.png)
 
 At this stage of the tutorial we will only use the `Controller`, the `Model` we will add later when we define a model for the database and the `View` in this case is not applicable because we are not serving HTML from the server, the view will be our React application in any case.
 
@@ -893,7 +895,7 @@ Let's review what the different options are for publishing our backend so that i
 
 On a basic scale you already have a local environment for your node server but it is not available outside your current local network, with this you may be able to test the server as we saw in the Postman section.
 
-Nowadays it is less common to want to use your local machine as a server, and if you prefer not to do that check the next sections, but if you want to expose your local node server to the world you can use [ngrock](https://ngrok.com/), the introduction video on the landing page is self explanatory to be honest :)
+Nowadays it is less common to want to use your local machine as a server, and if you prefer not to do that check the next sections, but if you want to expose your local node server to the world you can use [ngrock](https://ngrok.com/), the introduction video on the landing page is self explanatory to be honest 😄
 
 ### AWS
 
@@ -911,7 +913,7 @@ Be careful with this option because AWS has a free tier but may have additional 
 
 ### Heroku
 
-One of the easiest options and the one I will cover here in more detail is to use [Heroku](https://id.heroku.com). Heroku is a Platform as a Service (PaaS) that will simplify the process of having to configure your system to be visible from the outside and act as a server or the AWS option which as I said before requires some knowledge.
+One of the easiest options and the one I will cover here in more detail is to use [Heroku](https://id.heroku.com). Heroku is a Platform as a Service (PaaS) that will simplify the process of having to configure your system to be visible from the outside and act as a server.
 
 One of the cool things about Heroku is that we can do this kind of testing without any kind of credit card or fee, so it's perfect for a guide like this and your first tests developing backends with Node.js.
 
@@ -961,7 +963,7 @@ For a successful deployment you must have a `start` script in your `package.json
 
 ### Railway
 
-I found [Railway](https://railway.app/) during the process of this guide and I'm quite surprised, I try uploading the example project here and within seconds I have an instance ready to go, even with a provisioned MongoDB available but that's for the next iteration of this guide.
+I found [Railway](https://www.railway.app/) during the process of this guide and I'm quite surprised, I try uploading the example project here and within seconds I have an instance ready to go, even with a provisioned MongoDB available but that's for the next iteration of this guide.
 
 I haven't tested this option in depth but I will try it with future iterations of this series because it seems convenient.
 
@@ -978,19 +980,19 @@ There are also plenty of APIs available so you can test how things work and plan
 
 #### Testing endpoints
 
-With the example project I also provide a [Postman collection](), you can use it as an example for your collection or to test the example project.
+With the example project I also provide a [Postman collection](https://github.com/dastasoft/mars-pot-backend/tree/develop/postman), you can use it as an example for your collection or to test the example project.
 
 If you want to create a bunch of endpoints and test your own application, it's as easy as selecting the request method and url.
 
-[postman endpoints](/assets/posts/content/node-express/postman-endpoints.jpg)
+![postman endpoints](/assets/posts/content/node-express/postman-endpoints.jpg)
 
 For endpoints that have to carry data to the server, they can be sent via params or the `Body`.
 
-[postman endpoints 2](/assets/posts/content/node-express/postman-endpoints2.png)
+![postman endpoints 2](/assets/posts/content/node-express/postman-endpoints2.png)
 
 Postman provides a lot of information about the request and the response, so you won't miss anything from the Developer Tools Network tab:
 
-[postman endpoints 3](/assets/posts/content/node-express/postman-endpoints3.png)
+![postman endpoints 3](/assets/posts/content/node-express/postman-endpoints3.png)
 
 #### Creating examples
 
@@ -998,12 +1000,12 @@ Providing examples in the Postman collection is a fantastic way to ensure that y
 
 To create a new example, click on the three dots at the endpoint you want to add an example and select `Add example`.
 
-[postman examples](/assets/posts/content/node-express/postman-examples.png)
+![postman examples](/assets/posts/content/node-express/postman-examples.png)
 
 #### Environment variables
 
 As in programming, you can isolate your constants in environment variables to share different configurations and make it easier to modify the collection or test endpoints with different environments. 
 
-[postman environment variables](/assets/posts/content/node-express/postman-environment-variables.jpg)
+![postman environment variables](/assets/posts/content/node-express/postman-environment-variables.jpg)
 
 In the sample project collection you can find variables to run the endpoints on your local or directly to the published version on Heroku. To use the environemnt provided to the Postman collection you must import the two jsons provided in the same folder which are `*environment.json`.
