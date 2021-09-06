@@ -14,7 +14,7 @@ const About = () => {
     <Container>
       <NextSeo
         title="About | dastasoft"
-        description="Hi, I'm a Full Stack Developer and I love learning, teaching, Japanese culture, rhythm games and talking about tech."
+        description="Hi, I'm a Full Stack Developer specialized in React and Node. I love learning and teaching technology on my blog. Currently learning Japanese よろしくおねがいします。"
       />
       <Title>About</Title>
       <Text>
@@ -54,34 +54,15 @@ const About = () => {
           and cloud technology to offer high performance, scalable and
           innovative solutions.
         </p>
-
         <p>
-          I have been working as a programmer and analyst for 9 years in
-          different positions in the public and private sector, I have worked
-          providing technology solutions for universities, banking and the
-          notary sector, performing the roles of Java programmer, analyst and
-          currently full stack where I cover the spectrum of technology needed
-          to develop a complete project by myself. I have led small teams of 2-3
-          people in short and long term projects.
-        </p>
-
-        <p>
-          Intellectually curious and eager to take on new challenges, interested
-          in working in B2B and B2C by leveraging my own development experience,
-          not afraid to take on challenges by paying special attention to
-          details.
-        </p>
-
-        <p>
-          I am comfortable working both in a team and also working independently
-          to ensure goals are achieved. I adapt quickly to changes and promote a
-          discourse of constructive criticism that helps team members to
-          continue improving.
-        </p>
-
-        <p>
-          I am keen on creating high-quality user experience by working closely
-          with project managers, designers and other engineers.
+          <i>
+            The articles in this blog are written by me for the sole purpose of
+            teaching what has worked for me and what I have found useful, so
+            there is no sponsorship or anything similar to the different
+            technologies I use in the articles. If at any time a particular
+            article is sponsored or recommended, I will clearly
+            identify this fact in the article itself.
+          </i>
         </p>
       </Text>
       <SubTitle>I love to talk about tech, contact me on</SubTitle>

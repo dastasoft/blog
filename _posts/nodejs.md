@@ -1,8 +1,8 @@
 ---
 title: 'Node'
-excerpt: 'Node'
+excerpt: 'Expand your tool belt with backend knowledge using your existing JavaScript skills. In this article we will check what Node is and build a REST API.'
 coverImage: '/assets/posts/preview/node-express.webp'
-date: '2021-09-01T00:00:00.000Z'
+date: '2021-09-09T00:00:00.000Z'
 author:
   name: dastasoft
   picture: '/assets/authors/dastasoft.jpeg'
