@@ -9,15 +9,6 @@ import { Title, SubHeader, TagContainer, Date } from './Header.styles'
 const PostBody = ({ title, date, coverImage, tags }) => {
   return (
     <>
-      <Title>{title}</Title>
-      <SubHeader>
-        <TagContainer>
-          {tags.map(tag => (
-            <Tag key={tag} text={tag} />
-          ))}
-        </TagContainer>
-        <Date>{dayjs(date).format('DD MMMM YYYY')}</Date>
-      </SubHeader>
       <Image
         src={coverImage}
         alt={`${title} cover image`}
@@ -26,6 +17,15 @@ const PostBody = ({ title, date, coverImage, tags }) => {
         loading="eager"
         priority
       />
+      <SubHeader>
+        <TagContainer>
+          {tags.map(tag => (
+            <Tag key={tag} text={tag} />
+          ))}
+        </TagContainer>
+        <Date>{dayjs(date).format('DD MMMM YYYY')}</Date>
+      </SubHeader>
+      <Title>{title}</Title>
     </>
   )
 }
