@@ -1,13 +1,13 @@
 ---
 title: 'How to get better and easier state management with Redux Toolkit'
 excerpt: 'Learn through a simple project what state management improvements Redux Toolkit has to offer and whether it will be ideal for your project.'
-coverImage: '/assets/posts/preview/redux-toolkit.png'
+coverImage: '/assets/posts/preview/redux-toolkit.webp'
 date: '2021-11-29T00:00:00.000Z'
 author:
   name: dastasoft
   picture: '/assets/authors/dastasoft.jpeg'
 ogImage:
-  url: '/assets/posts/preview/redux-toolkit.png'
+  url: '/assets/posts/preview/redux-toolkit.webp'
 tags: ['beginners', 'react', 'redux', 'javascript']
 section: 'frontend'
 ---
