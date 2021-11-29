@@ -17,7 +17,8 @@ export const Container = styled.div`
   justify-content: space-between;
 
   img {
-    filter: ${({ theme }) => (theme.UIText === 'white' ? 'invert()' : 'none')};
+    filter: ${({ theme }) =>
+      theme.UIText === '#ededee' ? 'invert()' : 'none'};
     ${getGlobalTransition()}
   }
 

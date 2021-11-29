@@ -17,10 +17,10 @@ const theme = {
 }
 
 export const lightTheme = {
-  body: 'white',
-  UIText: 'white',
-  contentText: 'black',
-  background: 'white',
+  body: '#ededee',
+  UIText: '#ededee',
+  contentText: '#1a202c',
+  background: '#ededee',
   code: {
     color: '#383a42',
     background: '#fafafa',
@@ -36,10 +36,10 @@ export const lightTheme = {
   ...theme,
 }
 export const darkTheme = {
-  body: 'black',
-  UIText: 'black',
-  contentText: 'white',
-  background: 'black',
+  body: '#1a202c',
+  UIText: '#1a202c',
+  contentText: '#ededee',
+  background: '#1a202c',
   code: {
     color: '#abb2bf',
     background: '#282c34',
