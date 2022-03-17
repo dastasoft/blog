@@ -41,14 +41,13 @@ export default class MyDocument extends Document {
             href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap"
             rel="stylesheet"
           />
-          {process.env.VERCEL_ENV === 'production' && (
-            <script
-              async
-              defer
-              data-website-id={process.env.UMAMI_ID}
-              src={process.env.UMAMI_HOST}
-            ></script>
-          )}
+          <script
+            async
+            defer
+            data-website-id="5ec3456d-1873-4bde-998d-741fabd2a0f1"
+            src="https://umami-seven-navy.vercel.app/umami.js"
+            data-domains="blog.dastasoft.com"
+          ></script>
         </Head>
         <body>
           <Main />
