@@ -45,8 +45,8 @@ export default class MyDocument extends Document {
             <script
               async
               defer
-              data-website-id={process.env.UMAMI_ID}
-              src={process.env.UMAMI_HOST}
+              data-website-id="167535d3-ca8f-45b0-bb63-666bdcdecd86"
+              src="https://umami-analytics.dastasoft.com/umami.js"
             ></script>
           )}
         </Head>
