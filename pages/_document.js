@@ -45,7 +45,7 @@ export default class MyDocument extends Document {
             async
             defer
             data-website-id="5ec3456d-1873-4bde-998d-741fabd2a0f1"
-            src="https://umami-seven-navy.vercel.app/umami.js"
+            src="https://cold-wave-cc69.dastasoft.workers.dev/a11208ef-e077-4f30-83b3-4bc495d173dc.js"
             data-domains="blog.dastasoft.com"
           ></script>
         </Head>
