@@ -28,10 +28,7 @@ const Home = ({ allPosts }) => {
 
   return (
     <Container>
-      <NextSeo
-        title="Blog | dastasoft"
-        description="Hi, I'm a Full Stack Developer and I love learning, teaching, Japanese culture, rhythm games and talking about tech."
-      />
+      <NextSeo />
       <PostSearcher filter={filter} setFilter={setFilter} />
       <GridLayout>{posts}</GridLayout>
     </Container>
