@@ -5,6 +5,7 @@ import { NextSeo } from 'next-seo'
 import Post from '@/components/Post/Box'
 import PostSearcher from '@/components/InputSearch'
 import { getAllPosts } from '@/lib/api'
+import generateRssFeed from '@/lib/generateRSSFeed'
 
 const Home = ({ allPosts }) => {
   const [filter, setFilter] = useState('')
@@ -81,6 +82,8 @@ export async function getStaticProps() {
     'coverImage',
     'excerpt',
   ])
+
+  generateRssFeed(allPosts)
 
   return {
     props: { allPosts },

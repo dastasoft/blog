@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://blog.dastasoft.com/</id>
+    <title>Blog | dastasoft</title>
+    <updated>2022-03-21T12:12:40.297Z</updated>
+    <generator>Feed for Node.js</generator>
+    <author>
+        <name>dastasoft</name>
+        <email>dastasoft@protonmail.com</email>
+        <uri>https://dastasoft.com/</uri>
+    </author>
+    <link rel="alternate" href="https://blog.dastasoft.com/"/>
+    <link rel="self" href="https://blog.dastasoft.com/rss/atom.xml"/>
+    <subtitle>Hi I'm dastasoft, I love talking, learning and teaching about technology so, I write tutorials and guides about programming like JavaScript, React, Next.js, Node.js and many more.</subtitle>
+    <logo>https://blog.dastasoft.com/icons/maskable_icon.png</logo>
+    <icon>https://blog.dastasoft.com/favicon.ico</icon>
+    <rights>All rights reserved 2022, dastasoft</rights>
+    <entry>
+        <title type="html"><![CDATA[MongoDB and Mongoose - How Every Web Developer Can Become FullStack With Node.js]]></title>
+        <id>https://blog.dastasoft.com/posts/mongodb-mongoose-how-every-web-developer-can-become-fullstack-with-nodejs</id>
+        <link href="https://blog.dastasoft.com/posts/mongodb-mongoose-how-every-web-developer-can-become-fullstack-with-nodejs"/>
+        <updated>2022-03-16T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[In this second part of the tutorial we add a real integration with MongoDB using Mongoose, you will learn how to create a REST API with simple examples.]]></summary>
+        <author>
+            <name>dastasoft</name>
+            <email>dastasoft@protonmail.com</email>
+            <uri>https://dastasoft.com/</uri>
+        </author>
+        <contributor>
+            <name>dastasoft</name>
+            <email>dastasoft@protonmail.com</email>
+            <uri>https://dastasoft.com/</uri>
+        </contributor>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[How to get better and easier state management with Redux Toolkit]]></title>
+        <id>https://blog.dastasoft.com/posts/how-to-get-better-easier-state-management-redux-toolkit</id>
+        <link href="https://blog.dastasoft.com/posts/how-to-get-better-easier-state-management-redux-toolkit"/>
+        <updated>2021-11-29T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Learn through a simple project what state management improvements Redux Toolkit has to offer and whether it will be ideal for your project.]]></summary>
+        <author>
+            <name>dastasoft</name>
+            <email>dastasoft@protonmail.com</email>
+            <uri>https://dastasoft.com/</uri>
+        </author>
+        <contributor>
+            <name>dastasoft</name>
+            <email>dastasoft@protonmail.com</email>
+            <uri>https://dastasoft.com/</uri>
+        </contributor>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[How Every Web Developer Can Become FullStack With Node.js]]></title>
+        <id>https://blog.dastasoft.com/posts/how-every-web-developer-can-become-fullstack-with-nodejs</id>
+        <link href="https://blog.dastasoft.com/posts/how-every-web-developer-can-become-fullstack-with-nodejs"/>
+        <updated>2021-09-08T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Expand your tool belt with backend knowledge using your existing JavaScript skills. In this article we will check what Node is and build a REST API.]]></summary>
+        <author>
+            <name>dastasoft</name>
+            <email>dastasoft@protonmail.com</email>
+            <uri>https://dastasoft.com/</uri>
+        </author>
+        <contributor>
+            <name>dastasoft</name>
+            <email>dastasoft@protonmail.com</email>
+            <uri>https://dastasoft.com/</uri>
+        </contributor>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Here is what every React Developer needs to know about TypeScript - Part 1]]></title>
+        <id>https://blog.dastasoft.com/posts/heres-what-every-react-developer-needs-to-know-about-typescript</id>
+        <link href="https://blog.dastasoft.com/posts/heres-what-every-react-developer-needs-to-know-about-typescript"/>
+        <updated>2021-05-27T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Is it worth using TypeScript with React in 2021? Find out why through examples, you do not need to have any previous TypeScript knowledge.]]></summary>
+        <author>
+            <name>dastasoft</name>
+            <email>dastasoft@protonmail.com</email>
+            <uri>https://dastasoft.com/</uri>
+        </author>
+        <contributor>
+            <name>dastasoft</name>
+            <email>dastasoft@protonmail.com</email>
+            <uri>https://dastasoft.com/</uri>
+        </contributor>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Why you should use Chakra UI in React]]></title>
+        <id>https://blog.dastasoft.com/posts/why-you-should-use-chakra-ui-in-react</id>
+        <link href="https://blog.dastasoft.com/posts/why-you-should-use-chakra-ui-in-react"/>
+        <updated>2021-04-30T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Beautiful and accessible component library to speed up your development. Styling like a ninja.]]></summary>
+        <author>
+            <name>dastasoft</name>
+            <email>dastasoft@protonmail.com</email>
+            <uri>https://dastasoft.com/</uri>
+        </author>
+        <contributor>
+            <name>dastasoft</name>
+            <email>dastasoft@protonmail.com</email>
+            <uri>https://dastasoft.com/</uri>
+        </contributor>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Present like a pro with Fusuma and MD]]></title>
+        <id>https://blog.dastasoft.com/posts/presentations-like-a-pro-with-fusuma-and-markdown</id>
+        <link href="https://blog.dastasoft.com/posts/presentations-like-a-pro-with-fusuma-and-markdown"/>
+        <updated>2021-03-25T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Create slides quickly and easily with this amazing tool, make presentations like a pro.]]></summary>
+        <author>
+            <name>dastasoft</name>
+            <email>dastasoft@protonmail.com</email>
+            <uri>https://dastasoft.com/</uri>
+        </author>
+        <contributor>
+            <name>dastasoft</name>
+            <email>dastasoft@protonmail.com</email>
+            <uri>https://dastasoft.com/</uri>
+        </contributor>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Blog with Next.js and dev.to as CMS]]></title>
+        <id>https://blog.dastasoft.com/posts/simple-static-blog-with-nextjs-and-devto-as-cms</id>
+        <link href="https://blog.dastasoft.com/posts/simple-static-blog-with-nextjs-and-devto-as-cms"/>
+        <updated>2020-11-03T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[We are going to set up a static blog using Next.js and dev.to as a headless CMS.]]></summary>
+        <author>
+            <name>dastasoft</name>
+            <email>dastasoft@protonmail.com</email>
+            <uri>https://dastasoft.com/</uri>
+        </author>
+        <contributor>
+            <name>dastasoft</name>
+            <email>dastasoft@protonmail.com</email>
+            <uri>https://dastasoft.com/</uri>
+        </contributor>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Styling in React]]></title>
+        <id>https://blog.dastasoft.com/posts/styling-in-react</id>
+        <link href="https://blog.dastasoft.com/posts/styling-in-react"/>
+        <updated>2020-03-15T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Check out the different options to style your React application. Decide which one fits best to your project.]]></summary>
+        <author>
+            <name>dastasoft</name>
+            <email>dastasoft@protonmail.com</email>
+            <uri>https://dastasoft.com/</uri>
+        </author>
+        <contributor>
+            <name>dastasoft</name>
+            <email>dastasoft@protonmail.com</email>
+            <uri>https://dastasoft.com/</uri>
+        </contributor>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Simple Animated Circle Bar]]></title>
+        <id>https://blog.dastasoft.com/posts/simple-animated-circle-bar-as-react-component</id>
+        <link href="https://blog.dastasoft.com/posts/simple-animated-circle-bar-as-react-component"/>
+        <updated>2020-03-05T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Let's make an easy and simple circle progress bar from an animated SVG in a React component.]]></summary>
+        <author>
+            <name>dastasoft</name>
+            <email>dastasoft@protonmail.com</email>
+            <uri>https://dastasoft.com/</uri>
+        </author>
+        <contributor>
+            <name>dastasoft</name>
+            <email>dastasoft@protonmail.com</email>
+            <uri>https://dastasoft.com/</uri>
+        </contributor>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Simple React Boilerplate]]></title>
+        <id>https://blog.dastasoft.com/posts/simple-react-boilerplate</id>
+        <link href="https://blog.dastasoft.com/posts/simple-react-boilerplate"/>
+        <updated>2020-02-29T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[How to make a simple React boilerplate from scartch with Babel, Parcel and ESlint checks.]]></summary>
+        <author>
+            <name>dastasoft</name>
+            <email>dastasoft@protonmail.com</email>
+            <uri>https://dastasoft.com/</uri>
+        </author>
+        <contributor>
+            <name>dastasoft</name>
+            <email>dastasoft@protonmail.com</email>
+            <uri>https://dastasoft.com/</uri>
+        </contributor>
+    </entry>
+</feed>

@@ -14,6 +14,7 @@
 - [x] **Umami analytics** Analytics with [Umami](https://umami.is/), retrieve traffic statistics without cookies. Self hosted on Heroku.
 - [x] **Google's Lighthouse compliant** Guides from Google's Lighthouse are implemented to ensure the best performance, SEO and Accesibility practices.
 - [x] **Newsletter** Can subscribe a newsletter which will send you an email each time I publish a new article or tutorial.
+- [x] **RSS and Sitemap** Generate RSS feed and sitemap on each build.
 - [x] **Filter Posts** Can search and filter post by title.
 - [x] **Custom Domain** Uses a [custom domain](https://dastasoft.com)
 - [x] **Designed with Figma** Own design using [Figma](https://www.figma.com/)
