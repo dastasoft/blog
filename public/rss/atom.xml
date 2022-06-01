@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://blog.dastasoft.com/</id>
     <title>Blog | dastasoft</title>
-    <updated>2022-04-27T18:49:59.268Z</updated>
+    <updated>2022-06-01T22:25:06.360Z</updated>
     <generator>Feed for Node.js</generator>
     <author>
         <name>dastasoft</name>
@@ -15,6 +15,23 @@
     <logo>https://blog.dastasoft.com/icons/maskable_icon.png</logo>
     <icon>https://blog.dastasoft.com/favicon.ico</icon>
     <rights>All rights reserved 2022, dastasoft</rights>
+    <entry>
+        <title type="html"><![CDATA[How to get cool animations in your React projects]]></title>
+        <id>https://blog.dastasoft.com/posts/framer-motion</id>
+        <link href="https://blog.dastasoft.com/posts/framer-motion"/>
+        <updated>2022-06-02T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[In this guide we will use Framer Motion in a basic example project to write animations declaratively and effortlessly with seamless integration with our React ecosystem.]]></summary>
+        <author>
+            <name>dastasoft</name>
+            <email>dastasoft@protonmail.com</email>
+            <uri>https://dastasoft.com/</uri>
+        </author>
+        <contributor>
+            <name>dastasoft</name>
+            <email>dastasoft@protonmail.com</email>
+            <uri>https://dastasoft.com/</uri>
+        </contributor>
+    </entry>
     <entry>
         <title type="html"><![CDATA[MongoDB and Mongoose - How Every Web Developer Can Become FullStack With Node.js]]></title>
         <id>https://blog.dastasoft.com/posts/mongodb-mongoose-how-every-web-developer-can-become-fullstack-with-nodejs</id>

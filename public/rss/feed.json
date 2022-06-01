@@ -11,6 +11,17 @@
     },
     "items": [
         {
+            "id": "https://blog.dastasoft.com/posts/framer-motion",
+            "url": "https://blog.dastasoft.com/posts/framer-motion",
+            "title": "How to get cool animations in your React projects",
+            "summary": "In this guide we will use Framer Motion in a basic example project to write animations declaratively and effortlessly with seamless integration with our React ecosystem.",
+            "date_modified": "2022-06-02T00:00:00.000Z",
+            "author": {
+                "name": "dastasoft",
+                "url": "https://dastasoft.com/"
+            }
+        },
+        {
             "id": "https://blog.dastasoft.com/posts/mongodb-mongoose-how-every-web-developer-can-become-fullstack-with-nodejs",
             "url": "https://blog.dastasoft.com/posts/mongodb-mongoose-how-every-web-developer-can-become-fullstack-with-nodejs",
             "title": "MongoDB and Mongoose - How Every Web Developer Can Become FullStack With Node.js",

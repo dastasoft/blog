@@ -4,7 +4,7 @@
         <title>Blog | dastasoft</title>
         <link>https://blog.dastasoft.com/</link>
         <description>Hi I'm dastasoft, I love talking, learning and teaching about technology so, I write tutorials and guides about programming like JavaScript, React, Next.js, Node.js and many more.</description>
-        <lastBuildDate>Wed, 27 Apr 2022 18:49:59 GMT</lastBuildDate>
+        <lastBuildDate>Wed, 01 Jun 2022 22:25:06 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>Feed for Node.js</generator>
         <image>
@@ -13,6 +13,14 @@
             <link>https://blog.dastasoft.com/</link>
         </image>
         <copyright>All rights reserved 2022, dastasoft</copyright>
+        <item>
+            <title><![CDATA[How to get cool animations in your React projects]]></title>
+            <link>https://blog.dastasoft.com/posts/framer-motion</link>
+            <guid>https://blog.dastasoft.com/posts/framer-motion</guid>
+            <pubDate>Thu, 02 Jun 2022 00:00:00 GMT</pubDate>
+            <description><![CDATA[In this guide we will use Framer Motion in a basic example project to write animations declaratively and effortlessly with seamless integration with our React ecosystem.]]></description>
+            <author>dastasoft@protonmail.com (dastasoft)</author>
+        </item>
         <item>
             <title><![CDATA[MongoDB and Mongoose - How Every Web Developer Can Become FullStack With Node.js]]></title>
             <link>https://blog.dastasoft.com/posts/mongodb-mongoose-how-every-web-developer-can-become-fullstack-with-nodejs</link>
