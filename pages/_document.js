@@ -44,8 +44,8 @@ export default class MyDocument extends Document {
           <script
             async
             defer
-            data-website-id="644479ea-6fde-429d-a498-abc7255b169d"
-            src="https://umami-production-5d7c.up.railway.app/umami.js"
+            data-website-id="8b5d5af6-9a28-49dc-bd74-561469d3f041"
+            src="https://umami-production-66a6.up.railway.app/umami.js"
             data-domains="blog.dastasoft.com"
           ></script>
         </Head>
