@@ -11,6 +11,16 @@
     },
     "items": [
         {
+            "id": "https://blog.dastasoft.com/posts/heres-what-every-react-developer-needs-to-know-about-typescript_part_2",
+            "url": "https://blog.dastasoft.com/posts/heres-what-every-react-developer-needs-to-know-about-typescript_part_2",
+            "title": "Here is what every React Developer needs to know about TypeScript - Part 2",
+            "date_modified": "2022-10-31T00:00:00.000Z",
+            "author": {
+                "name": "dastasoft",
+                "url": "https://dastasoft.com/"
+            }
+        },
+        {
             "id": "https://blog.dastasoft.com/posts/framer-motion",
             "url": "https://blog.dastasoft.com/posts/framer-motion",
             "title": "How to get cool animations in your React projects",

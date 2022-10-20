@@ -41,13 +41,6 @@ export default class MyDocument extends Document {
             href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap"
             rel="stylesheet"
           />
-          <script
-            async
-            defer
-            data-website-id="8b5d5af6-9a28-49dc-bd74-561469d3f041"
-            src="https://umami-production-66a6.up.railway.app/umami.js"
-            data-domains="blog.dastasoft.com"
-          ></script>
         </Head>
         <body>
           <Main />
