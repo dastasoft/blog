@@ -1,6 +1,6 @@
 ---
 title: 'Here is what every React Developer needs to know about TypeScript - Part 2'
-excerpt: ''
+excerpt: 'Using TypeScript in combination with React can provide an enhanced, less error-prone development experience. But as always, with great power comes great responsibility.'
 coverImage: '/assets/posts/preview/typescript-react-2.webp'
 date: '2022-10-31T00:00:00.000Z'
 author:
@@ -14,15 +14,9 @@ section: 'frontend'
 
 Welcome to the second part of this series on TypeScript, in the first part we talked about why to use TypeScript in general, how to use it and an overview of the language. In this second post we will take a closer look at how to use TypeScript in React and how to solve the different challenges you will face when trying to develop an app with React and TypeScript.
 
-## Why React + Typescript
+## AnimeTrailers aka the Example Project
 
-If you want to know [why bother dealing with TS](https://blog.dastasoft.com/posts/heres-what-every-react-developer-needs-to-know-about-typescript) I recommend reading that section from the first part, the same arguments can be used here to defend its use in combination with React.
-
-It's also worth adding that most of the TypeScript code in React is inferred, so in addition to the fact that everything will be examined here in detail most of the time you'll be fine with inferred types and the types already provided by React.
-
-## AnimeTrailers aka the example project
-
-![animetrailers](/assets/posts/content/typescript2/animetrailers-screenshot.webp)
+[![animetrailers](/assets/posts/content/typescript2/animetrailers-screenshot.webp)](https://github.com/dastasoft/animetrailers)
 
 As always a working example project is provided with the article to have real code to refer to and test real implementations.
 
@@ -35,6 +29,12 @@ In this case I have built [AnimeTrailers](https://animetrailers.dastasoft.com/) 
 - [Vite + TypeScript + ESLint + Prettier Boilerplate](https://github.com/dastasoft/react-boilerplate/tree/vite-typescript)
 - [TS Handbook](https://www.typescriptlang.org/docs/handbook/)
 - [Here is what every React Developer needs to know about TypeScript - Part 1](https://blog.dastasoft.com/posts/heres-what-every-react-developer-needs-to-know-about-typescript)
+
+## Why React + Typescript
+
+If you want to know [why bother dealing with TS](https://blog.dastasoft.com/posts/heres-what-every-react-developer-needs-to-know-about-typescript) I recommend reading that section from the first part, the same arguments can be used here to defend its use in combination with React.
+
+It's also worth adding that most of the TypeScript code in React is inferred, so in addition to the fact that everything will be examined here in detail most of the time you'll be fine with inferred types and the types already provided by React.
 
 ## Setup
 
@@ -64,7 +64,7 @@ npm install -D typescript
 
 I must warn you that if this is your first encounter with TypeScript I do not recommend that you try it on a project that you have already built, because your experience will be to constantly think that you have something working and that it is all just more work for nothing, and that cannot be further from the real benefits of TypeScript.
 
-## Typing component's props
+## Typing Component Props
 
 The first and most common scenario when using TypeScript in a React project is to write the props for a component.
 
@@ -149,7 +149,7 @@ So, to summarise, writing props is useful for:
 
 Of course, this will absolutely shine on complex components and third party components that come from fancy libraries you use in your project.
 
-### React Types
+### React Built-in Types
 
 With React and a lot of libraries you will find tons of pre-built types to ease your experience as a developer. For example in React it is quite common to have the following component:
 
@@ -201,7 +201,7 @@ export default function Favorites(): JSX.Element {
 To summarise the answer from this section: **let the TypeScript automatically infer the return type**. If you need a detailed list of the differences between those 3 types I suggest you [have a look at this SO post](https://stackoverflow.com/questions/58123398/when-to-use-jsx-element-vs-reactnode-vs-reactelement)
 
 
-### types vs interfaces
+### Types vs Interfaces
 
 In part 1 we already talked about this but as a reminder we will follow this rule of thumb: *If you write object oriented code - use interfaces, if you write functional code - use type aliases* in combination with *Use interfaces for public API libraries and types for components, state, JSX, etc.* For that reason I included in the boilerplates that ESLint autofixes interfaces to types.
 
@@ -210,7 +210,7 @@ If you want to go deeper into the differences you can read [this post in TS Hand
 TLDR; types are more restricted and interfaces can be opened and add more properties.
 
 
-### Template literals
+### Combinations with Template Literals
 
 Inside [AnimeTrailers](https://animetrailers.dastasoft.com/) I have included a simple custom UI that will be useful to demonstrate cases like this, you can check the different simple components in `src/components/UI` but most of them will be explained through this guide.
 
@@ -271,7 +271,7 @@ Now `PositionValues` will generate `"center" | "top-left" | "top-center" | "top-
 
 With exclude you can remove the `middle-center` and add `center` afterwards with a union.
 
-### Custom HTML components
+### Custom HTML Components
 
 If you want to create a component that behaves like an `input` but you don't want to write every single property and function of the input HTML, you can achieve this with:
 
@@ -320,11 +320,11 @@ In this case, this component explicitly passes a `text` to display as `children`
 
 ## Typing Hooks
 
-Now let's deep dive on how to type each of the most used hooks in React.
+Now let's dive into how to write each of the most commonly used hooks in React.
 
 ### useState
 
-In most cases, typing `useState` will require nothing from you, because TS will try to infer the type, on other scenarios, for example when initial value is different than future values, you will specify directly.
+In most cases, typing `useState` will not require anything from you, because TypeScript will try to infer the type, in other scenarios, e.g. when the initial value is different from future values, you will specify it directly.
 
 ```ts
 // src/pages/Search.tsx
@@ -337,11 +337,11 @@ export default function Search() {
 }
 ```
 
-From the state, `page` is type infered as number based on the initial value provided, it will be exactly the same as the version commented down. Also the state setters are automatically typed as `React.Dispatch<React.SetStateAction<number>>` being `number` replaced for the infered/specified type.
+From the state `page` the type is inferred as a number based on the initial value provided, it will be exactly the same as the commented version. Also state setters are automatically typed as `React.Dispatch<React.SetStateAction<number>>` with `number` replaced by the inferred/specified type.
 
-On the other hand `animeList` without any explicit type would be `null`, that it's true before the component fetches the necessary data but eventually will contain a collection of `Anime` types for that we explicitly set the type with an union of the two possible types.
+On the other hand `animeList` without any explicit type would be only `null`, which is true before the component gets the necessary data but will eventually contain a collection of `Anime` types for which you must explicitly set the type with a union of the two possible types.
 
-Beyond setting the type to null for control initial states on useState there are other similar solutions, like:
+Beyond setting the type to null for initial control states in useState there are other similar solutions, such as:
 
 ```ts
 export default function Search() {
@@ -352,9 +352,9 @@ export default function Search() {
 }
 ```
 
-*Important to take a look into the third example, in that case works because is not a collection.
+*Important to have a look at `anime, setAnime` line, in that case it works because it is not a collection, is a single element.
 
-The principal difference with this additional solutions is that we're not 100% honest with the compiler, we're saying that at first we have something with the shape the compiler spects because we know that eventually a correct value will be provided and that comes with a risk.
+The main difference with these additional solutions is that you are not 100% honest with the compiler, saying that at the beginning in that state there is something with the form that the compiler speculates because you know that eventually a correct value will be provided and that comes with a risk.
 
 
 ```ts
@@ -366,11 +366,11 @@ export default function Search() {
 }
 ```
 
-If we don't provide a correct value with this option this can explode and the IDE won't complain at all.
+If you do not provide a correct value with this option this may explode at runtime and the IDE will not complain at all.
 
 #### Passing state as props
 
-A lot of times we need to pass the state down in the hirearchy and delegate to a children when a state is readed or even setted in those cases you will need to type the props of that component with state types, the best is to understand what types do you need to pass but if you have a hard time with it, you can hover your current state and the IDE will tell you what do you need.
+Quite often you may need to pass state down in the hirearchy and delegate to a children when a state is read or set. You will need to write the props for that component with state types in mind.
 
 ```ts
 type FancyComponentProps = {
@@ -383,9 +383,15 @@ const FancyComponent = ({anime, setAnime}: FancyComponentProps) => {
 }
 ```
 
+It is best to understand what types you need to pass but if you have difficulty with that, you can pass the current state and the IDE will tell you what you need.
+
+![type intellisense](/assets/posts/content/typescript2/type-intellisense.webp)
+
 ### useReducer
 
-At this point we have almost every tool to define correctly the types for `useReducer`. For the next example even if you can see the final code in the url provided you will find it different, I simplified the example here and we'll cover the real code in the Generics section.
+At this point you have mostly all the tools to correctly define the types for `useReducer`.
+
+For the following example although I have simplified it here and we will cover the actual code in the Generics section.
 
 ```ts
 // src/hooks/useFetch.ts
@@ -429,11 +435,11 @@ const fetchReducer = (state: State, action: Action): State => {
 const [state, dispatch] = useReducer(fetchReducer, initialState)
 ```
 
-As always we recieve a `state` and `dispatch` from useReducer when we provide a `reducer function` and an `initial state`. We don't need to anything on the useReducer itself but we must type the `state` and the `actions` because this will define how state and dispatch will behave.
+As always, you get a `status` and a `dispatch` from `useReducer` when you provide a `reducer function` and an `initial state`. You don't need to do anything in the useReducer itself, but you must write the `state` and `actions` because this will define how the state and dispatch will behave.
 
 #### initialState
 
-As for the `initial state` we can simplify the process and instead of creating a `State` type we may use `typeof initialState` wherever we need to define a type according to the initial state.
+For the `initial state` you can simplify the process and instead of creating a `State` type, you can use `typeof initialState` whenever you need to define a type based on the initial state.
 
 ```ts
 const initialState: State = {
@@ -447,27 +453,27 @@ const fetchReducer = (state: typeof initialState, action: Action) => {
 }
 ```
 
-The pitfall with this version is that we're not controlling future values of `data` and `error` this can work when the type is correct and defined from the first moment, that is not our case here so for that we define a custom type `State`.
+The drawback of this version is that it does not control the future values of `data` and `error`. This may work when the type is always the same but it is not the case here so you can use a custom `State` type for that.
 
 #### Actions
 
-We need to specify which actions our reducer will be capable of handle and that is done with unions. The enum part is totally optional but helps to be less error phrone than writing strings on multiple places.
+You have to specify which actions the reducer will be able to handle, and that is done with unions. The enum part is entirely optional, but it helps to be less error-prone than writing strings in several places.
 
 
 #### reducer function
 
-We only need to specify the types of the params passed to the function that are in fact the ones we created on the above steps.
+You only have to specify the types of the params passed to the function, which are in fact the ones you created in the previous steps.
 
 #### Passing as props
 
-Again, if you need to pass anything from useReducer as prop you will need to type the consumer props accordignly.
+Again, if you want to pass something from useReducer as a prop, you will have to write the consumer props accordingly.
 
-- `state` will be the type you defined your `initialState` and/or a custom type `State` like in the previous example
-- `dispatch` will be `React.Dispatch<Action>` where `Action` is our custom type for actions.
+- `state` will be the type you have defined in your `initialState` and/or a custom `State` type as in the example above.
+- `dispatch` will be `React.Dispatch<Action>` where `Action` is the custom type for actions.
 
 ### useContext
 
-Context in the example project is used to handle a list of liked animes and toggle the state on different points in the app. At this point `useContext` will have no secrets for you because is simply a combination of what you saw until now but let's see an example:
+The context in the example project is used to manage a list of anime you like and toggle the state at different points in the application. At this point `useContext` will have no secret for you because it is simply a combination of what you have seen so far but let's look at an example:
 
 ```ts
 // src/context/FavContext.tsx
@@ -495,11 +501,11 @@ export const FavContextProvider = ({ children }: FavContextProviderProps) => {
 }
 ```
 
-`useContext` follows the same rules than in `useState` for typing. In this case, initial value will be null but we trick TypeScrpt with `as` and defined an object that will contain an array of `favorited animes` and a function to toggle.
+`useContext` follows the same rules as `useState` for typing. In this case, the initial value will be null but we trick TypeScrpt with `as` and define an object that will contain an array of `favourite animes` and a function to toggle.
 
-Commented you have the tipically scenario of a setter in case you needed.
+Commented you have the typical setter scenario in case you need it.
 
-For the rest of the code, you already learnt `useState` in previous section so nothing new, with the type `Favorite` useState will determine the necessary types and those types will be available directly on the consumer side.
+For the rest of the code, you already learned `useState` in the previous section so nothing new, with the `Favorite` type useState will determine the necessary types and those types will be available directly on the consumer side.
 
 ```ts
 // src/components/AnimeDetail/index.tsx
@@ -509,15 +515,15 @@ const { favList, toggleFav } = useContext(FavContext)
 
 ### useRef
 
-`useRef` can be used in two different ways so the typing will be slightly different on each case.
+`useRef` can be used in two different ways, so the typing will be slightly different in each case.
 
 #### DOM references
 
-One of the uses for `useRef` is for holding a reference to a DOM element. 
+One of the uses of `useRef` is to keep a reference to a DOM element. 
 
-In the the example project you will find this for performing infinite scroll saving a reference to an observable of the last element of the anime list, with that you can know when the user is viewing that element in the browser and trigger a new fetch.
+In the example project you'll find this for infinite scrolling by holding a reference to an observable of the last item in the anime list, so you can know when the user is viewing that item in the viewport and trigger a new fetch.
 
-Let's see an esier and shorter example of useRef for DOM reference, but you can [check the full version of the useRef + observer](https://github.com/dastasoft/animetrailers/blob/main/src/components/AnimeList/index.tsx)
+Let's look at a shorter example of useRef for the DOM reference, but you can [check the full version of the useRef + observer](https://github.com/dastasoft/animetrailers/blob/main/src/components/AnimeList/index.tsx)
 
 ```ts
   const myDomReference = useRef<HTMLInputElement>(null)
@@ -527,17 +533,17 @@ Let's see an esier and shorter example of useRef for DOM reference, but you can 
   }, [])
 ```
 
-A typical case can be when a page loads automatic focus on an input. You only need to specify the type of the DOM element you're referencing to, in this case `HTMLInputElement`.
+A typical case might be when a page loads and you want an automatic focus on an input. Just specify the type of the DOM element being referenced, in this case `HTMLInputElement`.
 
-A few considerations of the code above:
+Some considerations about the above code:
 
-- The hook will return a read-only property `current`.
-- You don't need to manually type `current`, React will handle it through `React.RefObject<HTMLInputElement>` in this case.
+- The hook will return a read-only `current` property.
+- You don't need to manually write `current`, React will handle it through `React.RefObject<HTMLInputElement>` in this case.
 - If the DOM element is always present, you can set the initial value to `null!` and avoid the if check.
 
 #### Mutable references
 
-Second use for `useRef` when you want to hold mutable values, for example in cases that you need a variable unique to each instance of a component that survives between renders and does not trigger a re-render.
+The second use of `useRef` is when you want to keep mutable values between renders, e.g. in cases where you need a unique variable for each instance of a component that survives between renders and does not trigger a re-render.
 
 ```ts
 const isFirstRun = useRef(true)
@@ -550,14 +556,14 @@ useEffect(() => {
 }, [])
 ```
 
-Some consideratons you will notice compared with the previous example: 
+Some considerations you will notice compared to the previous example: 
 
-- Now you can mutate the value inside `current`
-- React provides `React.MutableRefObject<boolean>` now is a `MutableRefObject` instead of `RefObject`.
+- You can now mutate the value inside `current`.
+- React provides `React.MutableRefObject<boolean>` is now a `MutableRefObject` instead of `RefObject`.
 
 ## Forwarding ref
 
-In the example project I use refs to know where is the last element of the list and trigger a fetch of the next "page". If at some point you need to pass a reference to an HTML element like in the section `useRef` typing the props of that component will be slightly different:
+In the example project I use refs to know where the last element in the list is and trigger a fetch of the next "page". If at some point you need to pass a reference to an HTML element as in the `useRef` section writing the props for that component will be slightly different:
 
 
 ```ts
@@ -572,21 +578,21 @@ const Card = React.forwardRef(
 })
 ```
 
-In order to pass the reference you will need to wrap your component with `React.forwardRef` and that will inject alongside the regular props of the component the `ref` which will be any HTML element wrapped into `React.Ref` type.
+To pass the reference you will need to wrap your component with `React.forwardRef` and that will inject along with the regular props of the component the `ref` which will be any HTML element wrapped in the `React.Ref` type.
 
-In this case we know the type of the HTML element we're forwarding to, but if not is your case, this can be a good moment to use generics.
+In this case we know the type of the HTML element we are forwarding to, but if this is not your case, this might be a good time to use generics.
 
 ## Generics
 
 If you need to review what generics are, be sure to check the [part 1 under Generics section](https://blog.dastasoft.com/posts/heres-what-every-react-developer-needs-to-know-about-typescript).
 
-As for React concerns let's see one of the examples on where you may need the generics usage.
+As for React concerns, let's look at one of the examples where you may need to use generics.
 
-Let's imagine that you want to create a custom UI component wrapping existing HTML elements but giving a set of custom properties like most component libraries does.
+Let's imagine we want to create a custom UI component by wrapping existing HTML elements but giving it a set of custom properties as most component libraries do.
 
-Most of these libraries also provides the flexibility of deciding which HTML element is finally rendered with a property `as` and that is exactly the case of the `Text` UI component. This Text UI component is used to display any text with a set of sizes and colors, also we want to allow the user to choose any HTML element that they need, not contrain to an unique `p` or `span`.
+Most of these libraries also provide the flexibility to decide which HTML element is finally rendered with an `as` property and that is exactly the case for the `Text` UI component. This Text UI component is used to display any text with a set of sizes and colors, plus we want to allow the user to choose any HTML element they need, not restrict themselves to a single `p` or `span`.
 
-In this scenario you don't know upfront which element the consumer will pass to your component so, you need to use generics to infer the type to whichever they pass. 
+In this scenario you don't know in advance what element the consumer will pass to your component, so you need to use generics to infer the type to whichever one they pass. 
 
 So the prop types for the component will be:
 
@@ -612,24 +618,24 @@ export default function Text<T extends React.ElementType = 'div'>({
 }
 ```
 
-Let's examine in detail what is happening there:
+Let's examine in detail what happens in the example above:
 
-- We use `T` for the generic here but you can use any name you want.
-- E extends from `React.ElementType` which is the most generic type for HTML elements, with that we will know that anything passed into the component is based on an HTML element instead of making a union of every HTML element possible.
-- Second type `TextProps` is used for two things:
-  - We need extra properties depending on the type of HTML element, when a consumer uses the Text component as label we want to verify and suggest different properties than when it's a span for that we need to use `React.ComponentProps` in this case we don't need references so we use explicitly the version without ref forwarding.
-  - `React.ComponentProps` also provides the `children` prop that we use but as we don't modify it's type we don't need to deal with it like we did on `Omit` section.
+- We use `T` for generics here but you can use any name you want.
+- T extends from `React.ElementType` which is the most generic type for HTML elements, so we know that whatever is passed to the component is based on an HTML element rather than a manually typed union of all possible HTML elements.
+- The second type `TextProps` is used for two things:
+  - We need extra properties depending on the type of HTML element, when a consumer uses the Text component as a `label` we want to check and suggest different properties than when it is a `span` for that we need to use `React.ComponentProps` in this case we don't need references so we explicitly use the type `ComponentPropsWithoutRef`.
+  - `React.ComponentProps` also provides the `children` prop that this component uses, but as its type is not modified, there is no need to deal with `Omit` or other exclusion techniques.
 
-With this example, we have a very flexible component that is correctly typed and provides a good developer experience by checking and suggesting props or even it's values.
+With this example, we have a very flexible component that is correctly typed and provides a good developer experience when testing and suggesting props or even their values.
 
-Inside the example project you can examine the different custom UI components to check the implementation following this same pattern.
+Within the example project you can examine the different custom UI components to check the implementation following this same pattern.
 
 
-## Typing Fetch data
+## Typing Custom useFetch Hook
 
-On the example project I included a simple typed hook to fetch data, isn't nothing fancy but I think is a complete example of everything that is explained on this guide.
+In the example project I have included a simple hook to get data, it is not a big deal but I think it is a complete example of everything explained in this article.
 
-Let's take a look at some parts of that hook but I encourague you to watch [the real file](https://github.com/dastasoft/animetrailers/blob/main/src/hooks/useFetch.ts) and try to understand all with the different sections explained on this guide.
+Let's take a look at some parts of that hook but I encourague you to watch [the real file](https://github.com/dastasoft/animetrailers/blob/main/src/hooks/useFetch.ts) and try to understand everything with the different sections explained in this article.
 
 ```ts
 // src/hooks/useFetch.ts
@@ -648,13 +654,13 @@ function useFetch<T = unknown>(
 }
 ```
 
-- The hook recieves a generic type that we can't know upfront what kind of data will handle, it can be a Pokemon data, Employees data or in this case, etc, In this case Anime data.
-- The hook accepts `url` on where to do the fetch and options to decide if the hook performs an initial fetch or in-demand and if there is a delay between fetches.
-- Options are setted with default values.
-- The hook return a `State` of the type specified by the consumer through generics.
-- State type defines that optionally a data of the type defined by the consumer is returned, a looading flag or error if anything goes wrong.
+- The hook receives a generic type that we can't know in advance what kind of data it will handle.
+- The hook accepts `url` on where to do the fetch and options to decide if the hook does an initial fetch and if there is a delay between fetches.
+- The `options` object have default values if nothing is provided.
+- The hook returns a `State` of the type specified by the consumer via the generics.
+- The status type defines that optionally a data of the type defined by the consumer, a looading flag or an error is returned if something goes wrong.
 
-Let's check the usage on the consumers side:
+Let's check the usage on the consumer side:
 
 ```ts
 // src/pages/AnimeDetail.tsx
@@ -664,8 +670,8 @@ const { data, loading, error } = useFetch<JikanAPIResponse<RawAnimeData>>(
   )
 ```
 
-- `getAnimeFullById` returns the url for that endpoint.
-- useFetch in this case will return a `data` of the type `JikanAPIResponse` which also have different possibilities, in this case `RawAnimeData`.
+- `getAnimeFullById` returns the url of that endpoint.
+- `useFetch` in this case will return a `data` of type `JikanAPIResponse` which also has different possibilities, in this case `RawAnimeData`.
 
 ## Conclusion
 

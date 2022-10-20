@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://blog.dastasoft.com/</id>
     <title>Blog | dastasoft</title>
-    <updated>2022-10-18T09:16:08.301Z</updated>
+    <updated>2022-10-20T15:39:58.934Z</updated>
     <generator>Feed for Node.js</generator>
     <author>
         <name>dastasoft</name>
@@ -20,6 +20,7 @@
         <id>https://blog.dastasoft.com/posts/heres-what-every-react-developer-needs-to-know-about-typescript_part_2</id>
         <link href="https://blog.dastasoft.com/posts/heres-what-every-react-developer-needs-to-know-about-typescript_part_2"/>
         <updated>2022-10-31T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Using TypeScript in combination with React can provide an enhanced, less error-prone development experience. But as always, with great power comes great responsibility.]]></summary>
         <author>
             <name>dastasoft</name>
             <email>dastasoft@protonmail.com</email>

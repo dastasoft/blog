@@ -4,7 +4,7 @@
         <title>Blog | dastasoft</title>
         <link>https://blog.dastasoft.com/</link>
         <description>Hi I'm dastasoft, I love talking, learning and teaching about technology so, I write tutorials and guides about programming like JavaScript, React, Next.js, Node.js and many more.</description>
-        <lastBuildDate>Tue, 18 Oct 2022 09:16:08 GMT</lastBuildDate>
+        <lastBuildDate>Thu, 20 Oct 2022 15:39:58 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>Feed for Node.js</generator>
         <image>
@@ -18,6 +18,7 @@
             <link>https://blog.dastasoft.com/posts/heres-what-every-react-developer-needs-to-know-about-typescript_part_2</link>
             <guid>https://blog.dastasoft.com/posts/heres-what-every-react-developer-needs-to-know-about-typescript_part_2</guid>
             <pubDate>Mon, 31 Oct 2022 00:00:00 GMT</pubDate>
+            <description><![CDATA[Using TypeScript in combination with React can provide an enhanced, less error-prone development experience. But as always, with great power comes great responsibility.]]></description>
             <author>dastasoft@protonmail.com (dastasoft)</author>
         </item>
         <item>
