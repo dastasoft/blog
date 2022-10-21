@@ -12,7 +12,7 @@ tags: ['beginners', 'react', 'typescript', 'javascript']
 section: 'frontend'
 ---
 
-Welcome to the second part of this series on TypeScript, in the first part we talked about why to use TypeScript in general, how to use it and an overview of the language. In this second post we will take a closer look at how to use TypeScript in React and how to solve the different challenges you will face when trying to develop an app with React and TypeScript.
+Welcome to the second part of this series on TypeScript, first part was about why to use TypeScript in general, how to use it and an overview of the language. In this second part you can take a closer look at how to use TypeScript in React and how to solve the different challenges you will face when trying to develop an app with React and TypeScript.
 
 ## AnimeTrailers aka the Example Project
 
@@ -198,12 +198,12 @@ export default function Favorites(): JSX.Element {
 }
 ```
 
-To summarise the answer from this section: **let the TypeScript automatically infer the return type**. If you need a detailed list of the differences between those 3 types I suggest you [have a look at this SO post](https://stackoverflow.com/questions/58123398/when-to-use-jsx-element-vs-reactnode-vs-reactelement)
+To summarise the answer from this section: **let TypeScript automatically infer the return type**. If you need a detailed list of the differences between those 3 types I suggest you [have a look at this SO post](https://stackoverflow.com/questions/58123398/when-to-use-jsx-element-vs-reactnode-vs-reactelement)
 
 
 ### Types vs Interfaces
 
-In part 1 we already talked about this but as a reminder we will follow this rule of thumb: *If you write object oriented code - use interfaces, if you write functional code - use type aliases* in combination with *Use interfaces for public API libraries and types for components, state, JSX, etc.* For that reason I included in the boilerplates that ESLint autofixes interfaces to types.
+Part 1 already covered this but as a reminder you should follow this rule of thumb: *If you write object oriented code - use interfaces, if you write functional code - use type aliases* in combination with *Use interfaces for public API libraries and types for components, state, JSX, etc.* For that reason I included in the boilerplates that ESLint autofixes interfaces to types.
 
 If you want to go deeper into the differences you can read [this post in TS Handbook](https://www.typescriptlang.org/docs/handbook/2/everyday-types.html#differences-between-type-aliases-and-interfaces) but nowadays most of the features present in an interface are in a type as well and vice versa. 
 
@@ -243,7 +243,7 @@ export default function Position({
 
 Position is a simple component to use with any other component with absolute positon and place it on any of the four edges with `top-left`, `top-right`, `bottom-left` and `bottom-right`.
 
-Creating a new type with template literals has no secret if you are already using it in JavaScript, the clever trick here is when you combine template literals `${VPosition}-${HPositon}` with union types `top` | `bottom`, TypeScript will generate all possible combinations of both, so we can generate the four different values we need.
+Creating a new type with template literals has no secret if you are already using it in JavaScript, the clever trick here is when you combine template literals `${VPosition}-${HPositon}` with union types `top` | `bottom` like in the example above, TypeScript will generate all possible combinations of both, so we can generate the four different values we need.
 
 
 ### Exclude
@@ -297,7 +297,7 @@ With `React.ComponentProps` you can specify which element you are basing your ne
 
 #### Omit
 
-Remember the problem with `React.FC` or other types built in React? But what if you want to take advantage of some of the properties it provides? Let's take a look at the `Tag` UI component:
+Let's take a look at the `Tag` UI component:
 
 ```ts
 // src/components/UI/Tag/index.tsx
@@ -324,7 +324,7 @@ Now let's dive into how to write each of the most commonly used hooks in React.
 
 ### useState
 
-In most cases, typing `useState` will not require anything from you, because TypeScript will try to infer the type, in other scenarios, e.g. when the initial value is different from future values, you will specify it directly.
+In most cases, typing `useState` will not require anything from you, because TypeScript will try to infer the type, in other scenarios, e.g. when the initial value is different from future values, you need to specify it directly.
 
 ```ts
 // src/pages/Search.tsx
@@ -352,9 +352,10 @@ export default function Search() {
 }
 ```
 
-*Important to have a look at `anime, setAnime` line, in that case it works because it is not a collection, is a single element.
+*Important to take a closer look at `anime, setAnime` line, in that case it works because it is not a collection, is a single element.
 
-The main difference with these additional solutions is that you are not 100% honest with the compiler, saying that at the beginning in that state there is something with the form that the compiler speculates because you know that eventually a correct value will be provided and that comes with a risk.
+ The main difference with these additional solutions is that you are not 100% honest with the compiler. You are assuming that you will have a value with that shape, and that has an implicit risk.
+
 
 
 ```ts
@@ -366,7 +367,7 @@ export default function Search() {
 }
 ```
 
-If you do not provide a correct value with this option this may explode at runtime and the IDE will not complain at all.
+If you do not provide a correct value with this option this may explode at runtime.
 
 #### Passing state as props
 
@@ -383,7 +384,7 @@ const FancyComponent = ({anime, setAnime}: FancyComponentProps) => {
 }
 ```
 
-It is best to understand what types you need to pass but if you have difficulty with that, you can pass the current state and the IDE will tell you what you need.
+It is best to understand what types you need to pass but if you have difficulty with that, you can check the current state variables and the IDE will tell you what you need to pass.
 
 ![type intellisense](/assets/posts/content/typescript2/type-intellisense.webp)
 
@@ -501,7 +502,7 @@ export const FavContextProvider = ({ children }: FavContextProviderProps) => {
 }
 ```
 
-`useContext` follows the same rules as `useState` for typing. In this case, the initial value will be null but we trick TypeScrpt with `as` and define an object that will contain an array of `favourite animes` and a function to toggle.
+`useContext` follows the same rules as `useState` for typing. In this case, the initial value will be null but we trick TypeScrpt with `as` on `createContext` and define an object that will contain an array of `favourite animes` and a function to toggle.
 
 Commented you have the typical setter scenario in case you need it.
 
@@ -563,7 +564,7 @@ Some considerations you will notice compared to the previous example:
 
 ## Forwarding ref
 
-In the example project I use refs to know where the last element in the list is and trigger a fetch of the next "page". If at some point you need to pass a reference to an HTML element as in the `useRef` section writing the props for that component will be slightly different:
+If at some point you need to pass a reference to an HTML element as in the `useRef` section writing the props for that component will be slightly different:
 
 
 ```ts
@@ -585,8 +586,6 @@ In this case we know the type of the HTML element we are forwarding to, but if t
 ## Generics
 
 If you need to review what generics are, be sure to check the [part 1 under Generics section](https://blog.dastasoft.com/posts/heres-what-every-react-developer-needs-to-know-about-typescript).
-
-As for React concerns, let's look at one of the examples where you may need to use generics.
 
 Let's imagine we want to create a custom UI component by wrapping existing HTML elements but giving it a set of custom properties as most component libraries do.
 
@@ -624,16 +623,17 @@ Let's examine in detail what happens in the example above:
 - T extends from `React.ElementType` which is the most generic type for HTML elements, so we know that whatever is passed to the component is based on an HTML element rather than a manually typed union of all possible HTML elements.
 - The second type `TextProps` is used for two things:
   - We need extra properties depending on the type of HTML element, when a consumer uses the Text component as a `label` we want to check and suggest different properties than when it is a `span` for that we need to use `React.ComponentProps` in this case we don't need references so we explicitly use the type `ComponentPropsWithoutRef`.
-  - `React.ComponentProps` also provides the `children` prop that this component uses, but as its type is not modified, there is no need to deal with `Omit` or other exclusion techniques.
+  - `React.ComponentProps` also provides the `children` prop so you don't need to include in `TextOwnProps`.
+  - There is no need to deal with `Omit` or other exclusion techniques because `children` is not modified or overwritten by any `TextOwnProps` props.
 
-With this example, we have a very flexible component that is correctly typed and provides a good developer experience when testing and suggesting props or even their values.
+With this example, we have a very flexible component that is correctly typed and provides a good developer experience.
 
 Within the example project you can examine the different custom UI components to check the implementation following this same pattern.
 
 
 ## Typing Custom useFetch Hook
 
-In the example project I have included a simple hook to get data, it is not a big deal but I think it is a complete example of everything explained in this article.
+In the example project I have included a simple hook to get the data and use `localStorage` as a temporary cache so as not to exceed the API limit, it is not a big deal but I think it is a complete example of everything explained in this article.
 
 Let's take a look at some parts of that hook but I encourague you to watch [the real file](https://github.com/dastasoft/animetrailers/blob/main/src/hooks/useFetch.ts) and try to understand everything with the different sections explained in this article.
 
@@ -654,11 +654,11 @@ function useFetch<T = unknown>(
 }
 ```
 
-- The hook receives a generic type that we can't know in advance what kind of data it will handle.
+- The hook receives a generic type that you can't know in advance what kind of data it will handle.
 - The hook accepts `url` on where to do the fetch and options to decide if the hook does an initial fetch and if there is a delay between fetches.
 - The `options` object have default values if nothing is provided.
 - The hook returns a `State` of the type specified by the consumer via the generics.
-- The status type defines that optionally a data of the type defined by the consumer, a looading flag or an error is returned if something goes wrong.
+- The status type defines that optionally a data of the type provided by the consumer, a loading flag or an error is returned if something goes wrong.
 
 Let's check the usage on the consumer side:
 
@@ -675,3 +675,8 @@ const { data, loading, error } = useFetch<JikanAPIResponse<RawAnimeData>>(
 
 ## Conclusion
 
+Throughout this article you've seen the most common pain points when it comes to TypeScript in a React project that will pay for the effort, especially when working with others to fully understand the ins and outs of every component, hook and context you need to use. Using TypeScript is investing in code that is more reliable, better documented and readable, less error-prone and more maintainable.
+
+I hope this article helps you avoid pitfalls with this combination of technologies and if you'd like more explanations of other parts of React with TypeScript or perhaps other frameworks like Next, let me know so I can consider including them in part three of this series.
+
+Thanks for reading!
