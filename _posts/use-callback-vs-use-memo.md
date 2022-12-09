@@ -50,9 +50,9 @@ true === true // true
 {} === {} // false
 [] === [] // false
 
-const f = () => 'Hi'
-const f1 = f
-const f2 = f
+const f = () => () => 'Hi'
+const f1 = f()
+const f2 = f()
 
 f1 === f1 // true
 f1 === f2 // false
