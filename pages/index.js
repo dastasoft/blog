@@ -6,6 +6,7 @@ import Post from '@/components/Post/Box'
 import PostSearcher from '@/components/InputSearch'
 import { getAllPosts } from '@/lib/api'
 import generateRssFeed from '@/lib/generateRSSFeed'
+import { DESCRIPTION } from '@/lib/constants'
 
 const Home = ({ allPosts }) => {
   const [filter, setFilter] = useState('')
@@ -30,6 +31,7 @@ const Home = ({ allPosts }) => {
   return (
     <Container>
       <NextSeo />
+      <Description>{DESCRIPTION}</Description>
       <PostSearcher filter={filter} setFilter={setFilter} />
       <GridLayout>{posts}</GridLayout>
     </Container>
@@ -46,6 +48,10 @@ const Container = styled.div`
   form {
     margin: 4rem 0 2rem 0;
   }
+`
+
+const Description = styled.h2`
+  padding: 0.5rem 0 1rem 0;
 `
 
 const GridLayout = styled.div`
@@ -80,6 +86,8 @@ export async function getStaticProps() {
     'slug',
     'author',
     'coverImage',
+    'canonicalURL',
+    'canonicalPublisher',
     'excerpt',
   ])
 

@@ -12,9 +12,9 @@ const components = {
         <Image
           src={image.src}
           alt={image.alt}
-          width={1920}
-          height={1080}
-          objectFit="contain"
+          width={900}
+          height={500}
+          style={{ objectFit: 'contain' }}
         />
         {image.title && <figcaption>{image.title}</figcaption>}
       </Figure>

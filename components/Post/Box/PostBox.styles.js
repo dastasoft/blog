@@ -12,6 +12,7 @@ export const Article = styled.article`
   display: flex;
   flex-direction: column;
   cursor: pointer;
+  height: 100%;
 
   a,
   span,

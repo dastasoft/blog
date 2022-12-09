@@ -6,6 +6,7 @@ export const Container = styled.div`
   justify-content: center;
   align-items: center;
 
+  p,
   a {
     text-decoration: none;
     text-align: center;
@@ -23,6 +24,7 @@ export const Container = styled.div`
   @media (min-width: ${({ theme }) => theme.breakpoints.lg}) {
     flex-direction: row;
 
+    p,
     a {
       padding: 0.5rem 1rem;
       font-size: 24px;

@@ -30,7 +30,7 @@ export const StyledHeader = styled.header`
   }
 `
 
-export const Avatar = styled.a`
+export const Avatar = styled.div`
   justify-self: flex-start;
 
   img {

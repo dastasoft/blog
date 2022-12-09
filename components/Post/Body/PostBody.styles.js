@@ -195,6 +195,9 @@ export const StyledContent = styled.div`
 `
 
 export const Figure = styled.figure`
+  width: 100%;
+  height: auto;
+
   figcaption {
     font-size: 16px;
     text-align: center;

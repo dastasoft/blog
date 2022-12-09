@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://blog.dastasoft.com/</id>
     <title>Blog | dastasoft</title>
-    <updated>2022-10-24T17:13:41.759Z</updated>
+    <updated>2022-12-09T16:25:35.407Z</updated>
     <generator>Feed for Node.js</generator>
     <author>
         <name>dastasoft</name>
@@ -11,10 +11,27 @@
     </author>
     <link rel="alternate" href="https://blog.dastasoft.com/"/>
     <link rel="self" href="https://blog.dastasoft.com/rss/atom.xml"/>
-    <subtitle>Hi I'm dastasoft, I love talking, learning and teaching about technology so, I write tutorials and guides about programming like JavaScript, React, Next.js, Node.js and many more.</subtitle>
+    <subtitle>Learn JavaScript ecosystem with easy step by step articles.</subtitle>
     <logo>https://blog.dastasoft.com/icons/maskable_icon.png</logo>
     <icon>https://blog.dastasoft.com/favicon.ico</icon>
     <rights>All rights reserved 2022, dastasoft</rights>
+    <entry>
+        <title type="html"><![CDATA[Better React Performance - useCallback vs useMemo]]></title>
+        <id>https://blog.dastasoft.com/posts/use-callback-vs-use-memo</id>
+        <link href="https://blog.dastasoft.com/posts/use-callback-vs-use-memo"/>
+        <updated>2022-12-09T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Learn how, when and which methods you can use to improve the performance of your React web application.]]></summary>
+        <author>
+            <name>dastasoft</name>
+            <email>dastasoft@protonmail.com</email>
+            <uri>https://dastasoft.com/</uri>
+        </author>
+        <contributor>
+            <name>dastasoft</name>
+            <email>dastasoft@protonmail.com</email>
+            <uri>https://dastasoft.com/</uri>
+        </contributor>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Here is what every React Developer needs to know about TypeScript - Part 2]]></title>
         <id>https://blog.dastasoft.com/posts/heres-what-every-react-developer-needs-to-know-about-typescript_part_2</id>

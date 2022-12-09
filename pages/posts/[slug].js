@@ -15,8 +15,7 @@ import { HOMEPAGE, URLs } from '@/lib/constants'
 
 export default function Post({ post }) {
   const router = useRouter()
-  const url = `${HOMEPAGE}posts/${post.slug}`
-
+  const url = post.canonicalURL || `${HOMEPAGE}posts/${post.slug}`
   if (!router.isFallback && !post?.slug) {
     return <ErrorPage statusCode={404} />
   }
@@ -100,6 +99,8 @@ export async function getStaticProps({ params }) {
     'content',
     'ogImage',
     'coverImage',
+    'canonicalURL',
+    'canonicalPublisher',
     'tags',
     'section',
   ])

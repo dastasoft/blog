@@ -13,6 +13,11 @@ export const SubHeader = styled.div`
   margin: 1rem 0;
 `
 
+export const Canonical = styled.p`
+  margin: 1rem 0;
+  font-style: italic;
+`
+
 export const TagContainer = styled.div`
   display: flex;
   align-items: center;

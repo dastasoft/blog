@@ -7,14 +7,14 @@ const MenuItems = () => {
   return (
     <Container>
       <ELink href="/" activeClassName="active">
-        <a>Blog</a>
+        <p>Blog</p>
       </ELink>
       <a href={URLs.PORTFOLIO} target="_blank" rel="noopener noreferrer">
         Portfolio
       </a>
       <a href={`mailto:${URLs.MAIL}`}>Contact</a>
       <ELink href="/about" activeClassName="active">
-        <a>About</a>
+        <p>About</p>
       </ELink>
     </Container>
   )

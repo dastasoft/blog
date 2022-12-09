@@ -30,9 +30,7 @@ const Header = ({ theme, themeToggler }) => {
             />
           </Avatar>
         </Link>
-        <Link href="/">
-          <a>{AUTHOR}</a>
-        </Link>
+        <Link href="/">{AUTHOR}</Link>
         <ThemeToggler theme={theme} onToggle={themeToggler} />
         <Navigation>
           <MenuItems />
