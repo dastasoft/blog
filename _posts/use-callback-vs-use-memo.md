@@ -140,7 +140,7 @@ In the example above you can see the use of `useMemo`:
 - Wrap a function that you want to save the result.
 - As in `useEffect` it passes an array of dependencies that will tell React when this stored value (the value returned by the function) needs to be refreshed.
 
-In this case, the function returns an object, as you know comparing objects with [Object.is](http://Object.is) are not the same because they are stored in different memory addresses, with useMemo you can save the same reference.
+In this case, the function returns an object, as you know comparing objects with [Object.is](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/is) are not the same because they are stored in different memory addresses, with useMemo you can save the same reference.
 
 In the example project you can test this behaviour as in the previous section, same results too, with the non-optimised version each keystroke will retrieve the images, with `useMemo` the equality is maintained and the child component does not retrieve the image again.
 
