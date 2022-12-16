@@ -30,5 +30,15 @@ yarn-error.log*
 .env.test.local
 .env.production.local
 
+# next-sitemap
+public/robots.txt
+public/sitemap.xml
+
+# next-sw
+public/sw.js
+public/sw.js.map
+public/workbox-*.js
+public/workbox-*.js.map
+
 # vercel
 .vercel

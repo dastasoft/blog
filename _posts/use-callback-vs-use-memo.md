@@ -28,7 +28,7 @@ Still, it's important to know the tools and know when to use them if you see the
 - [Example Project Source Code](https://github.com/dastasoft/optimizing-react)
 - [Example Project Live Demo](https://react-optimisation.dastasoft.com/)
 
-As always, a sample project is provided to test in a simplified environment everything that is explained here. No big deal, the example project is just a summary of the main points you will learn now.
+As always, a sample project is provided to test in a simplified environment everything that is explained here. No big deal, the [example project](https://react-optimisation.dastasoft.com) is just a summary of the main points you will learn now.
 
 Before we start comparing these two hooks, let's review some necessary background concepts.
 
@@ -36,7 +36,7 @@ Before we start comparing these two hooks, let's review some necessary backgroun
 
 When React compares the values used in a dependency array such as `useEffect`, `useCallback`, or props passed to a child component it uses `Object.is()`.
 
-You can find the detailed explanation of [Object.is](http://Object.is) but in short:
+You can find the detailed explanation of [Object.is](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/is) but in short:
 
 - Primitive values are equal (check the link above for the few exceptions).
 - Non-primitive values refer to the same object in memory.
@@ -111,9 +111,9 @@ To achieve true equality between renders, `useCallback` will store the function 
 
 Without this hook, in each render the function will be recreated and point to a different in-memory reference, so React will understand that it is different even if you use `React.memo` in your child component.
 
-In the example project you can test this behaviour and see that with the non-optimised version every time you write, the side effect of a child component is triggered. In that demo, you only get a fetch and a fake slowdown, but imagine this same problem in a large project that runs expensive computations on the client or spends a lot on the server.
+In the [example project](https://react-optimisation.dastasoft.com) you can test this behaviour and see that with the non-optimised version every time you write, the side effect of a child component is triggered. In that demo, you only get a fetch and a fake slowdown, but imagine this same problem in a large project that runs expensive computations on the client or spends a lot on the server.
 
-![use-callback-referential-equality](/assets/posts/content/use-callback-vs-use-memo/use-callback-referential-equality.png)
+[![use-callback-referential-equality](/assets/posts/content/use-callback-vs-use-memo/use-callback-referential-equality.png)](https://react-optimisation.dastasoft.com/use-callback)
 
 ## useMemo
 
@@ -142,17 +142,17 @@ In the example above you can see the use of `useMemo`:
 
 In this case, the function returns an object, as you know comparing objects with [Object.is](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/is) are not the same because they are stored in different memory addresses, with useMemo you can save the same reference.
 
-In the example project you can test this behaviour as in the previous section, same results too, with the non-optimised version each keystroke will retrieve the images, with `useMemo` the equality is maintained and the child component does not retrieve the image again.
+In the [example project](https://react-optimisation.dastasoft.com) you can test this behaviour as in the previous section, same results too, with the non-optimised version each keystroke will retrieve the images, with `useMemo` the equality is maintained and the child component does not retrieve the image again.
 
-![use-memo-referential-equality](/assets/posts/content/use-callback-vs-use-memo/use-memo-referential-equality.png)
+[![use-memo-referential-equality](/assets/posts/content/use-callback-vs-use-memo/use-memo-referential-equality.png)](https://react-optimisation.dastasoft.com/use-memo)
 
 ### Expensive Calculation
 
 Because you are storing a value and avoiding executing the function at all with `useMemo` you can use this to avoid executing unnecessary expensive calculations and be more performant.
 
-Let's see this with the example project:
+Let's see this with the [example project](https://react-optimisation.dastasoft.com):
 
-![use-memo-expensive-calculation](/assets/posts/content/use-callback-vs-use-memo/use-memo-expensive-calculation.png)
+[![use-memo-expensive-calculation](/assets/posts/content/use-callback-vs-use-memo/use-memo-expensive-calculation.png)](https://react-optimisation.dastasoft.com/use-memo)
 
 There is a component which, given a number n, prints out the nth Fibonacci number, this recursive version of the algorithm is rather poorly performing. 
 
@@ -206,7 +206,7 @@ I will give examples with the sample project but you can do it with your own pro
 
 If you press the `record` button and start performing the actions that you think might need some performance tuning, the profiler will save and print a detailed explanation of what has happened there.
 
-For example, in the expensive calculation example project we are going to compare side by side the non-optimised version versus the useMemo version:
+For example, in the expensive calculation [example project](https://react-optimisation.dastasoft.com) we are going to compare side by side the non-optimised version versus the useMemo version:
 
 ![profiler-graph](/assets/posts/content/use-callback-vs-use-memo/profiler-graph.png)
 
