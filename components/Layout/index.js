@@ -1,6 +1,7 @@
 import Header from '@/components/Header'
 import Subscribe from '@/components/Subscribe'
-import { Container, GridLayout } from './Layout.styles'
+import BuyMeACoffeeButton from '../BuyMeACoffeeButton'
+import { Actions, Container, GridLayout } from './Layout.styles'
 
 const Layout = ({ children, theme, themeToggler }) => {
   return (
@@ -8,7 +9,10 @@ const Layout = ({ children, theme, themeToggler }) => {
       <GridLayout>
         <Header theme={theme} themeToggler={themeToggler} />
         <main>{children}</main>
-        <Subscribe />
+        <Actions>
+          <BuyMeACoffeeButton />
+          <Subscribe />
+        </Actions>
       </GridLayout>
     </Container>
   )

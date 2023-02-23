@@ -9,7 +9,7 @@ import {
 export const Container = styled.form`
   justify-self: center;
   margin: 1rem 0 4rem 0;
-  padding: 2rem;
+  padding: 1.5rem 2rem;
   display: flex;
   flex-direction: column;
   border: 1px solid ${({ theme }) => theme.primary};
@@ -22,7 +22,6 @@ export const Container = styled.form`
     ${({ theme }) => theme.primary};
   color: ${({ theme }) => theme.UIText};
   ${getGlobalTransition()}
-  max-width: 20rem;
 `
 
 export const Title = styled.h3`

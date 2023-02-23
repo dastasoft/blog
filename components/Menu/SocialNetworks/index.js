@@ -18,9 +18,6 @@ const SocialNetworks = () => {
       <a href={URLs.GITHUB} target="_blank" rel="noopener noreferrer">
         <FaGithub fontSize={ICON_FONT_SIZE} />
       </a>
-      <a href={URLs.DEV} target="_blank" rel="noopener noreferrer">
-        <FaDev fontSize={ICON_FONT_SIZE} />
-      </a>
       <a href={URLs.LINKEDIN} target="_blank" rel="noopener noreferrer">
         <FaLinkedin fontSize={ICON_FONT_SIZE} />
       </a>

@@ -4,7 +4,7 @@
         <title>Blog | dastasoft</title>
         <link>https://blog.dastasoft.com/</link>
         <description>Learn JavaScript ecosystem with easy step by step articles.</description>
-        <lastBuildDate>Fri, 16 Dec 2022 18:16:51 GMT</lastBuildDate>
+        <lastBuildDate>Thu, 23 Feb 2023 20:35:17 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>Feed for Node.js</generator>
         <image>
@@ -12,7 +12,7 @@
             <url>https://blog.dastasoft.com/icons/maskable_icon.png</url>
             <link>https://blog.dastasoft.com/</link>
         </image>
-        <copyright>All rights reserved 2022, dastasoft</copyright>
+        <copyright>All rights reserved 2023, dastasoft</copyright>
         <item>
             <title><![CDATA[Better React Performance - useCallback vs useMemo]]></title>
             <link>https://blog.dastasoft.com/posts/use-callback-vs-use-memo</link>
