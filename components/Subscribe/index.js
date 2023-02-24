@@ -38,7 +38,7 @@ export default function Subscribe() {
 
   return (
     <Container onSubmit={subscribe}>
-      <Title>Join the Newsletter</Title>
+      <Title>Be the first to know</Title>
       <Label htmlFor="email-input">{'Email Address'}</Label>
       <Input
         id="email-input"
@@ -54,7 +54,7 @@ export default function Subscribe() {
           : `I'll only send emails when new content is posted. No spam.`}
       </Message>
       <Button type="submit" disabled={loading}>
-        <Spinner loading={loading} /> Subscribe
+        <Spinner loading={loading} /> Get the Newsletter
       </Button>
     </Container>
   )

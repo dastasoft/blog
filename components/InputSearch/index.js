@@ -7,13 +7,13 @@ const PostSearcher = ({ filter, setFilter }) => {
     <Container>
       <Input
         type="text"
-        placeholder="Search Posts"
+        placeholder="Search articles"
         aria-labelledby="search-post"
         value={filter}
         onChange={onFilterHandler}
         maxLength={40}
       />
-      <Label id="search-post">Search for posts</Label>
+      <Label id="search-post">Search for articles</Label>
     </Container>
   )
 }

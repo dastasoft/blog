@@ -7,12 +7,10 @@ import {
 } from '@/components/GlobalStyle'
 
 export const Container = styled.form`
-  justify-self: center;
-  margin: 1rem 0 4rem 0;
   padding: 1.5rem 2rem;
   display: flex;
   flex-direction: column;
-  border: 1px solid ${({ theme }) => theme.primary};
+  border: 1px solid ${({ theme }) => theme.secondary};
   border-radius: 0.5rem;
   background: linear-gradient(
       180deg,
@@ -42,5 +40,6 @@ export const Input = styled(RawInput)`
 `
 
 export const Button = styled(RawButton)`
-  max-width: 8rem;
+  max-width: fit-content;
+  margin: 1rem 0;
 `

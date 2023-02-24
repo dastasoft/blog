@@ -1,90 +1,68 @@
 import styled from 'styled-components'
 import { NextSeo } from 'next-seo'
-import { FaGithub, FaLinkedin, FaDev, FaTwitter } from 'react-icons/fa'
-import { MdEmail } from 'react-icons/md'
+import { FaGithub, FaLinkedin, FaTwitter, FaRssSquare } from 'react-icons/fa'
+import { SiBuymeacoffee } from 'react-icons/si'
 
 import {
   colorBackgroundAndTransition,
   imageDarkModeSupport,
 } from '@/components/GlobalStyle'
-import { URLs } from '@/lib/constants'
+import { PERSONAL_DESCRIPTION, URLs } from '@/lib/constants'
+
+const ICON_FONT_SIZE = 40
 
 const About = () => {
   return (
     <Container>
-      <NextSeo
-        title="About | dastasoft"
-        description="Hi, I'm a Full Stack Developer specialized in React and Node. I love learning and teaching technology on my blog. Currently learning Japanese よろしくおねがいします。"
-      />
+      <NextSeo title="About | dastasoft" description={PERSONAL_DESCRIPTION} />
       <Title>About</Title>
+      <H2>About the author</H2>
       <Text>
         <p>
-          Hi, I'm Daniel and I live in Barcelona, I've been making websites,
-          applications, games and learning the ins and outs of technology since
-          I can remember. I love learning, teaching what I have learned and
-          approaching projects from an agile vision and from the user's point of
-          view maintaining the quality of the code following the best practices.
-        </p>
-
-        <p>
-          Currently, both professionally and personally, I keep myself busy with{' '}
-          <a
-            href="https://reactjs.org/"
-            target="blank"
-            rel="noopener noreferrer"
-          >
-            React.js
-          </a>
-          ,{' '}
-          <a
-            href="https://nodejs.org/"
-            target="blank"
-            rel="noopener noreferrer"
-          >
-            Node.js
-          </a>
-          ,{' '}
-          <a
-            href="http://reactnative.dev/"
-            target="blank"
-            rel="noopener noreferrer"
-          >
-            React Native
-          </a>{' '}
-          and cloud technology to offer high performance, scalable and
-          innovative solutions.
+          Hi there, I'm a full stack developer with a passion for writing
+          technical articles about JavaScript, TypeScript, React, and other
+          backend technologies. I love to dive deep into complex concepts and
+          explain them using simple language, providing examples and
+          step-by-step guides to help readers understand the concepts easily.
         </p>
         <p>
-          <i>
-            The articles in this blog are written by me for the sole purpose of
-            teaching what has worked for me and what I have found useful, so
-            there is no sponsorship or anything similar to the different
-            technologies I use in the articles. If at any time a particular
-            article is sponsored or recommended, I will clearly
-            identify this fact in the article itself.
-          </i>
+          I believe that sharing knowledge is the best way to learn, and that's
+          why I write articles that not only explain the concepts but also show
+          how to apply them in real-world scenarios. To make things even easier
+          for my readers, I always include an example open-source project that
+          demonstrates all the concepts explained in the article.
+        </p>
+        <p>
+          Whether you're a beginner or an experienced developer, my articles
+          will provide you with valuable insights and practical knowledge that
+          you can use to improve your skills and become a better web developer.
         </p>
       </Text>
-      <SubTitle>I love to talk about tech, contact me on</SubTitle>
+      <SubTitle>
+        If you find my content helpful and would like to support me, please
+        consider buying me a coffee. It would mean a lot to me and will help me
+        continue creating useful content for the web development community.
+        Thank you!
+      </SubTitle>
       <IconHolder>
+        <a href={URLs.GITHUB} target="_blank" rel="noopener noreferrer">
+          <FaGithub fontSize={ICON_FONT_SIZE} />
+        </a>
+        <a href={URLs.LINKEDIN} target="_blank" rel="noopener noreferrer">
+          <FaLinkedin fontSize={ICON_FONT_SIZE} />
+        </a>
+        <a href={URLs.TWITTER} target="_blank" rel="noopener noreferrer">
+          <FaTwitter fontSize={ICON_FONT_SIZE} />
+        </a>
+        <a href={URLs.RSS} target="_blank" rel="noopener noreferrer">
+          <FaRssSquare fontSize={ICON_FONT_SIZE} />
+        </a>
         <a
-          href={`maitlo:${URLs.MAIL}`}
+          href={URLs.BUY_ME_A_COFFEE}
           target="_blank"
           rel="noopener noreferrer"
         >
-          <MdEmail fontSize="40px" />
-        </a>
-        <a href={URLs.GITHUB} target="_blank" rel="noopener noreferrer">
-          <FaGithub fontSize="40px" />
-        </a>
-        <a href={URLs.DEV} target="_blank" rel="noopener noreferrer">
-          <FaDev fontSize="40px" />
-        </a>
-        <a href={URLs.LINKEDIN} target="_blank" rel="noopener noreferrer">
-          <FaLinkedin fontSize="40px" />
-        </a>
-        <a href={URLs.TWITTER} target="_blank" rel="noopener noreferrer">
-          <FaTwitter fontSize="40px" />
+          <SiBuymeacoffee fontSize={ICON_FONT_SIZE} />
         </a>
       </IconHolder>
     </Container>
@@ -120,6 +98,11 @@ export const Title = styled.h1`
   @media (min-width: ${({ theme }) => theme.breakpoints.lg}) {
     display: none;
   }
+`
+
+const H2 = styled.h2`
+  font-size: x-large;
+  border-bottom: 3px solid ${({ theme }) => theme.primary};
 `
 
 export const Text = styled.div`

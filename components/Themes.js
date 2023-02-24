@@ -1,9 +1,9 @@
 const theme = {
   primary: '#6da34dff',
-  secondary: '#8fbc94ff',
-  contrast: '#512bd4',
+  secondary: '#0d652d',
+  contrast: '#ff7f50',
   thumbBG: '#6da34dff',
-  activeLink: '#28401a',
+  activeLink: '#0d652d',
   maxWidth: '475px',
   breakpoints: {
     mobile: '475px',

@@ -2,6 +2,7 @@ import styled from 'styled-components'
 
 export const Footer = styled.div`
   font-size: 1.25rem;
+  margin-bottom: 3rem;
 
   hr {
     margin: 1.55rem 0 1rem 0;

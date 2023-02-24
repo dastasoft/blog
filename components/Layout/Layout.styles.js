@@ -28,11 +28,3 @@ export const GridLayout = styled.div`
     border: none;
   }
 `
-
-export const Actions = styled.div`
-  display: flex;
-  flex-direction: column;
-  margin: 0 auto;
-  max-width: 32rem;
-  padding: 0 1rem;
-`

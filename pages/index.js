@@ -7,6 +7,7 @@ import PostSearcher from '@/components/InputSearch'
 import { getAllPosts } from '@/lib/api'
 import generateRssFeed from '@/lib/generateRSSFeed'
 import { DESCRIPTION } from '@/lib/constants'
+import Subscribe from '@/components/Subscribe'
 
 const Home = ({ allPosts }) => {
   const [filter, setFilter] = useState('')
@@ -31,8 +32,14 @@ const Home = ({ allPosts }) => {
   return (
     <Container>
       <NextSeo />
-      <Description>{DESCRIPTION}</Description>
-      <PostSearcher filter={filter} setFilter={setFilter} />
+      <Hero>
+        <HeroMain>
+          <Description>{DESCRIPTION}</Description>
+          <PostSearcher filter={filter} setFilter={setFilter} />
+        </HeroMain>
+        <Subscribe />
+      </Hero>
+      <H3>Latest Articles</H3>
       <GridLayout>{posts}</GridLayout>
     </Container>
   )
@@ -50,8 +57,33 @@ const Container = styled.div`
   }
 `
 
+const Hero = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 90%;
+  margin-bottom: 10rem;
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.lg}) {
+    flex-direction: row;
+  }
+`
+
+const HeroMain = styled.div`
+  max-width: 30rem;
+  padding: 1rem;
+`
+
 const Description = styled.h2`
-  padding: 0.5rem 0 1rem 0;
+  padding: 0.5rem 0 2rem 0;
+  font-size: xx-large;
+`
+
+const H3 = styled.h3`
+  font-size: x-large;
+  align-self: flex-start;
+  border-bottom: 3px solid ${({ theme }) => theme.primary};
 `
 
 const GridLayout = styled.div`

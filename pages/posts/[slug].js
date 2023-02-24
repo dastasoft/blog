@@ -12,6 +12,7 @@ import ScrollToTop from '@/components/ScrollToTop'
 
 import { getPostBySlug, getAllPosts } from '@/lib/api'
 import { HOMEPAGE, URLs } from '@/lib/constants'
+import Subscribe from '@/components/Subscribe'
 
 export default function Post({ post }) {
   const router = useRouter()
@@ -58,6 +59,7 @@ export default function Post({ post }) {
         <PostHeader {...post} />
         <PostBody {...post} />
         <PostFooter slug={post.slug} />
+        <Subscribe />
       </Container>
       <ScrollToTop />
       <Share title={post.title} summary={post.excerpt} />
@@ -74,7 +76,7 @@ const Container = styled.div`
   ${getGlobalTransition()}
   padding: 2rem 1rem;
   max-width: 100vw;
-  margin: 0 auto;
+  margin: 0 auto 10rem auto;
 
   @media (min-width: ${({ theme }) => theme.breakpoints.md}) {
     max-width: ${({ theme }) => theme.breakpoints.sm};

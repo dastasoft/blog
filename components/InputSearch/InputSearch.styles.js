@@ -10,6 +10,8 @@ export const Container = styled.div`
 
 export const Input = styled(RawInput)`
   margin: 0 auto;
+  padding: 1rem;
+  border-radius: 0.5rem;
 `
 
 export const Label = styled.label`
