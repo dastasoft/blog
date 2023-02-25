@@ -4,11 +4,9 @@ import { getGlobalTransition } from '@/components/GlobalStyle'
 
 export const Article = styled.article`
   background-color: ${({ theme }) => theme.background};
-  border-radius: 5px;
-  border: 1px solid ${({ theme }) => theme.secondary};
-  box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 0.5rem;
   ${getGlobalTransition()}
-  padding: 1rem;
+
   display: flex;
   flex-direction: column;
   cursor: pointer;
@@ -23,8 +21,8 @@ export const Article = styled.article`
 
   span {
     font-weight: 300;
-    font-size: 12.5px;
-    margin-bottom: 0.5rem;
+    font-size: medium;
+    margin: 0.5rem 0;
   }
 
   p {
@@ -39,6 +37,6 @@ export const Article = styled.article`
   }
 
   h2 {
-    margin: 0.5rem 0;
+    font-size: x-large;
   }
 `

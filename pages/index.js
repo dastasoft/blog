@@ -46,7 +46,7 @@ const Home = ({ allPosts }) => {
 }
 
 const Container = styled.div`
-  padding: 1rem;
+  padding: 1rem 3rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -62,7 +62,7 @@ const Hero = styled.div`
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  width: 90%;
+  width: 100%;
   margin-bottom: 10rem;
 
   @media (min-width: ${({ theme }) => theme.breakpoints.lg}) {
@@ -88,25 +88,11 @@ const H3 = styled.h3`
 
 const GridLayout = styled.div`
   display: grid;
-  grid-template-columns: 1fr;
-  grid-gap: 1.8rem;
+  grid-template-columns: repeat(auto-fill, minmax(25rem, 1fr));
+  grid-auto-rows: minmax(20rem, 1fr);
+  grid-gap: 4rem 3rem;
   margin: 1rem auto;
-  max-width: ${({ theme }) => theme.breakpoints.sm};
-
-  @media (min-width: ${({ theme }) => theme.breakpoints.lg}) {
-    grid-template-columns: repeat(2, 1fr);
-    max-width: ${({ theme }) => theme.breakpoints.lg};
-  }
-
-  @media (min-width: ${({ theme }) => theme.breakpoints.xl}) {
-    grid-template-columns: repeat(3, 1fr);
-    max-width: ${({ theme }) => theme.breakpoints.xl};
-  }
-
-  @media (min-width: ${({ theme }) => theme.breakpoints['2xl']}) {
-    grid-template-columns: repeat(4, 1fr);
-    max-width: ${({ theme }) => theme.breakpoints['2xl']};
-  }
+  width: 100%;
 `
 
 export default Home

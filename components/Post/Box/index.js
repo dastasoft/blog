@@ -6,7 +6,7 @@ import { DEFAULT_IMAGE_SIZES } from '@/lib/constants'
 
 import { Article } from './PostBox.styles'
 
-const Post = ({ title, date, slug, coverImage, excerpt, isFirst }) => {
+const Post = ({ title, date, slug, coverImage, isFirst }) => {
   const firstPostProperties = {
     loading: 'eager',
     priority: true,
@@ -29,12 +29,11 @@ const Post = ({ title, date, slug, coverImage, excerpt, isFirst }) => {
   return (
     <Link href="/posts/[slug]" as={`/posts/${slug}`}>
       <Article>
-        <span>{dayjs(date).format('DD MMMM YYYY')}</span>
         <Image {...imageProperties} />
+        <span>{dayjs(date).format('DD MMMM YYYY')}</span>
         <a href={`/posts/${slug}`}>
           <h2>{title}</h2>
         </a>
-        <p>{excerpt}</p>
       </Article>
     </Link>
   )
