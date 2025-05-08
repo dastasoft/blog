@@ -8,6 +8,9 @@
     "build": "next build",
     "start": "next start"
   },
+  "engines": {
+    "node": "18.x"
+  },
   "dependencies": {
     "@mailchimp/mailchimp_marketing": "^3.0.80",
     "date-fns": "^2.29.3",
