@@ -1,4 +1,4 @@
-import { FaGithub, FaLinkedin, FaTwitter, FaRssSquare } from 'react-icons/fa'
+import { FaGithub, FaLinkedin, FaRssSquare } from 'react-icons/fa'
 import { SiBuymeacoffee } from 'react-icons/si'
 
 import { URLs } from '@/lib/constants'
@@ -15,9 +15,6 @@ const SocialNetworks = () => {
       </a>
       <a href={URLs.LINKEDIN} target="_blank" rel="noopener noreferrer">
         <FaLinkedin fontSize={ICON_FONT_SIZE} />
-      </a>
-      <a href={URLs.TWITTER} target="_blank" rel="noopener noreferrer">
-        <FaTwitter fontSize={ICON_FONT_SIZE} />
       </a>
       <a href={URLs.RSS} target="_blank" rel="noopener noreferrer">
         <FaRssSquare fontSize={ICON_FONT_SIZE} />
