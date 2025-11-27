@@ -1,6 +1,5 @@
 import { useState } from 'react'
 import Image from 'next/image'
-import { HamburgerSpin } from 'react-animated-burgers'
 
 import { AUTHOR } from '@/lib/constants'
 import Link from 'next/link'
@@ -8,10 +7,11 @@ import ThemeToggler from '@/components/ThemeToggler'
 import Menu from '@/components/Menu'
 import MenuItems from '@/components/Menu/Items'
 import SocialNetworks from '@/components/Menu/SocialNetworks'
+import Hamburger from '@/components/Hamburger'
 
 import { ICON_SIZES } from '@/lib/constants'
 
-import { StyledHeader, Avatar, Navigation, Hamburger } from './Header.styles'
+import { StyledHeader, Avatar, Navigation, HamburgerWrapper } from './Header.styles'
 
 const Header = ({ theme, themeToggler }) => {
   const [menuOpen, setMenuOpen] = useState(false)
@@ -36,12 +36,12 @@ const Header = ({ theme, themeToggler }) => {
           <MenuItems />
           <SocialNetworks />
         </Navigation>
-        <Hamburger>
-          <HamburgerSpin
-            toggleButton={() => setMenuOpen(!menuOpen)}
-            isActive={menuOpen}
+        <HamburgerWrapper>
+          <Hamburger
+            onClick={() => setMenuOpen(!menuOpen)}
+            isOpen={menuOpen}
           />
-        </Hamburger>
+        </HamburgerWrapper>
       </StyledHeader>
       <Menu isOpen={menuOpen} close={() => setMenuOpen(false)} />
     </>
