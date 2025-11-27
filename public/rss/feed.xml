@@ -4,7 +4,7 @@
         <title>Blog | dastasoft</title>
         <link>https://blog.dastasoft.com/</link>
         <description>Learn JavaScript ecosystem with easy step by step articles.</description>
-        <lastBuildDate>Sat, 25 Feb 2023 00:01:06 GMT</lastBuildDate>
+        <lastBuildDate>Thu, 27 Nov 2025 08:52:09 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>Feed for Node.js</generator>
         <image>
@@ -12,11 +12,11 @@
             <url>https://blog.dastasoft.com/icons/maskable_icon.png</url>
             <link>https://blog.dastasoft.com/</link>
         </image>
-        <copyright>All rights reserved 2023, dastasoft</copyright>
+        <copyright>All rights reserved 2025, dastasoft</copyright>
         <item>
             <title><![CDATA[Better React Performance - useCallback vs useMemo]]></title>
             <link>https://blog.dastasoft.com/posts/use-callback-vs-use-memo</link>
-            <guid>https://blog.dastasoft.com/posts/use-callback-vs-use-memo</guid>
+            <guid isPermaLink="false">https://blog.dastasoft.com/posts/use-callback-vs-use-memo</guid>
             <pubDate>Fri, 09 Dec 2022 00:00:00 GMT</pubDate>
             <description><![CDATA[Learn how, when and which methods you can use to improve the performance of your React web application.]]></description>
             <author>dastasoft@protonmail.com (dastasoft)</author>
@@ -24,7 +24,7 @@
         <item>
             <title><![CDATA[Here is what every React Developer needs to know about TypeScript - Part 2]]></title>
             <link>https://blog.dastasoft.com/posts/heres-what-every-react-developer-needs-to-know-about-typescript_part_2</link>
-            <guid>https://blog.dastasoft.com/posts/heres-what-every-react-developer-needs-to-know-about-typescript_part_2</guid>
+            <guid isPermaLink="false">https://blog.dastasoft.com/posts/heres-what-every-react-developer-needs-to-know-about-typescript_part_2</guid>
             <pubDate>Mon, 24 Oct 2022 00:00:00 GMT</pubDate>
             <description><![CDATA[Using TypeScript in combination with React can provide an enhanced, less error-prone development experience. But as always, with great power comes great responsibility.]]></description>
             <author>dastasoft@protonmail.com (dastasoft)</author>
@@ -32,7 +32,7 @@
         <item>
             <title><![CDATA[How to get cool animations in your React projects]]></title>
             <link>https://blog.dastasoft.com/posts/framer-motion</link>
-            <guid>https://blog.dastasoft.com/posts/framer-motion</guid>
+            <guid isPermaLink="false">https://blog.dastasoft.com/posts/framer-motion</guid>
             <pubDate>Thu, 02 Jun 2022 00:00:00 GMT</pubDate>
             <description><![CDATA[In this guide we will use Framer Motion in a basic example project to write animations declaratively and effortlessly with seamless integration with our React ecosystem.]]></description>
             <author>dastasoft@protonmail.com (dastasoft)</author>
@@ -40,7 +40,7 @@
         <item>
             <title><![CDATA[MongoDB and Mongoose - How Every Web Developer Can Become FullStack With Node.js]]></title>
             <link>https://blog.dastasoft.com/posts/mongodb-mongoose-how-every-web-developer-can-become-fullstack-with-nodejs</link>
-            <guid>https://blog.dastasoft.com/posts/mongodb-mongoose-how-every-web-developer-can-become-fullstack-with-nodejs</guid>
+            <guid isPermaLink="false">https://blog.dastasoft.com/posts/mongodb-mongoose-how-every-web-developer-can-become-fullstack-with-nodejs</guid>
             <pubDate>Wed, 16 Mar 2022 00:00:00 GMT</pubDate>
             <description><![CDATA[In this second part of the tutorial we add a real integration with MongoDB using Mongoose, you will learn how to create a REST API with simple examples.]]></description>
             <author>dastasoft@protonmail.com (dastasoft)</author>
@@ -48,7 +48,7 @@
         <item>
             <title><![CDATA[How to get better and easier state management with Redux Toolkit]]></title>
             <link>https://blog.dastasoft.com/posts/how-to-get-better-easier-state-management-redux-toolkit</link>
-            <guid>https://blog.dastasoft.com/posts/how-to-get-better-easier-state-management-redux-toolkit</guid>
+            <guid isPermaLink="false">https://blog.dastasoft.com/posts/how-to-get-better-easier-state-management-redux-toolkit</guid>
             <pubDate>Mon, 29 Nov 2021 00:00:00 GMT</pubDate>
             <description><![CDATA[Learn through a simple project what state management improvements Redux Toolkit has to offer and whether it will be ideal for your project.]]></description>
             <author>dastasoft@protonmail.com (dastasoft)</author>
@@ -56,7 +56,7 @@
         <item>
             <title><![CDATA[How Every Web Developer Can Become FullStack With Node.js]]></title>
             <link>https://blog.dastasoft.com/posts/how-every-web-developer-can-become-fullstack-with-nodejs</link>
-            <guid>https://blog.dastasoft.com/posts/how-every-web-developer-can-become-fullstack-with-nodejs</guid>
+            <guid isPermaLink="false">https://blog.dastasoft.com/posts/how-every-web-developer-can-become-fullstack-with-nodejs</guid>
             <pubDate>Wed, 08 Sep 2021 00:00:00 GMT</pubDate>
             <description><![CDATA[Expand your tool belt with backend knowledge using your existing JavaScript skills. In this article we will check what Node is and build a REST API.]]></description>
             <author>dastasoft@protonmail.com (dastasoft)</author>
@@ -64,7 +64,7 @@
         <item>
             <title><![CDATA[Here is what every React Developer needs to know about TypeScript - Part 1]]></title>
             <link>https://blog.dastasoft.com/posts/heres-what-every-react-developer-needs-to-know-about-typescript</link>
-            <guid>https://blog.dastasoft.com/posts/heres-what-every-react-developer-needs-to-know-about-typescript</guid>
+            <guid isPermaLink="false">https://blog.dastasoft.com/posts/heres-what-every-react-developer-needs-to-know-about-typescript</guid>
             <pubDate>Thu, 27 May 2021 00:00:00 GMT</pubDate>
             <description><![CDATA[Is it worth using TypeScript with React in 2021? Find out why through examples, you do not need to have any previous TypeScript knowledge.]]></description>
             <author>dastasoft@protonmail.com (dastasoft)</author>
@@ -72,7 +72,7 @@
         <item>
             <title><![CDATA[Why you should use Chakra UI in React]]></title>
             <link>https://blog.dastasoft.com/posts/why-you-should-use-chakra-ui-in-react</link>
-            <guid>https://blog.dastasoft.com/posts/why-you-should-use-chakra-ui-in-react</guid>
+            <guid isPermaLink="false">https://blog.dastasoft.com/posts/why-you-should-use-chakra-ui-in-react</guid>
             <pubDate>Fri, 30 Apr 2021 00:00:00 GMT</pubDate>
             <description><![CDATA[Beautiful and accessible component library to speed up your development. Styling like a ninja.]]></description>
             <author>dastasoft@protonmail.com (dastasoft)</author>
@@ -80,7 +80,7 @@
         <item>
             <title><![CDATA[Present like a pro with Fusuma and MD]]></title>
             <link>https://blog.dastasoft.com/posts/presentations-like-a-pro-with-fusuma-and-markdown</link>
-            <guid>https://blog.dastasoft.com/posts/presentations-like-a-pro-with-fusuma-and-markdown</guid>
+            <guid isPermaLink="false">https://blog.dastasoft.com/posts/presentations-like-a-pro-with-fusuma-and-markdown</guid>
             <pubDate>Thu, 25 Mar 2021 00:00:00 GMT</pubDate>
             <description><![CDATA[Create slides quickly and easily with this amazing tool, make presentations like a pro.]]></description>
             <author>dastasoft@protonmail.com (dastasoft)</author>
@@ -88,7 +88,7 @@
         <item>
             <title><![CDATA[Blog with Next.js and dev.to as CMS]]></title>
             <link>https://blog.dastasoft.com/posts/simple-static-blog-with-nextjs-and-devto-as-cms</link>
-            <guid>https://blog.dastasoft.com/posts/simple-static-blog-with-nextjs-and-devto-as-cms</guid>
+            <guid isPermaLink="false">https://blog.dastasoft.com/posts/simple-static-blog-with-nextjs-and-devto-as-cms</guid>
             <pubDate>Tue, 03 Nov 2020 00:00:00 GMT</pubDate>
             <description><![CDATA[We are going to set up a static blog using Next.js and dev.to as a headless CMS.]]></description>
             <author>dastasoft@protonmail.com (dastasoft)</author>
@@ -96,7 +96,7 @@
         <item>
             <title><![CDATA[Styling in React]]></title>
             <link>https://blog.dastasoft.com/posts/styling-in-react</link>
-            <guid>https://blog.dastasoft.com/posts/styling-in-react</guid>
+            <guid isPermaLink="false">https://blog.dastasoft.com/posts/styling-in-react</guid>
             <pubDate>Sun, 15 Mar 2020 00:00:00 GMT</pubDate>
             <description><![CDATA[Check out the different options to style your React application. Decide which one fits best to your project.]]></description>
             <author>dastasoft@protonmail.com (dastasoft)</author>
@@ -104,7 +104,7 @@
         <item>
             <title><![CDATA[Simple Animated Circle Bar]]></title>
             <link>https://blog.dastasoft.com/posts/simple-animated-circle-bar-as-react-component</link>
-            <guid>https://blog.dastasoft.com/posts/simple-animated-circle-bar-as-react-component</guid>
+            <guid isPermaLink="false">https://blog.dastasoft.com/posts/simple-animated-circle-bar-as-react-component</guid>
             <pubDate>Thu, 05 Mar 2020 00:00:00 GMT</pubDate>
             <description><![CDATA[Let's make an easy and simple circle progress bar from an animated SVG in a React component.]]></description>
             <author>dastasoft@protonmail.com (dastasoft)</author>
@@ -112,7 +112,7 @@
         <item>
             <title><![CDATA[Simple React Boilerplate]]></title>
             <link>https://blog.dastasoft.com/posts/simple-react-boilerplate</link>
-            <guid>https://blog.dastasoft.com/posts/simple-react-boilerplate</guid>
+            <guid isPermaLink="false">https://blog.dastasoft.com/posts/simple-react-boilerplate</guid>
             <pubDate>Sat, 29 Feb 2020 00:00:00 GMT</pubDate>
             <description><![CDATA[How to make a simple React boilerplate from scartch with Babel, Parcel and ESlint checks.]]></description>
             <author>dastasoft@protonmail.com (dastasoft)</author>

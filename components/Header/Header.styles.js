@@ -47,16 +47,8 @@ export const Navigation = styled.div`
   }
 `
 
-export const Hamburger = styled.div`
+export const HamburgerWrapper = styled.div`
   justify-self: flex-end;
-
-  div > span,
-  div > span::after,
-  div > span::before {
-    ${getGlobalTransition()}
-    background-color: ${({ theme }) => theme.UIText};
-    z-index: 10;
-  }
 
   @media (min-width: ${({ theme }) => theme.breakpoints.lg}) {
     display: none;
